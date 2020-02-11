@@ -142,9 +142,6 @@
   <data name="FlecheHaut" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>C:\Session Grand Public\Données\Administrateur\Application Public\Boutons\FlecheHaut.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="gear" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>C:\Session Grand Public\Données\Administrateur\Application Admin\Boutons\Puzzle\gear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="memory_fondecran" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>C:\Session Grand Public\Données\Administrateur\Application Admin\Boutons\Memory\memory-fondecran.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
