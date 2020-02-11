@@ -33,7 +33,8 @@ namespace AppPalaisRois
         private VisiteViewModel ViewModel;
         private WindowsFormsHost whost;
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
-
+        private string CheminFondTitre = ConfigurationManager.AppSettings["CheminFondTitre"];
+        private string CheminFondLateralTexte = ConfigurationManager.AppSettings["CheminFondLateralTexte"];
         #endregion Private Fields
 
         /* EFFECTS RESOURCE DICTIONARY */
@@ -55,7 +56,7 @@ namespace AppPalaisRois
 
             // Fond pour le border
             BitmapDecoder decoder = BitmapDecoder.Create(
-                    new Uri("pack://application:,,,/CommonSurface;component/Resources/FondTextBoxe.jpg", UriKind.RelativeOrAbsolute),
+                    new Uri(CheminFondLateralTexte, UriKind.RelativeOrAbsolute),
                     BitmapCreateOptions.PreservePixelFormat,
                     BitmapCacheOption.OnLoad);
             ImageBrush brush = new ImageBrush(decoder.Frames[0]);
@@ -313,7 +314,7 @@ namespace AppPalaisRois
 
                 // Image de fond du titre
                 BitmapDecoder decoder = BitmapDecoder.Create(
-                    new Uri("pack://application:,,,/CommonSurface;component/Resources/FondTextBoxe.jpg", UriKind.RelativeOrAbsolute),
+                    new Uri(CheminFondTitre, UriKind.RelativeOrAbsolute),
                     BitmapCreateOptions.PreservePixelFormat,
                     BitmapCacheOption.OnLoad);
                 ImageBrush brush = new ImageBrush(decoder.Frames[0]);
