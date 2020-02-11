@@ -18,10 +18,9 @@ namespace AppAdministrationWPF.View
     {
         #region Private Fields
 
+        private AdminMemoryViewModel _viewModel;
         private string chemin = ConfigurationManager.AppSettings["cheminMemory"];
         private string cheminLibrairie = ConfigurationManager.AppSettings["cheminLibrairieMemory"];
-
-        private string difficulty;
 
         #endregion Private Fields
 
@@ -30,8 +29,8 @@ namespace AppAdministrationWPF.View
         public AdminMemoryView()
         {
             InitializeComponent();
-            difficulty = "";
-            this.DataContext = ServiceLocator.AdminMemoryViewModel;
+            _viewModel = ServiceLocator.AdminMemoryViewModel;
+            this.DataContext = _viewModel;
 
             #region Récupération des niveaux Memory
 
@@ -68,46 +67,70 @@ namespace AppAdministrationWPF.View
 
         #region Public Properties
 
-        public AdminMemoryViewModel viewModel
+        public AdminMemoryViewModel ViewModel
         {
-            get { return (AdminMemoryViewModel)DataContext; }
-            set { DataContext = value; }
+            get { return _viewModel; }
+            set { _viewModel = value; }
         }
 
         #endregion Public Properties
 
         #region Private Methods
 
+        /// <summary>
+        /// Ajout d'un nouveau Memory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
+            gridAdministration.Visibility = Visibility.Visible;
+            UpdateVisibility(true);
+
             Picture p = Picture.Blank();
-            viewModel.Pictures.Add(p);
-            ListPictures.SelectedItem = p;
-            gridConfiguration.Visibility = Visibility.Visible;
+            ViewModel.Pictures.Add(p);
+            ListPictures.SelectedItem = ViewModel.Selected = p;
         }
 
+        /// <summary>
+        /// Annulation des modifications
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void CancelButton_Click(object sender, RoutedEventArgs e)
         {
-            viewModel.Selected.Name = viewModel.Selected.Source = "";
-            gridConfiguration.Visibility = Visibility.Hidden;
+            gridAdministration.Visibility = Visibility.Hidden;
+            UpdateVisibility(false);
         }
 
+        /// <summary>
+        /// Suppression du Memory sélectionné
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-            if (ListPictures.SelectedItem != null)
+            if (ViewModel.Selected != null)
             {
-                Picture p = ListPictures.SelectedItem as Picture;
-                viewModel.Pictures.Remove(p);
-                viewModel.Save();
+                gridAdministration.Visibility = Visibility.Hidden;
+                UpdateVisibility(false);
+                ViewModel.Pictures.Remove(ViewModel.Selected);
+                ViewModel.Selected = null;
+                ViewModel.Save();
             }
         }
 
-        private void DisplaySelection(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Sélection de la difficulté
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void DifficultySelection(object sender, RoutedEventArgs e)
         {
             Button button = sender as Button;
-            difficulty = button.Tag as string;
-            viewModel.filterPictures(difficulty);
-            gridConfiguration.Visibility = Visibility.Hidden;
+            ViewModel.filterPictures(button.Tag as string);
+            gridAdministration.Visibility = Visibility.Hidden;
+            UpdateVisibility(false);
         }
 
         private void ExportButton_Click(object sender, RoutedEventArgs e)
@@ -121,19 +144,30 @@ namespace AppAdministrationWPF.View
             Import import = new Import(chemin, cheminLibrairie, false, false);
             import.Closing += (s, t) =>
             {
-                viewModel.Refresh();
-                viewModel.filterPictures(difficulty);
-                gridConfiguration.Visibility = Visibility.Hidden;
+                ViewModel.Refresh();  
             };
             import.Show();
         }
 
+        /// <summary>
+        /// Modification d'un Memory
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void ModifyButton_Click(object sender, RoutedEventArgs e)
         {
-            gridConfiguration.Visibility = Visibility.Visible;
+            if (ViewModel.Selected != null)
+            {
+                gridAdministration.Visibility = Visibility.Visible;
+                UpdateVisibility(true);
+            }
         }
-
-        private void SearchButton_Click(object sender, RoutedEventArgs e)
+        /// <summary>
+        /// Sélection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void BrowseButton_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
@@ -147,23 +181,56 @@ namespace AppAdministrationWPF.View
             }
         }
 
+        /// <summary>
+        /// Mise à jour de la sélection
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void updateSelection(object sender, SelectionChangedEventArgs e)
         {
             if (e.AddedItems.Count > 0)
             {
-                viewModel.Selected = e.AddedItems[0] as Picture;
-                gridConfiguration.Visibility = Visibility.Hidden;
+                ViewModel.Selected = e.AddedItems[0] as Picture;
+                txtSource.Text = ViewModel.Selected.Source;
+                txtName.Text = ViewModel.Selected.Name;
+            }
+            else
+            {
+                gridAdministration.Visibility = Visibility.Hidden;
+                txtSource.Text = txtName.Text = "";
             }
         }
 
+        /// <summary>
+        /// Mise à jour des la visibilité des boutons de configuration
+        /// </summary>
+        /// <param name="previewVisible">Preview visible ?</param>
+        /// <param name="deleteVisible"> Bouton de suppression visible ?</param>
+        private void UpdateVisibility(bool editMode)
+        {
+            AddButton.Visibility = ModifyButton.Visibility = DeleteButton.Visibility = editMode ? Visibility.Collapsed : Visibility.Visible;
+            previewMedia.Visibility = editMode ? Visibility.Visible : Visibility.Collapsed;
+        }
+
+        /// <summary>
+        /// Applications des modifications
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void ValidateButton_Click(object sender, RoutedEventArgs e)
         {
-            if (viewModel.Selected != null)
+            try
             {
-                viewModel.Selected.Name = txtName.Text;
-                viewModel.Selected.Source = txtSource.Text;
-                gridConfiguration.Visibility = Visibility.Hidden;
-                viewModel.Save();
+                gridAdministration.Visibility = Visibility.Hidden;
+                UpdateVisibility(false);
+                ViewModel.Selected.Source = txtSource.Text;
+                ViewModel.Selected.Name = txtName.Text;
+                ListPictures.Items.Refresh();
+                ViewModel.Save();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error AdminMemoryView : " + ex.Message);
             }
         }
 

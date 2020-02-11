@@ -11,83 +11,83 @@
 	d:DesignWidth="1665"
 	mc:Ignorable="d">
 
-	<UserControl.Resources>
-		<Style x:Key="RedGlowItemContainer" TargetType="{x:Type ListBoxItem}">
-			<Setter Property="Template">
-				<Setter.Value>
-					<ControlTemplate TargetType="{x:Type ListBoxItem}">
-						<Border x:Name="IconBorder" BorderThickness="1">
-							<ContentPresenter />
-						</Border>
-						<ControlTemplate.Triggers>
-							<Trigger Property="IsSelected" Value="true">
-								<Setter TargetName="IconBorder" Property="Background" Value="DarkGray" />
-							</Trigger>
-						</ControlTemplate.Triggers>
-					</ControlTemplate>
-				</Setter.Value>
-			</Setter>
-		</Style>
-	</UserControl.Resources>
+    <UserControl.Resources>
+        <Style x:Key="RedGlowItemContainer" TargetType="{x:Type ListBoxItem}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBoxItem}">
+                        <Border x:Name="IconBorder" BorderThickness="1">
+                            <ContentPresenter />
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsSelected" Value="true">
+                                <Setter TargetName="IconBorder" Property="Background" Value="DarkGray" />
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </UserControl.Resources>
 
-	<Grid
+    <Grid
 		x:Name="LayoutRoot"
 		MinWidth="650"
 		MinHeight="350"
 		Background="Black">
 
-		<GroupBox Name="GroupAdminMemory">
+        <GroupBox Name="GroupAdminMemory">
 
-			<GroupBox.Header>
-				<Label
+            <GroupBox.Header>
+                <Label
 					Content="Memory"
 					FontSize="22"
 					FontWeight="Bold"
 					Foreground="White" />
-			</GroupBox.Header>
+            </GroupBox.Header>
 
-			<Grid Name="MainGrid">
+            <Grid Name="MainGrid">
 
-				<Grid.ColumnDefinitions>
-					<ColumnDefinition Width="130" />
-					<ColumnDefinition Width="*" />
-				</Grid.ColumnDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="130" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
 
-				<Grid.RowDefinitions>
-					<RowDefinition Height="380*" />
-					<RowDefinition Height="80*" />
-				</Grid.RowDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="380*" />
+                    <RowDefinition Height="80*" />
+                </Grid.RowDefinitions>
 
-				<StackPanel
+                <StackPanel
 					Grid.Row="1"
 					Grid.Column="0"
 					VerticalAlignment="Center">
-					<Button
+                    <Button
 						Width="100"
 						Height="30"
 						Margin="0,10"
 						Click="ImportButton_Click"
 						Content="Import" />
-					<Button
+                    <Button
 						Width="100"
 						Height="30"
 						Margin="0,10"
 						Click="ExportButton_Click"
 						Content="Export" />
-				</StackPanel>
+                </StackPanel>
 
-				<Grid
+                <Grid
 					Name="ListButtons"
 					Grid.Row="0"
 					Grid.Column="0">
-					<Grid.RowDefinitions>
-						<RowDefinition Height="*" />
-						<RowDefinition Height="*" />
-						<RowDefinition Height="*" />
-						<RowDefinition Height="*" />
-					</Grid.RowDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
 
-					<Button
+                    <Button
 						Name="btMemory1"
 						Grid.Row="0"
 						Width="95"
@@ -95,22 +95,22 @@
 						Margin="5,10"
 						HorizontalAlignment="Stretch"
 						Background="Transparent"
-						Click="DisplaySelection"
+						Click="DifficultySelection"
 						Tag="Easy">
-						<StackPanel Orientation="Vertical">
-							<Image
+                        <StackPanel Orientation="Vertical">
+                            <Image
 								x:Name="niveau1Memory"
 								Width="80"
 								Height="50" />
-							<TextBlock
+                            <TextBlock
 								Margin="3,0,0,0"
 								HorizontalAlignment="Center"
 								Foreground="White"
 								Text="Memory 16p" />
-						</StackPanel>
-					</Button>
+                        </StackPanel>
+                    </Button>
 
-					<Button
+                    <Button
 						Name="btMemory2"
 						Grid.Row="1"
 						Width="95"
@@ -118,22 +118,22 @@
 						Margin="5,10"
 						HorizontalAlignment="Stretch"
 						Background="Transparent"
-						Click="DisplaySelection"
+						Click="DifficultySelection"
 						Tag="Medium">
-						<StackPanel Orientation="Vertical">
-							<Image
+                        <StackPanel Orientation="Vertical">
+                            <Image
 								x:Name="niveau2Memory"
 								Width="80"
 								Height="50" />
-							<TextBlock
+                            <TextBlock
 								Margin="3,0,0,0"
 								HorizontalAlignment="Center"
 								Foreground="White"
 								Text="Memory 16p" />
-						</StackPanel>
-					</Button>
+                        </StackPanel>
+                    </Button>
 
-					<Button
+                    <Button
 						Name="btMemory3"
 						Grid.Row="2"
 						Width="95"
@@ -141,22 +141,22 @@
 						Margin="5,10"
 						HorizontalAlignment="Stretch"
 						Background="Transparent"
-						Click="DisplaySelection"
+						Click="DifficultySelection"
 						Tag="Hard">
-						<StackPanel Orientation="Vertical">
-							<Image
+                        <StackPanel Orientation="Vertical">
+                            <Image
 								x:Name="niveau3Memory"
 								Width="80"
 								Height="50" />
-							<TextBlock
+                            <TextBlock
 								Margin="3,0,0,0"
 								HorizontalAlignment="Center"
 								Foreground="White"
 								Text="Memory 36p" />
-						</StackPanel>
-					</Button>
+                        </StackPanel>
+                    </Button>
 
-					<Button
+                    <Button
 						Name="btBackground"
 						Grid.Row="3"
 						Width="95"
@@ -164,23 +164,23 @@
 						Margin="5,20,5,10"
 						HorizontalAlignment="Stretch"
 						Background="Transparent"
-						Click="DisplaySelection"
+						Click="DifficultySelection"
 						Tag="Background">
-						<StackPanel Orientation="Vertical">
-							<Image
+                        <StackPanel Orientation="Vertical">
+                            <Image
 								x:Name="arrierePlansMemory"
 								Width="80"
 								Height="50" />
-							<TextBlock
+                            <TextBlock
 								Margin="3,0,0,0"
 								HorizontalAlignment="Center"
 								Foreground="White"
 								Text="Arrieres Plans" />
-						</StackPanel>
-					</Button>
-				</Grid>
+                        </StackPanel>
+                    </Button>
+                </Grid>
 
-				<ListBox
+                <ListBox
 					Name="ListPictures"
 					Grid.Row="0"
 					Grid.Column="1"
@@ -189,85 +189,92 @@
 					SelectedItem="{Binding Selected}"
 					SelectionChanged="updateSelection"
 					SelectionMode="Single">
-					<ListBox.ItemsPanel>
-						<ItemsPanelTemplate>
-							<WrapPanel Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollContentPresenter}}}" />
-						</ItemsPanelTemplate>
-					</ListBox.ItemsPanel>
-					<ListBox.ItemTemplate>
-						<DataTemplate>
-							<StackPanel
+                    <ListBox.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <WrapPanel Width="{Binding ActualWidth, RelativeSource={RelativeSource AncestorType={x:Type ScrollContentPresenter}}}" />
+                        </ItemsPanelTemplate>
+                    </ListBox.ItemsPanel>
+                    <ListBox.ItemTemplate>
+                        <DataTemplate>
+                            <StackPanel
 								Width="200"
 								Height="200"
 								Margin="5"
 								Orientation="Vertical">
-								<TextBlock
+                                <TextBlock
 									HorizontalAlignment="Center"
 									VerticalAlignment="Center"
 									Text="{Binding Name}" />
-								<Image
+                                <Image
 									Height="170"
 									Source="{Binding Source}"
 									Stretch="Uniform" />
-							</StackPanel>
-						</DataTemplate>
-					</ListBox.ItemTemplate>
-				</ListBox>
+                            </StackPanel>
+                        </DataTemplate>
+                    </ListBox.ItemTemplate>
+                </ListBox>
 
-				<!--  Grille de la configuration  -->
-				<Grid
+                <!--  Grille de la configuration  -->
+                <Grid
 					x:Name="bgActionPan"
 					Grid.Row="1"
 					Grid.Column="1"
 					Margin="0,10,0,0"
 					Visibility="{Binding BackgroundsVisible}">
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="90" />
-					</Grid.ColumnDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="200" />
+                    </Grid.ColumnDefinitions>
 
-					<StackPanel
-						Grid.Column="1"
-						HorizontalAlignment="Stretch"
-						VerticalAlignment="Stretch">
-						<Button
-							Width="80"
-							Margin="5"
+                    <StackPanel
+						HorizontalAlignment="Center"
+						VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="1300,0,0,0">
+                        <Button
+                            Name="AddButton"
+                            Visibility="Collapsed"
+							Width="100"
+                            Margin="5"
 							Padding="5"
 							Click="AddButton_Click"
 							Content="Ajouter" />
-						<Button
-							Width="80"
+                        <Button
+                            Name="ModifyButton"
+                            Visibility="Collapsed"
+							Width="100"
 							Margin="5"
 							Padding="5"
 							Click="ModifyButton_Click"
 							Content="Modifier" />
-						<Button
-							Width="80"
+                        <Button
+                            Name="DeleteButton"
+                            Visibility="Collapsed"
+							Width="100"
 							Margin="5"
 							Padding="5"
 							Click="DeleteButton_Click"
 							Content="Supprimer" />
-					</StackPanel>
-					<Grid x:Name="gridConfiguration" Visibility="Hidden">
-						<Grid.ColumnDefinitions>
-							<ColumnDefinition Width="75" />
-							<ColumnDefinition Width="2*" />
-							<ColumnDefinition Width="100" />
-							<ColumnDefinition Width="3*" />
-						</Grid.ColumnDefinitions>
-						<Grid.RowDefinitions>
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="*" />
-						</Grid.RowDefinitions>
+                    </StackPanel>
+                    <Grid x:Name="gridAdministration"
+                          Grid.Column="0"
+                          Visibility="Hidden">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="75" />
+                            <ColumnDefinition Width="2*" />
+                            <ColumnDefinition Width="100" />
+                            <ColumnDefinition Width="3*" />
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="*" />
+                        </Grid.RowDefinitions>
 
-						<Label
+                        <Label
 							HorizontalAlignment="Right"
 							VerticalAlignment="Center"
 							Content="Source:"
 							Foreground="White" />
-						<TextBox
+                        <TextBox
 							x:Name="txtSource"
 							Grid.Column="1"
 							Height="23"
@@ -276,15 +283,17 @@
 							VerticalAlignment="Center"
 							IsEnabled="False"
 							Text="{Binding Selected.Source, Mode=OneWay}" />
-						<Button
+                        <Button
+							Grid.Row="0"
 							Grid.Column="2"
-							Height="23"
-							Margin="5,0,0,0"
-							HorizontalAlignment="Stretch"
-							Click="SearchButton_Click"
-							Content="Parcourir..." />
+							Width="60"
+							Margin="4,0,4,0"
+                            HorizontalAlignment="Center"
+							VerticalAlignment="Center"
+							Click="BrowseButton_Click"
+							Content="Parcourir" />
 
-						<MediaElement
+                        <MediaElement
 							x:Name="previewMedia"
 							Grid.RowSpan="3"
 							Grid.Column="3"
@@ -294,14 +303,14 @@
 							Source="{Binding Selected.Source, Mode=OneWay}"
 							Stretch="Uniform" />
 
-						<Label
+                        <Label
 							Grid.Row="1"
 							Grid.Column="0"
 							HorizontalAlignment="Right"
 							VerticalAlignment="Center"
 							Content="Nom:"
 							Foreground="White" />
-						<TextBox
+                        <TextBox
 							x:Name="txtName"
 							Grid.Row="1"
 							Grid.Column="1"
@@ -312,31 +321,31 @@
 							VerticalAlignment="Center"
 							Text="{Binding Selected.Name, Mode=OneWay}" />
 
-						<StackPanel
+                        <StackPanel
 							Grid.Row="2"
 							Grid.ColumnSpan="3"
 							HorizontalAlignment="Stretch"
 							VerticalAlignment="Bottom"
 							FlowDirection="RightToLeft"
 							Orientation="Horizontal">
-							<Button
+                            <Button
 								Width="75"
 								Height="23"
 								Margin="5,10"
 								VerticalAlignment="Top"
 								Click="ValidateButton_Click"
 								Content="Valider" />
-							<Button
+                            <Button
 								Width="75"
 								Height="23"
 								Margin="5,10"
 								VerticalAlignment="Top"
 								Click="CancelButton_Click"
 								Content="Annuler" />
-						</StackPanel>
-					</Grid>
-				</Grid>
-			</Grid>
-		</GroupBox>
-	</Grid>
+                        </StackPanel>
+                    </Grid>
+                </Grid>
+            </Grid>
+        </GroupBox>
+    </Grid>
 </UserControl>

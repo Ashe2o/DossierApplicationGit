@@ -52,31 +52,6 @@ namespace AppAdministrationWPF.View
                            BitmapSizeOptions.FromEmptyOptions());
 
             #endregion Récupération des niveaux Puzzle
-
-            #region Récupération des icônes
-
-            // Ajouter
-            iconeAjouter.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.gear.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
-            // Modifier
-            iconeModifier.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.gear.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
-            // Supprimer
-            iconeSupprimer.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.gear.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
-
-            #endregion Récupération des icônes
-
-            DeleteButton.Visibility = Visibility.Collapsed;
         }
 
         #endregion Public Constructors
@@ -225,8 +200,8 @@ namespace AppAdministrationWPF.View
         /// <param name="deleteVisible"> Bouton de suppression visible ?</param>
         private void UpdateVisibility(bool editMode)
         {
-            AddButton.Visibility = ModifyButton.Visibility = editMode ? Visibility.Collapsed : Visibility.Visible;
-            previewMedia.Visibility = DeleteButton.Visibility = editMode ? Visibility.Visible : Visibility.Collapsed;
+            AddButton.Visibility = ModifyButton.Visibility = DeleteButton.Visibility = editMode ? Visibility.Collapsed : Visibility.Visible;
+            previewMedia.Visibility = editMode ? Visibility.Visible : Visibility.Collapsed;
         }
 
         /// <summary>
