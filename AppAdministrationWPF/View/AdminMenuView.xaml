@@ -154,7 +154,7 @@
             <Button
 				x:Name="buttonCredit"
                 Click="buttonCredits_Click"
-				Content="Crédits"
+				Content="Copyright"
 				Style="{StaticResource adminButton}" 
                 Visibility="Collapsed"/>
 		</StackPanel>
