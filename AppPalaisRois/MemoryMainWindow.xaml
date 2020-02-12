@@ -13,7 +13,8 @@
 	mc:Ignorable="d">
 
 	<!--  Grid Principal  -->
-	<Grid x:Name="MemoryPanel" Background="Black">
+	<Grid x:Name="MemoryPanel" Background="Transparent">
+        <Image x:Name="imageBackground" />
 		<Canvas
 			x:Name="canvas"
 			Width="1920"
@@ -51,7 +52,7 @@
 								Width="{Binding GameSize, Mode=TwoWay}"
 								HorizontalAlignment="Center"
 								VerticalAlignment="Center"
-								Background="Black" />
+								Background="Transparent" />
 						</ItemsPanelTemplate>
 					</ItemsControl.ItemsPanel>
 					<ItemsControl.ItemTemplate>
@@ -62,7 +63,7 @@
 
 								<Border
 									x:Name="mask"
-									Background="Black"
+									Background="Transparent"
 									CornerRadius="{Binding MyRadius, Mode=TwoWay}" />
 
 								<StackPanel
@@ -295,36 +296,23 @@
 			</WrapPanel>
 
 			<!--  Bouton pour quitter  -->
-			<Button
+            <Button
 				x:Name="Quit_button"
-				Width="120"
-				Height="120"
-				Margin="85,710,0,0"
+				Width="90"
+				Height="90"
+				Margin="75,960,0,0"
 				HorizontalAlignment="Left"
 				VerticalAlignment="Top"
-				Background="Black"
-				BorderBrush="Black"
+				Background="Transparent"
+				BorderBrush="Transparent"
 				Click="BoutonQuit_click"
 				TouchUp="BoutonQuit_click">
-				<StackPanel>
-					<Image
-						x:Name="returnMemory"
-						Width="100"
-						Height="100"
-						Opacity="1.0" />
-				</StackPanel>
-			</Button>
+                <StackPanel Width="80" Height="80">
+                    <Image x:Name="returnMemory" Stretch="Uniform" />
+                </StackPanel>
+            </Button>
 
-			<!--  Frise  -->
-			<StackPanel
-				Canvas.Left="-55"
-				Canvas.Top="920"
-				Width="2025"
-				Height="150">
-				<Image x:Name="friseMemory" Stretch="Uniform" />
-			</StackPanel>
-
-			<!--  Label de difficulté  -->
+            <!--  Label de difficulté  -->
 			<Label
 				x:Name="labelEasy"
 				Width="90"
@@ -333,7 +321,7 @@
 				Panel.ZIndex="3"
 				Background="#00000000"
                 FontFamily="{StaticResource Luciole-Regular}"
-				FontSize="30"
+				FontSize="28"
 				Foreground="White" />
 			<Label
 				x:Name="labelMedium"
@@ -343,7 +331,7 @@
 				Panel.ZIndex="3"
 				Background="#00000000"
                 FontFamily="{StaticResource Luciole-Regular}"
-				FontSize="30"
+				FontSize="28"
 				Foreground="White" />
 			<Label
 				x:Name="labelHard"
@@ -353,7 +341,7 @@
 				Panel.ZIndex="3"
 				Background="#00000000"
                 FontFamily="{StaticResource Luciole-Regular}"
-				FontSize="30"
+				FontSize="28"
 				Foreground="White" />
 		</Canvas>
 	</Grid>

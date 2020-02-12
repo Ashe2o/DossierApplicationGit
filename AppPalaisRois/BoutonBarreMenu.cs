@@ -26,7 +26,7 @@ namespace AppPalaisRois
             this.url = url;
             quitButton = new SurfaceButton
             {
-                Background = Brushes.Black
+                Background = Brushes.Transparent
             };
             setImg(this.url);
             quitButton.Click += this.handler;

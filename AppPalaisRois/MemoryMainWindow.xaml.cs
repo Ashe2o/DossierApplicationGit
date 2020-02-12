@@ -21,7 +21,7 @@ namespace AppPalaisRois
         private bool canClose = true;
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHide;
-        private string CheminFrise = ConfigurationManager.AppSettings["CheminFrise"];
+        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcranApplication"];
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
 
         #endregion Private Fields
@@ -37,8 +37,8 @@ namespace AppPalaisRois
 
             #region Récupération image de fond
 
-            // Récupération de la frise
-            friseMemory.Source = ResourceAccessor.loadImage(CheminFrise);
+            // Récupération du fond d'ecran
+            imageBackground.Source = ResourceAccessor.loadImage(CheminFondEcran);
 
             // Récupération du retour
             returnMemory.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
@@ -50,18 +50,19 @@ namespace AppPalaisRois
 
             #region Récupération des icones de difficultés
 
-            // Ajout des jeux dans la liste des choix Bouton facile Icône
-            ChoixMemory.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(BoutonJeu1_click), ConfigurationManager.AppSettings["cheminIconeJeu1Memory"]).getButton());
-            // Nom
-            labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeu1Memory"];
+            // Ajout des jeux dans la liste des choix 
+            // Bouton Facile Icône
+            ChoixMemory.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(BoutonJeu1_click), ConfigurationManager.AppSettings["cheminIconeJeuFacile"]).getButton());
+            // Label Facile
+            labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacile"];
             // Bouton Moyen Icône
-            ChoixMemory.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(BoutonJeu2_click), ConfigurationManager.AppSettings["cheminIconeJeu2Memory"]).getButton());
-            // Nom
-            labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeu2Memory"];
+            ChoixMemory.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(BoutonJeu2_click), ConfigurationManager.AppSettings["cheminIconeJeuMoyen"]).getButton());
+            // Label Moyen
+            labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyen"];
             // Bouton Difficile Icône
-            ChoixMemory.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(BoutonJeu3_click), ConfigurationManager.AppSettings["cheminIconeJeu3Memory"]).getButton());
-            // Nom
-            labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeu3Memory"];
+            ChoixMemory.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(BoutonJeu3_click), ConfigurationManager.AppSettings["cheminIconeJeuDifficile"]).getButton());
+            // Label Difficile
+            labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficile"];
 
             #endregion Récupération des icones de difficultés
 
