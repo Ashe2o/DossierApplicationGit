@@ -11,29 +11,24 @@
 	WindowStyle="None"
 	mc:Ignorable="d">
 
-	<Grid Background="Black">
-
-		<StackPanel
+	<Grid Background="Transparent">
+        <Image x:Name="imageBackground" />
+        <StackPanel
 			Width="1660"
-			Height="145"
-			Margin="0,0,40,20"
+			Height="150"
+			Margin="0,0,60,40"
 			HorizontalAlignment="Right"
 			VerticalAlignment="Bottom">
-			<ListBox
+            <ListBox
 				Name="dock_expo"
 				MaxWidth="1600"
-				Margin="15,0,15,0"
+				Margin="0,0,0,0"
 				HorizontalAlignment="Center"
 				VerticalAlignment="Center"
 				Background="Transparent"
 				BorderBrush="Transparent"
 				ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-				<ListBox.Resources>
-					<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
-					<SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
-					<SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
-				</ListBox.Resources>
-				<ListBox.ItemsPanel>
+                <ListBox.ItemsPanel>
 					<ItemsPanelTemplate>
 						<UniformGrid Rows="1" />
 					</ItemsPanelTemplate>
@@ -71,8 +66,8 @@
 			Margin="15,880,0,0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Background="Black"
-			BorderBrush="Black"
+			Background="Transparent"
+			BorderBrush="Transparent"
 			Click="BoutonPlayStop"
 			TouchDown="BoutonPlayStop"
 			Visibility="Hidden">
@@ -101,8 +96,8 @@
 			Margin="75,960,0,0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
-			Background="Black"
-			BorderBrush="Black"
+			Background="Transparent"
+			BorderBrush="Transparent"
 			Click="BoutonQuit_click"
 			TouchDown="BoutonQuit_click"
 			Visibility="Visible">

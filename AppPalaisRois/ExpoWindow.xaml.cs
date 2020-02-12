@@ -22,7 +22,6 @@ namespace AppPalaisRois
 
         private string chemin = ConfigurationManager.AppSettings["cheminExpoVirtuelles"];
         private string CheminFondEcranExpo = ConfigurationManager.AppSettings["CheminFondEcranExpo"];
-        private string CheminFrise = ConfigurationManager.AppSettings["CheminFrise"];
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
         private DiapoModel diapo = new DiapoModel();
         private ModelExpo ExpoElement = new ModelExpo();
@@ -39,9 +38,6 @@ namespace AppPalaisRois
         public ExpoWindow()
         {
             InitializeComponent();
-
-            // Récupération de la frise
-            friseExpo.Source = ResourceAccessor.loadImage(CheminFrise);
 
             // Récupération du retour
             returnExpo.Source = ResourceAccessor.loadImage(CheminBoutonReturn);

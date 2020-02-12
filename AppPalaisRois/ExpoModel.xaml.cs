@@ -30,7 +30,7 @@ namespace AppPalaisRois
 
         private string chemin = ConfigurationManager.AppSettings["cheminExpoVirtuelles"];
 
-        private string cheminDefaut360 = ConfigurationManager.AppSettings["cheminDefautMiniature360"];
+        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcranApplication"];
 
         private string CheminFondEcranCadre = ConfigurationManager.AppSettings["CheminFondEcranCadre"];
 
@@ -59,6 +59,9 @@ namespace AppPalaisRois
         public ExpoModel(object sender, EventArgs e)
         {
             InitializeComponent();
+
+            //Récupération du fond d'ecran
+            imageBackground.Source = ResourceAccessor.loadImage(CheminFondEcran);
 
             // Récupération du retour
             returnExpo.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
@@ -282,24 +285,6 @@ namespace AppPalaisRois
                         Image imageTo360 = new Image();
                         BitmapImage imgAdd360 = new BitmapImage();
 
-                        //image du cadre
-                        Image imgGrey = new Image();
-
-                        //récupération de l'image fond grey cadre1
-                        try
-                        {
-                            imgGrey.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                               CommonSurface.Properties.Resources.CadreListeSlideDiapo.GetHbitmap(),
-                               IntPtr.Zero,
-                               Int32Rect.Empty,
-                               BitmapSizeOptions.FromEmptyOptions());
-                        }
-                        catch (Exception) { }
-                        imgGrey.Width = (thumbnail_width + 20);
-                        imgGrey.Height = (thumbnail_height + 20);
-                        imgGrey.HorizontalAlignment = HorizontalAlignment.Center;
-                        imgGrey.VerticalAlignment = VerticalAlignment.Center;
-
                         //image de fond du cadre
                         BitmapDecoder decoder = BitmapDecoder.Create(
                         new Uri(CheminFondEcranCadre, UriKind.RelativeOrAbsolute),
@@ -307,9 +292,6 @@ namespace AppPalaisRois
                         BitmapCacheOption.OnLoad);
                         ImageBrush brush = new ImageBrush(decoder.Frames[0]);
                         this.MASK3.Background = brush;
-
-                        //assemblement du cadre et du media
-                        grid1.Children.Add(imgGrey);
 
                         if (z.type == "photo")
                         {
@@ -322,14 +304,14 @@ namespace AppPalaisRois
 
                                 //caractéristique de l'image
                                 imageToAdd.Source = imgAdd;
-                                imageToAdd.Height = thumbnail_height - 40;
-                                imageToAdd.Width = thumbnail_width;
+                                imageToAdd.Height = thumbnail_height * 1.2;
+                                imageToAdd.Width = thumbnail_width * 1.2;
                                 imageToAdd.MouseUp += (senderImg, f) => ShowImage(senderImg, f, z);
                                 imageToAdd.MouseUp += (senderImg, f) => stack.Opacity = 5.5;
                                 imageToAdd.TouchDown += (senderImg, f) => ShowImage(senderImg, f, z);
                                 imageToAdd.TouchDown += (senderImg, f) => stack.Opacity = 5.5;
                                 imageToAdd.Margin = new Thickness(10, 10, 10, 10);
-                                imageToAdd.HorizontalAlignment = HorizontalAlignment.Stretch;
+                                imageToAdd.HorizontalAlignment = HorizontalAlignment.Center;
                                 grid1.Children.Add(imageToAdd);
                             }
                             catch
@@ -354,14 +336,14 @@ namespace AppPalaisRois
                             {
                                 //caractéristique de la video
                                 MediaToAdd.Source = new Uri(z.element);
-                                MediaToAdd.Height = thumbnail_height;
-                                MediaToAdd.Width = thumbnail_width;
+                                MediaToAdd.Height = thumbnail_height * 1.2;
+                                MediaToAdd.Width = thumbnail_width * 1.2;
                                 MediaToAdd.MouseUp += (senderImg, f) => ShowImage(senderImg, f, z);
                                 MediaToAdd.MouseUp += (senderImg, f) => stack.Opacity = 5.5;
                                 MediaToAdd.TouchDown += (senderImg, f) => ShowImage(senderImg, f, z);
                                 MediaToAdd.TouchDown += (senderImg, f) => stack.Opacity = 5.5;
                                 MediaToAdd.Margin = new Thickness(10, 10, 10, 10);
-                                MediaToAdd.HorizontalAlignment = HorizontalAlignment.Stretch;
+                                MediaToAdd.HorizontalAlignment = HorizontalAlignment.Center;
                                 MediaToAdd.Volume = 0;
                                 MediaToAdd.MediaEnded += new RoutedEventHandler(Media_Ended);
                                 grid1.Children.Add(MediaToAdd);
@@ -388,19 +370,18 @@ namespace AppPalaisRois
                             {
                                 //recupération de la source
                                 imgAdd360.BeginInit();
-                                imgAdd360.UriSource = new Uri(cheminDefaut360);
                                 imgAdd360.EndInit();
 
                                 //caractéristique de l'image
                                 imageTo360.Source = imgAdd360;
-                                imageTo360.Height = thumbnail_height;
-                                imageTo360.Width = thumbnail_width;
+                                imageTo360.Height = thumbnail_height*1.2;
+                                imageTo360.Width = thumbnail_width*1.2;
                                 imageTo360.MouseUp += (senderImg, f) => ShowImage(senderImg, f, z);
                                 imageTo360.MouseUp += (senderImg, f) => stack.Opacity = 5.5;
                                 imageTo360.TouchDown += (senderImg, f) => ShowImage(senderImg, f, z);
                                 imageTo360.TouchDown += (senderImg, f) => stack.Opacity = 5.5;
                                 imageTo360.Margin = new Thickness(10, 10, 10, 10);
-                                imageTo360.HorizontalAlignment = HorizontalAlignment.Stretch;
+                                imageTo360.HorizontalAlignment = HorizontalAlignment.Center;
                                 grid1.Children.Add(imageTo360);
                             }
                             catch
@@ -561,7 +542,6 @@ namespace AppPalaisRois
 
                             //initialisation de l'image
                             img.Source = imgAdd;
-                            img.Height = 500;
                             img.Width = this.dock_main_photo.Width;
                             img.HorizontalAlignment = HorizontalAlignment.Center;
                             img.Height = this.dock_main_photo.Height;
@@ -584,7 +564,6 @@ namespace AppPalaisRois
                             media.BeginInit();
                             media.Source = new Uri(i.ListeDiapo[0].element);
                             media.MediaOpened += new RoutedEventHandler(Me_MediaOpened);
-                            media.Height = 500;
                             media.Width = this.dock_main_photo.Width;
                             media.HorizontalAlignment = HorizontalAlignment.Center;
                             media.Height = this.dock_main_photo.Height;
