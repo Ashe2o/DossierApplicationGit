@@ -29,8 +29,8 @@
 				x:Name="ElementVisual"
 				Grid.Row="0"
 				Padding="0"
-				Background="Black"
-				BorderBrush="LightGray"
+				Background="Transparent"
+				BorderBrush="Transparent"
 				BorderThickness="0">
 				<Image Source="{Binding}" Stretch="Uniform" />
 			</Border>
@@ -100,7 +100,7 @@
 		x:Name="BanqueImagesPanel"
 		Width="1920"
 		Height="1080"
-		Background="Black">
+		Background="Transparent">
 		<!--  Fond de l'écran  -->
 		<Image
 			x:Name="imageFond"

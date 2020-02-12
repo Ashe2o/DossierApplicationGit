@@ -32,7 +32,7 @@ namespace AppPalaisRois
         private List<PlaceHolder> selectedOnes;
         private AppBanqueImagesMainViewModel ViewModel;
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
-        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcran"];
+        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcranApplication"];
         #endregion Private Fields
 
         #region Public Constructors

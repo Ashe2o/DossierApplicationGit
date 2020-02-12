@@ -32,7 +32,7 @@ namespace AppPalaisRois
         private List<PlaceHolder> selectedOnes;
         private AppRegionMainViewModel ViewModel;
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
-        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcran"];
+        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcranApplication"];
         #endregion Private Fields
 
         #region Public Constructors
@@ -46,7 +46,7 @@ namespace AppPalaisRois
 
             displayedItems = new Dictionary<PlaceHolder, List<ScatterViewItem>>();
 
-            //// Récupération de la frise
+            //// Récupération du fond d'ecran
             imageFond.Source = ResourceAccessor.loadImage(CheminFondEcran);
             returnRegion.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
 
