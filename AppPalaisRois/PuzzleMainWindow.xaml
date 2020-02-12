@@ -8,12 +8,11 @@
 	Title="AppPuzzle"
 	Width="1920"
 	Height="1080"
-	Background="Black"
 	WindowState="Maximized"
 	WindowStyle="None"
 	mc:Ignorable="d">
 
-	<Window.Resources>
+    <Window.Resources>
 		<Storyboard x:Key="AnimPiece">
 			<PointAnimation
 				BeginTime="00:00:00"
@@ -26,25 +25,26 @@
 		</Storyboard>
 	</Window.Resources>
 
-	<Grid x:Name="PuzzlePanel">
-		<Grid.Resources>
-			<Style TargetType="{x:Type s:SurfaceListBox}">
-				<Setter Property="ItemsPanel">
-					<Setter.Value>
-						<ItemsPanelTemplate>
-							<WrapPanel
+    <Grid x:Name="PuzzlePanel">
+        <Grid.Resources>
+            <Style TargetType="{x:Type s:SurfaceListBox}">
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <WrapPanel
 								Margin="0"
 								HorizontalAlignment="Center"
 								VerticalAlignment="Center"
-								Background="Black"
 								Orientation="Horizontal" />
-						</ItemsPanelTemplate>
-					</Setter.Value>
-				</Setter>
-			</Style>
-		</Grid.Resources>
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+        </Grid.Resources>
 
-		<Canvas
+        <Image x:Name="imageBackground" />
+
+        <Canvas
 			x:Name="canvas"
 			Width="1920"
 			Height="1080"
@@ -385,33 +385,22 @@
 					VerticalAlignment="Center"
 					Source="{Binding Star3Control}" />
 			</WrapPanel>
-			<Button
+            <Button
 				x:Name="Quit_button"
-				Canvas.Left="100"
-				Canvas.Top="681"
-				Width="120"
-				Height="120"
+				Width="90"
+				Height="90"
+                Margin="75,960,0,0"
 				HorizontalAlignment="Left"
 				VerticalAlignment="Top"
-				Background="Black"
-				BorderBrush="Black"
+				Background="Transparent"
+				BorderBrush="Transparent"
 				Click="BoutonQuit_click"
-				TouchDown="BoutonQuit_click"
+				TouchUp="BoutonQuit_click"
 				Visibility="Visible">
-				<StackPanel>
-					<Image
-						x:Name="returnPuzzle"
-						Width="100"
-						Height="100"
-						Opacity="1.0" />
-				</StackPanel>
-			</Button>
-			<Image
-				x:Name="frisePuzzle"
-				Canvas.Left="-55"
-				Canvas.Top="870"
-				Width="2025"
-				Height="150" />
-		</Canvas>
+                <StackPanel Width="80" Height="80">
+                    <Image x:Name="returnPuzzle" Stretch="Uniform" />
+                </StackPanel>
+            </Button>
+        </Canvas>
 	</Grid>
 </Window>

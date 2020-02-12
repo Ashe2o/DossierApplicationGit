@@ -13,7 +13,7 @@
 	mc:Ignorable="d">
 
 	<!--  Grid Principal  -->
-	<Grid x:Name="MemoryPanel" Background="Transparent">
+	<Grid x:Name="MemoryPanel" Background="Black">
         <Image x:Name="imageBackground" />
 		<Canvas
 			x:Name="canvas"
@@ -63,7 +63,7 @@
 
 								<Border
 									x:Name="mask"
-									Background="Transparent"
+									Background="DarkGray"
 									CornerRadius="{Binding MyRadius, Mode=TwoWay}" />
 
 								<StackPanel
@@ -220,7 +220,7 @@
 				Width="120"
 				Height="120"
 				Margin="760,50,0,902"
-				HorizontalAlignment="Left"
+				HorizontalAlignment="Center"
 				VerticalAlignment="Center"
 				Visibility="{Binding ItemsControlVisibility}">
 
@@ -266,7 +266,7 @@
 			<!--  Panel Etoiles  -->
 			<WrapPanel
 				Margin="1040,50,0,942"
-				HorizontalAlignment="Left"
+				HorizontalAlignment="Center"
 				VerticalAlignment="Center"
 				Visibility="{Binding ItemsControlVisibility}">
 
@@ -301,7 +301,7 @@
 				Width="90"
 				Height="90"
 				Margin="75,960,0,0"
-				HorizontalAlignment="Left"
+				HorizontalAlignment="Center"
 				VerticalAlignment="Top"
 				Background="Transparent"
 				BorderBrush="Transparent"

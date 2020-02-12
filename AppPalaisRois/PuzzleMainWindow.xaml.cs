@@ -31,7 +31,7 @@ namespace AppPalaisRois
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHide, sbHelp;
         private Temps tps = new Temps();
-        private string CheminFrise = ConfigurationManager.AppSettings["CheminFrise"];
+        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcranApplication"];
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
 
         #endregion Private Fields
@@ -50,7 +50,7 @@ namespace AppPalaisRois
             InitializeComponent();
 
             // Récupération de la frise
-            frisePuzzle.Source = ResourceAccessor.loadImage(CheminFrise);
+            imageBackground.Source = ResourceAccessor.loadImage(CheminFondEcran);
 
             // Récupération du retour
             returnPuzzle.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
@@ -58,21 +58,19 @@ namespace AppPalaisRois
             // Récupération du sablier
             sablier.Source = ResourceAccessor.loadImage("/CommonSurface;component/Resources/Sablier.png");
 
-            // Ajout des jeux dans la liste des choix Bouton facile Icône
-            ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleEasy_click), ConfigurationManager.AppSettings["cheminIconeJeu1Puzzle"]).getButton());
-            // Nom
-            labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeu1Puzzle"];
-
+            // Ajout des jeux dans la liste des choix 
+            // Bouton facile Icône
+            ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleEasy_click), ConfigurationManager.AppSettings["cheminIconeJeuFacile"]).getButton());
+            // Label Facile
+            labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacile"];
             // Bouton moyen Icône
-            ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleMedium_click), ConfigurationManager.AppSettings["cheminIconeJeu2Puzzle"]).getButton());
-            // Nom
-            labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeu2Puzzle"];
-
-            //Bouton difficile
-            // Icône
-            ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleHard_click), ConfigurationManager.AppSettings["cheminIconeJeu3Puzzle"]).getButton());
-            // Nom
-            labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeu3Puzzle"];
+            ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleMedium_click), ConfigurationManager.AppSettings["cheminIconeJeuMoyen"]).getButton());
+            // Label Moyen
+            labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyen"];
+            //Bouton difficile Icône
+            ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleHard_click), ConfigurationManager.AppSettings["cheminIconeJeuDifficile"]).getButton());
+            // Label Difficile
+            labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficile"];
 
             /* EFFECTS RESOURCE DICTIONARY */
             myresourcedictionary = new ResourceDictionary();
