@@ -148,11 +148,6 @@ namespace AppPalaisRois
             base.OnClosed(e);
             DataContext = null;
             ViewModel = null;
-            foreach (var item in displayedItems.Keys)
-            {
-                displayedItems[item].Clear();
-                displayedItems.Remove(item);
-            }
             itemsGarbage.Clear();
             selectedOnes.Clear();
             selectedFramework.Clear();
