@@ -86,7 +86,7 @@
 			<Setter Property="ItemTemplate">
 				<Setter.Value>
 					<DataTemplate>
-						<Button Click="selectOne" Style="{StaticResource NoNothingButton}">
+						<Button Click="selectOne" Style="{StaticResource NoNothingButton}" Opacity="1">
 							<Image Source="{Binding IconPath}" Stretch="None" />
 						</Button>
 					</DataTemplate>

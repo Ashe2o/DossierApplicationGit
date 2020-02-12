@@ -111,6 +111,8 @@ namespace AppPalaisRois
         /// <param name="svi"></param>
         public void CloseMedia(ScatterViewItem svi)
         {
+           // svi.Opacity = 1;
+            
             svi.BeginAnimation(ScatterViewItem.WidthProperty, new DoubleAnimation()
             {
                 From = svi.ActualWidth,
@@ -411,10 +413,13 @@ namespace AppPalaisRois
                 if (selectedFramework.Contains(buttonSelected))
                 {
                     selectedFramework.Remove(sender);
+                    buttonSelected.Opacity = 1;
                 }
+                
             }
             else
             {
+                buttonSelected.Opacity = 0.5;
                 Storyboard.SetTarget(sbFloat, buttonSelected);
                 buttonSelected.BeginStoryboard(sbFloat);
                 selectedOnes.Add(selectedOne);
@@ -422,6 +427,8 @@ namespace AppPalaisRois
                 if (!selectedFramework.Contains(buttonSelected))
                 {
                     selectedFramework.Add(sender);
+                    buttonSelected.Opacity = 0.5;
+
                 }
             }
         }

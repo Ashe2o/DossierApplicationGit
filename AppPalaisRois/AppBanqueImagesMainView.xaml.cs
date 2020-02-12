@@ -408,6 +408,7 @@ namespace AppPalaisRois
                 if (selectedFramework.Contains(buttonSelected))
                 {
                     selectedFramework.Remove(sender);
+                    buttonSelected.Opacity = 1;
                 }
             }
             else
@@ -419,6 +420,7 @@ namespace AppPalaisRois
                 if (!selectedFramework.Contains(buttonSelected))
                 {
                     selectedFramework.Add(sender);
+                    buttonSelected.Opacity = 0.5;
                 }
             }
         }
