@@ -22,9 +22,15 @@ namespace AppAdministrationWPF.ViewModel
 
         private string _background;
         private Credits _credits;
+        private Langue _en_US;
+        private Langue _fr_FR;
+        private Langue _es_ES;
+        private Langue _cat_CAT;
+
         private ObservableCollection<Icon> _icons;
         private Icon _selected;
         private string cheminImageballError = ConfigurationManager.AppSettings["cheminImageballError"];
+        private string cheminDrapeauError = ConfigurationManager.AppSettings["cheminDrapeauError"];
 
         #endregion Private Fields
 
@@ -49,6 +55,24 @@ namespace AppAdministrationWPF.ViewModel
             {
                 _credits.Source = cheminImageballError;
             }
+
+            // On vérifie pour les icônes des Langues
+            if (!File.Exists(_en_US.Icon.Source))
+            {
+                _en_US.Icon.Source = cheminDrapeauError;
+            }
+            if (!File.Exists(_fr_FR.Icon.Source))
+            {
+                _fr_FR.Icon.Source = cheminDrapeauError;
+            }
+            if (!File.Exists(_es_ES.Icon.Source))
+            {
+                _es_ES.Icon.Source = cheminDrapeauError;
+            }
+            if (!File.Exists(_cat_CAT.Icon.Source))
+            {
+                _cat_CAT.Icon.Source = cheminDrapeauError;
+            }
         }
 
         #endregion Public Constructors
@@ -65,6 +89,30 @@ namespace AppAdministrationWPF.ViewModel
         {
             get { return _credits; }
             set { _credits = value; }
+        }
+
+        public Langue English
+        {
+            get { return _en_US; }
+            set { _en_US = value; }
+        }
+
+        public Langue French
+        {
+            get { return _fr_FR; }
+            set { _fr_FR = value; }
+        }
+
+        public Langue Spanish
+        {
+            get { return _es_ES; }
+            set { _es_ES = value; }
+        }
+
+        public Langue Catalan
+        {
+            get { return _cat_CAT; }
+            set { _cat_CAT = value; }
         }
 
         public ObservableCollection<Icon> Icons
@@ -110,6 +158,10 @@ namespace AppAdministrationWPF.ViewModel
             _icons = DAOMenu.Instance.Icons;
             _credits = DAOMenu.Instance.Credits;
             _background = DAOMenu.Instance.Background;
+            _en_US = DAOMenu.Instance.English;
+            _fr_FR = DAOMenu.Instance.French;
+            _es_ES = DAOMenu.Instance.Spanish;
+            _cat_CAT = DAOMenu.Instance.Catalan;
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)

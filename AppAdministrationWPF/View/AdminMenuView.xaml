@@ -107,7 +107,59 @@
 					<Image Source="{Binding Credits.Icon.Source}" />
 				</StackPanel>
 
-				<!--  Background  -->
+                <!--  Drapeau English  -->
+                <StackPanel
+					Canvas.Left="{Binding English.Icon.X}"
+					Canvas.Top="{Binding English.Icon.Y}"
+					Width="100"
+					Height="60"
+					Panel.ZIndex="100"
+					MouseLeftButtonDown="selectIcon"
+					Opacity="{Binding English.Icon.Visibility, Converter={StaticResource OpacityConverter}}"
+					Tag="{Binding English.Icon.Name}">
+                    <Image Source="{Binding English.Icon.Source}" />
+                </StackPanel>
+
+                <!--  Drapeau French  -->
+                <StackPanel
+					Canvas.Left="{Binding French.Icon.X}"
+					Canvas.Top="{Binding French.Icon.Y}"
+					Width="100"
+					Height="60"
+					Panel.ZIndex="100"
+					MouseLeftButtonDown="selectIcon"
+					Opacity="{Binding French.Icon.Visibility, Converter={StaticResource OpacityConverter}}"
+					Tag="{Binding French.Icon.Name}">
+                    <Image Source="{Binding French.Icon.Source}" />
+                </StackPanel>
+
+                <!--  Drapeau Spanish  -->
+                <StackPanel
+					Canvas.Left="{Binding Spanish.Icon.X}"
+					Canvas.Top="{Binding Spanish.Icon.Y}"
+					Width="100"
+					Height="60"
+					Panel.ZIndex="100"
+					MouseLeftButtonDown="selectIcon"
+					Opacity="{Binding Spanish.Icon.Visibility, Converter={StaticResource OpacityConverter}}"
+					Tag="{Binding Spanish.Icon.Name}">
+                    <Image Source="{Binding Spanish.Icon.Source}" />
+                </StackPanel>
+
+                <!--  Drapeau Catalan  -->
+                <StackPanel
+					Canvas.Left="{Binding Catalan.Icon.X}"
+					Canvas.Top="{Binding Catalan.Icon.Y}"
+					Width="100"
+					Height="60"
+					Panel.ZIndex="100"
+					MouseLeftButtonDown="selectIcon"
+					Opacity="{Binding Catalan.Icon.Visibility, Converter={StaticResource OpacityConverter}}"
+					Tag="{Binding Catalan.Icon.Name}">
+                    <Image Source="{Binding Catalan.Icon.Source}" />
+                </StackPanel>
+
+                <!--  Background  -->
 				<Image
 					x:Name="imageBackground"
 					Width="{Binding Path=ActualWidth, ElementName=canvasMenu}"

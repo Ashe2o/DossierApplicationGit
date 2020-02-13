@@ -17,6 +17,10 @@ namespace CommonSurface.DAO
         private static string defaultPath = ConfigurationManager.AppSettings["cheminMenu"];
         private string _background;
         private Credits _credits;
+        private Langue _en_US;
+        private Langue _fr_FR;
+        private Langue _es_ES;
+        private Langue _cat_CAT;
         private ObservableHashSet<Icon> _icons;
 
         #endregion Private Fields
@@ -116,6 +120,10 @@ namespace CommonSurface.DAO
         {
             _icons = other.Icons;
             _credits = other.Credits;
+            _en_US = other.English;
+            _fr_FR = other.French;
+            _es_ES = other.Spanish;
+            _cat_CAT = other.Catalan;
             _background = other.Background;
         }
 
@@ -150,6 +158,34 @@ namespace CommonSurface.DAO
         {
             get { return _credits; }
             set { _credits = value; }
+        }
+
+        [XmlElement("English")]
+        public Langue English
+        {
+            get { return _en_US; }
+            set { _en_US = value; }
+        }
+
+        [XmlElement("French")]
+        public Langue French
+        {
+            get { return _fr_FR; }
+            set { _fr_FR = value; }
+        }
+
+        [XmlElement("Spanish")]
+        public Langue Spanish
+        {
+            get { return _es_ES; }
+            set { _es_ES = value; }
+        }
+
+        [XmlElement("Catalan")]
+        public Langue Catalan
+        {
+            get { return _cat_CAT; }
+            set { _cat_CAT = value; }
         }
 
         /// <summary>

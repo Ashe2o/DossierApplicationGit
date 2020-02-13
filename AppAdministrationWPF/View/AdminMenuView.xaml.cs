@@ -202,6 +202,8 @@ namespace AppAdministrationWPF.View
             }
         }
 
+
+
         /// <summary>
         /// Configuration du bouton
         /// </summary>
@@ -381,13 +383,42 @@ namespace AppAdministrationWPF.View
             {
                 _selectedItem = sender as StackPanel;
                 _selectedItem.Effect = shadowEffect;
-                _viewModel.Selected = (_selectedItem.Tag as string == _viewModel.Credits.Icon.Name) ? _viewModel.Credits.Icon : (Icon)_selectedItem.DataContext;
+                if (_selectedItem.Tag as string == _viewModel.Credits.Icon.Name){
+                    _viewModel.Selected = _viewModel.Credits.Icon;
+                }else if (_selectedItem.Tag as string == _viewModel.English.Icon.Name){
+                    _viewModel.Selected = _viewModel.English.Icon;
+                }else if (_selectedItem.Tag as string == _viewModel.French.Icon.Name){
+                    _viewModel.Selected = _viewModel.French.Icon;
+                }else if (_selectedItem.Tag as string == _viewModel.Spanish.Icon.Name){
+                    _viewModel.Selected = _viewModel.Spanish.Icon;
+                }else if (_selectedItem.Tag as string == _viewModel.Catalan.Icon.Name){
+                    _viewModel.Selected = _viewModel.Catalan.Icon;
+                }else{
+                    _viewModel.Selected = (Icon)_selectedItem.DataContext;
+                }
+
                 panelIconEdit.Visibility = Visibility.Visible;
 				if (this._viewModel.Selected.Name == "Credits")
                 {
                     buttonCredit.Visibility = Visibility.Visible;
                 }											   
                 buttonVisibility.Content = (_viewModel.Selected.Visibility) ? "Cacher" : "Afficher";
+                if (this._viewModel.Selected.Name == "English")
+                {
+                    Console.WriteLine("English Selected");
+                }
+                if (this._viewModel.Selected.Name == "French")
+                {
+                    Console.WriteLine("French Selected");
+                }
+                if (this._viewModel.Selected.Name == "Spanish")
+                {
+                    Console.WriteLine("Spanish Selected");
+                }
+                if (this._viewModel.Selected.Name == "Catalan")
+                {
+                    Console.WriteLine("Catalan Selected");
+                }
             }
             else
             {
