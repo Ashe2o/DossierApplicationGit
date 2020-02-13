@@ -181,7 +181,51 @@
 				<Image x:Name="imageCredits" />
 			</StackPanel>
 
-			<!--  Crédits  -->
+            <!--  Langue ENGLISH  -->
+            <StackPanel
+				x:Name="positionEnglish"
+				Width="100"
+				Height="60"
+				Panel.ZIndex="10"
+				MouseLeftButtonDown="EnglishButton_Click"
+				RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imageEnglish" />
+            </StackPanel>
+
+            <!--  Langue FRENCH  -->
+            <StackPanel
+				x:Name="positionFrench"
+				Width="100"
+				Height="60"
+				Panel.ZIndex="10"
+				MouseLeftButtonDown="FrenchButton_Click"
+				RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imageFrench" />
+            </StackPanel>
+
+            <!--  Langue SPANISH  -->
+            <StackPanel
+				x:Name="positionSpanish"
+				Width="100"
+				Height="60"
+				Panel.ZIndex="10"
+				MouseLeftButtonDown="SpanishButton_Click"
+				RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imageSpanish" />
+            </StackPanel>
+
+            <!--  Langue CATALAN  -->
+            <StackPanel
+				x:Name="positionCatalan"
+				Width="100"
+				Height="60"
+				Panel.ZIndex="10"
+				MouseLeftButtonDown="CatalanButton_Click"
+				RenderTransformOrigin="0.5,0.5">
+                <Image x:Name="imageCatalan" />
+            </StackPanel>
+
+            <!--  Crédits  -->
 			<s:ScatterView
 				x:Name="ScatterView"
 				Grid.Row="1"

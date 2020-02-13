@@ -34,6 +34,10 @@ namespace AppPalaisRois
 
             List<Icon> icons = new List<Icon>(DAOMenu.Instance.Icons);
             icons.Add(DAOMenu.Instance.Credits.Icon);
+            icons.Add(DAOMenu.Instance.English.Icon);
+            icons.Add(DAOMenu.Instance.French.Icon);
+            icons.Add(DAOMenu.Instance.Spanish.Icon);
+            icons.Add(DAOMenu.Instance.Catalan.Icon);
             foreach (Icon icon in icons)
             {
                 // Récupération des éléments graphiques de l'icone
@@ -137,6 +141,46 @@ namespace AppPalaisRois
             }
 
             sviCredits.BeginAnimation(OpacityProperty, animation);
+        }
+
+        /// <summary>
+        /// Changement de la langue en ANGLAIS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void EnglishButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("English Selected");
+        }
+
+        /// <summary>
+        /// Changement de la langue en FRANCAIS
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void FrenchButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("French Selected");
+        }
+
+        /// <summary>
+        /// Changement de la langue en ESPAGNOL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void SpanishButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Spanish Selected");
+        }
+
+        /// <summary>
+        /// Changement de la langue en CATALAN
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void CatalanButton_Click(object sender, RoutedEventArgs e)
+        {
+            Console.WriteLine("Catalan Selected");
         }
 
         /// <summary>
