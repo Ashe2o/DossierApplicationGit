@@ -47,8 +47,6 @@ namespace AppPalaisRois
 
             displayedItems = new Dictionary<PlaceHolder, List<ScatterViewItem>>();
 
-            //// Récupération de la frise
-            imageFond.Source = ResourceAccessor.loadImage(CheminFondEcran);
             returnFrise.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
 
             ///* ANIM PART*/
