@@ -23,7 +23,6 @@ namespace AppAdministrationWPF.View
         private AdminRegionViewModel _viewModel;
         private string chemin = ConfigurationManager.AppSettings["cheminRegion"];
         private string cheminLibrairie = ConfigurationManager.AppSettings["cheminLibrairieRegion"];
-        private string defautCarte = ConfigurationManager.AppSettings["cheminDefautCarte"];
         private ResourceDictionary myresourcedictionary;
         private Button selectedOne;
 
