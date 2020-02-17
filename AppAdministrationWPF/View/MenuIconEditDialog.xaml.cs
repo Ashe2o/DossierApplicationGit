@@ -33,7 +33,10 @@ namespace AppAdministrationWPF.View
                 txtImageURI.Text = _new_icon.Source;
 
                 // Texte du label
-                txtImageLabel.Text = _new_icon.Text;
+                txtImageLabelFR.Text = _new_icon.TextFR;
+                txtImageLabelEN.Text = _new_icon.TextEN;
+                txtImageLabelES.Text = _new_icon.TextES;
+                txtImageLabelCAT.Text = _new_icon.TextCAT;
 
                 this.DataContext = _new_icon;
             }
@@ -72,7 +75,10 @@ namespace AppAdministrationWPF.View
 
         private void buttonValidate_Click(object sender, RoutedEventArgs e)
         {
-            _old_icon.Text = _new_icon.Text;
+            _old_icon.TextFR = _new_icon.TextFR;
+            _old_icon.TextEN = _new_icon.TextEN;
+            _old_icon.TextES = _new_icon.TextES;
+            _old_icon.TextCAT = _new_icon.TextCAT;
             _old_icon.Source = _new_icon.Source;
 
             this.Close();
@@ -85,7 +91,11 @@ namespace AppAdministrationWPF.View
         /// <param name="e">     </param>
         private void updateLabelPreview(object sender, KeyEventArgs e)
         {
-            _new_icon.Text = txtImageLabel.Text;
+            _new_icon.TextFR = txtImageLabelFR.Text;
+            _new_icon.TextEN = txtImageLabelEN.Text;
+            _new_icon.TextES = txtImageLabelES.Text;
+            _new_icon.TextCAT = txtImageLabelCAT.Text;
+
         }
 
         #endregion Private Methods

@@ -17,7 +17,13 @@ namespace CommonSurface.Model
 
         private string _source;
 
-        private string _text;
+        private string _textFR;
+
+        private string _textEN;
+
+        private string _textES;
+
+        private string _textCAT;
 
         private bool _visibility;
 
@@ -38,14 +44,17 @@ namespace CommonSurface.Model
             this.Visibility = true;
         }
 
-        public Icon(int id, string name, int x, int y, string source, string text, string color, bool visibility)
+        public Icon(int id, string name, int x, int y, string source, string textFR, string textEN, string textES, string textCAT, string color, bool visibility)
         {
             this.Id = id;
             this.Name = name;
             this.X = x;
             this.Y = y;
             this.Source = source;
-            this.Text = text;
+            this.TextFR = textFR;
+            this.TextEN = textEN;
+            this.TextES = textES;
+            this.TextCAT = textCAT;
             this.Color = color;
             this.Visibility = visibility;
         }
@@ -61,7 +70,10 @@ namespace CommonSurface.Model
             this.X = other.X;
             this.Y = other.Y;
             this.Source = other.Source;
-            this.Text = other.Text;
+            this.TextFR = other.TextFR;
+            this.TextEN = other.TextEN;
+            this.TextES = other.TextES;
+            this.TextCAT = other.TextCAT;
             this.Color = other.Color;
             this.Visibility = other.Visibility;
         }
@@ -106,6 +118,7 @@ namespace CommonSurface.Model
             set { _name = value; OnPropertyChanged("Name"); }
         }
 
+
         [XmlElement]
         public string Source
         {
@@ -114,10 +127,31 @@ namespace CommonSurface.Model
         }
 
         [XmlElement]
-        public string Text
+        public string TextFR
         {
-            get { return _text; }
-            set { _text = value; OnPropertyChanged("Text"); }
+            get { return _textFR; }
+            set { _textFR = value; OnPropertyChanged("TextFR"); }
+        }
+
+        [XmlElement]
+        public string TextEN
+        {
+            get { return _textEN; }
+            set { _textEN = value; OnPropertyChanged("TextEN"); }
+        }
+
+        [XmlElement]
+        public string TextES
+        {
+            get { return _textES; }
+            set { _textES = value; OnPropertyChanged("TextES"); }
+        }
+
+        [XmlElement]
+        public string TextCAT
+        {
+            get { return _textCAT; }
+            set { _textCAT = value; OnPropertyChanged("TextCAT"); }
         }
 
         [XmlElement]

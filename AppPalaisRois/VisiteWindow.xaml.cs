@@ -35,6 +35,7 @@ namespace AppPalaisRois
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
         private string CheminFondTitre = ConfigurationManager.AppSettings["CheminFondTitre"];
         private string CheminFondLateralTexte = ConfigurationManager.AppSettings["CheminFondLateralTexte"];
+        private string CheminFondEcran = ConfigurationManager.AppSettings["CheminFondEcranApplication"];
         #endregion Private Fields
 
         /* EFFECTS RESOURCE DICTIONARY */

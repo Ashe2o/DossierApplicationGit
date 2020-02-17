@@ -85,6 +85,7 @@
     <Compile Include="Model\Expo.cs" />
     <Compile Include="DAO\DAORegion.cs" />
     <Compile Include="Model\Icon.cs" />
+    <Compile Include="Model\Langue.cs" />
     <Compile Include="Model\Map.cs" />
     <Compile Include="Model\Panorama.cs" />
     <Compile Include="Model\PlaceHolder.cs" />

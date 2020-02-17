@@ -49,7 +49,7 @@ namespace AppPalaisRois
             loadedMedias = 0;
             InitializeComponent();
 
-            // Récupération de la frise
+            // Récupération du fond d'ecran
             imageBackground.Source = ResourceAccessor.loadImage(CheminFondEcran);
 
             // Récupération du retour

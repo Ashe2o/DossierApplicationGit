@@ -108,9 +108,7 @@ namespace AppPalaisRois
         /// </summary>
         /// <param name="svi"></param>
         public void CloseMedia(ScatterViewItem svi)
-        {
-           // svi.Opacity = 1;
-            
+        {           
             svi.BeginAnimation(ScatterViewItem.WidthProperty, new DoubleAnimation()
             {
                 From = svi.ActualWidth,

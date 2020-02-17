@@ -14,8 +14,8 @@
 	mc:Ignorable="d">
 
     <Grid x:Name="grille">
-        <Grid Margin="0,0,0,0" Opacity="1">
-			<ListBox
+        <Grid Margin="0,0,0,0" Opacity="1" Grid.Row="2">
+            <ListBox
 				Name="main_photos_slider"
 				Height="1080"
 				Margin="0,0,0,0"
@@ -24,19 +24,19 @@
 				Background="Transparent"
 				BorderBrush="Transparent"
 				ScrollViewer.HorizontalScrollBarVisibility="Hidden">
-				<ListBox.Resources>
-					<SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
-					<SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
-					<SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
-				</ListBox.Resources>
-				<ListBox.ItemsPanel>
-					<ItemsPanelTemplate>
-						<UniformGrid Rows="1" />
-					</ItemsPanelTemplate>
-				</ListBox.ItemsPanel>
-			</ListBox>
-		</Grid>
-		<Button
+                <ListBox.Resources>
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" Color="Transparent" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.HighlightTextBrushKey}" Color="Black" />
+                    <SolidColorBrush x:Key="{x:Static SystemColors.ControlBrushKey}" Color="Transparent" />
+                </ListBox.Resources>
+                <ListBox.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Rows="1"/>
+                    </ItemsPanelTemplate>
+                </ListBox.ItemsPanel>
+            </ListBox>
+        </Grid>
+        <Button
 			x:Name="Quit_button"
 			Canvas.Left="100"
 			Canvas.Top="681"
@@ -50,9 +50,9 @@
 			Click="Quit_button_Click"
 			TouchDown="Quit_button_Click"
 			Visibility="Visible">
-			<StackPanel Width="80" Height="80">
-				<Image x:Name="returnExpo" Stretch="Uniform" />
-			</StackPanel>
-		</Button>
-	</Grid>
+            <StackPanel Width="80" Height="80">
+                <Image x:Name="returnExpo" Stretch="Uniform" />
+            </StackPanel>
+        </Button>
+    </Grid>
 </Window>

@@ -14,12 +14,12 @@
 	<Grid>
 		<Grid.ColumnDefinitions>
 			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="280" />
+			<ColumnDefinition Width="200" />
 			<ColumnDefinition Width="*" />
 		</Grid.ColumnDefinitions>
 		<Grid.RowDefinitions>
 			<RowDefinition Height="10" />
-			<RowDefinition Height="280" />
+			<RowDefinition Height="200" />
 			<RowDefinition Height="5" />
 			<RowDefinition Height="*" />
 			<RowDefinition Height="5" />
@@ -36,18 +36,18 @@
 			<Canvas>
 				<StackPanel
 					x:Name="stckPreview"
-					Width="280"
-					Height="280"
+					Width="200"
+					Height="200"
 					Panel.ZIndex="10"
 					RenderTransformOrigin="0.5,0.5">
 					<Image x:Name="imagePreview" Source="{Binding Source, Mode=OneWay}" />
 					<Label
 						x:Name="labelPreview"
-						Margin="0,-60,0,0"
+						Margin="0,-45,0,0"
 						HorizontalAlignment="Center"
 						Panel.ZIndex="3"
-						Content="{Binding Text, Mode=OneWay}"
-						FontSize="24"
+						Content="{Binding TextFR, Mode=OneWay}"
+						FontSize="18"
 						FontWeight="Bold"
 						Foreground="{Binding Color, Mode=OneWay}" />
 				</StackPanel>
@@ -60,9 +60,10 @@
 			Grid.Column="0"
 			Grid.ColumnSpan="3"
 			Margin="10,0"
-			VerticalAlignment="Center">
+			VerticalAlignment="Top">
+            
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="50" />
+				<ColumnDefinition Width="80" />
 				<ColumnDefinition Width="*" />
 				<ColumnDefinition Width="40" />
 			</Grid.ColumnDefinitions>
@@ -70,7 +71,13 @@
 				<RowDefinition Height="*" />
 				<RowDefinition Height="10" />
 				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
 			<!--  Formulaire de configuration  -->
 			<Grid.Resources>
@@ -94,7 +101,7 @@
 			</Grid.Resources>
 
 			<!--  Image  -->
-			<Label Grid.Row="0" Grid.Column="0">Image:</Label>
+			<Label Grid.Row="0" Grid.Column="0">Image :</Label>
 			<Border Grid.Row="0" Grid.Column="1">
                 <TextBlock x:Name="txtImageURI" FontFamily="{StaticResource Luciole-Regular}" />
 			</Border>
@@ -109,18 +116,54 @@
 				...
 			</Button>
 
-			<!--  Label  -->
-			<Label Grid.Row="2" Grid.Column="0">Label:</Label>
+			<!--  Label FR  -->
+			<Label Grid.Row="2" Grid.Column="0">Label FR :</Label>
 			<Border
 				Grid.Row="2"
 				Grid.Column="1"
 				Grid.ColumnSpan="2">
 				<TextBox
-					x:Name="txtImageLabel"
+					x:Name="txtImageLabelFR"
 					KeyDown="updateLabelPreview"
 					KeyUp="updateLabelPreview" />
 			</Border>
-		</Grid>
+            
+            <!--  Label EN  -->
+            <Label Grid.Row="4" Grid.Column="0">Label EN :</Label>
+            <Border
+				Grid.Row="4"
+				Grid.Column="1"
+				Grid.ColumnSpan="4">
+                <TextBox
+					x:Name="txtImageLabelEN"
+					KeyDown="updateLabelPreview"
+					KeyUp="updateLabelPreview" />
+            </Border>
+
+            <!--  Label ES  -->
+            <Label Grid.Row="6" Grid.Column="0">Label ES :</Label>
+            <Border
+				Grid.Row="6"
+				Grid.Column="1"
+				Grid.ColumnSpan="6">
+                <TextBox
+					x:Name="txtImageLabelES"
+					KeyDown="updateLabelPreview"
+					KeyUp="updateLabelPreview" />
+            </Border>
+
+            <!--  Label CAT  -->
+            <Label Grid.Row="8" Grid.Column="0">Label CAT :</Label>
+            <Border
+				Grid.Row="8"
+				Grid.Column="1"
+				Grid.ColumnSpan="8">
+                <TextBox
+					x:Name="txtImageLabelCAT"
+					KeyDown="updateLabelPreview"
+					KeyUp="updateLabelPreview" />
+            </Border>
+        </Grid>
 
 		<!--  Boutons de validation et d'annulation  -->
 		<Grid Grid.Row="5" Grid.Column="1">

@@ -21,6 +21,8 @@ namespace AppPalaisRois
         private int isopen = 0;
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHideAnim, sbShowAnim, sbHideAnimSec, sbShowAnimSec;
+        private List<Icon> icons;
+        private string Language = "French";
 
         #endregion Private Fields
 
@@ -32,12 +34,14 @@ namespace AppPalaisRois
 
             #region Gestion des icones
 
-            List<Icon> icons = new List<Icon>(DAOMenu.Instance.Icons);
-            icons.Add(DAOMenu.Instance.Credits.Icon);
-            icons.Add(DAOMenu.Instance.English.Icon);
-            icons.Add(DAOMenu.Instance.French.Icon);
-            icons.Add(DAOMenu.Instance.Spanish.Icon);
-            icons.Add(DAOMenu.Instance.Catalan.Icon);
+            icons = new List<Icon>(DAOMenu.Instance.Icons)
+            {
+                DAOMenu.Instance.Credits.Icon,
+                DAOMenu.Instance.English.Icon,
+                DAOMenu.Instance.French.Icon,
+                DAOMenu.Instance.Spanish.Icon,
+                DAOMenu.Instance.Catalan.Icon
+            };
             foreach (Icon icon in icons)
             {
                 // Récupération des éléments graphiques de l'icone
@@ -59,9 +63,9 @@ namespace AppPalaisRois
                     imageIcon.Source = ResourceAccessor.loadImage(icon.Source);
 
                     // Label avec le texte définit dans la configuration
-                    if (icon.Text != null)
+                    if (icon.TextFR != null)
                     {
-                        labelIcon.Content = icon.Text;
+                        labelIcon.Content = icon.TextFR;
                     }
 
                     if (icon.Color != null)
@@ -95,8 +99,10 @@ namespace AppPalaisRois
             #endregion Dimension du crédit
 
             // Récupération du dictionnaire des ressources
-            myresourcedictionary = new ResourceDictionary();
-            myresourcedictionary.Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute);
+            myresourcedictionary = new ResourceDictionary
+            {
+                Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute)
+            };
 
             // Récupération des animations
             sbHideAnim = myresourcedictionary["hideAnim"] as Storyboard;
@@ -150,7 +156,25 @@ namespace AppPalaisRois
         /// <param name="e">     </param>
         private void EnglishButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("English Selected");
+            //Changement du nom de l'icone du menu Principal
+            foreach (Icon icon in icons)
+            {
+                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                {
+                    // Récupération du label de l'icone
+                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
+                    if (icon.TextEN != "")
+                    {
+                        labelIcon.Content = icon.TextEN;
+                    }
+                    else
+                    {
+                        labelIcon.Content = icon.TextFR;
+                    }
+                }
+            }
+            Language = "English";
         }
 
         /// <summary>
@@ -160,7 +184,21 @@ namespace AppPalaisRois
         /// <param name="e">     </param>
         private void FrenchButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("French Selected");
+            //Changement du nom de l'icone du menu Principal
+            foreach (Icon icon in icons)
+            {
+                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                {
+                    // Récupération du label de l'icone
+                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
+                    if (icon.TextFR != "")
+                    {
+                        labelIcon.Content = icon.TextFR;
+                    }
+                }
+            }
+            Language = "French";
         }
 
         /// <summary>
@@ -170,7 +208,25 @@ namespace AppPalaisRois
         /// <param name="e">     </param>
         private void SpanishButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Spanish Selected");
+            //Changement du nom de l'icone du menu Principal
+            foreach (Icon icon in icons)
+            {
+                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                {
+                    // Récupération du label de l'icone
+                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
+                    if (icon.TextES != "")
+                    {
+                        labelIcon.Content = icon.TextES;
+                    }
+                    else
+                    {
+                        labelIcon.Content = icon.TextFR;
+                    }
+                }
+            }
+            Language = "Spanish";
         }
 
         /// <summary>
@@ -180,7 +236,25 @@ namespace AppPalaisRois
         /// <param name="e">     </param>
         private void CatalanButton_Click(object sender, RoutedEventArgs e)
         {
-            Console.WriteLine("Catalan Selected");
+            //Changement du nom de l'icone du menu Principal
+            foreach (Icon icon in icons)
+            {
+                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                {
+                    // Récupération du label de l'icone
+                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
+                    if (icon.TextCAT != "")
+                    {
+                        labelIcon.Content = icon.TextCAT;
+                    }
+                    else
+                    {
+                        labelIcon.Content = icon.TextFR;
+                    }
+                }
+            }
+            Language = "Catalan";
         }
 
         /// <summary>

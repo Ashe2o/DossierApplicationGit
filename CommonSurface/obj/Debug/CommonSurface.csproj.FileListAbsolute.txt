@@ -26,12 +26,13 @@ C:\Session Grand Public\Application\CommonSurface\bin\Debug\Microsoft.Surface.Pr
 C:\Session Grand Public\Application\CommonSurface\bin\Debug\Microsoft.Surface.HidSupport.dll
 C:\Session Grand Public\Application\CommonSurface\bin\Debug\Microsoft.Surface.NativeWrappers.dll
 C:\Session Grand Public\Application\CommonSurface\bin\Debug\Microsoft.Surface.Presentation.dll
+C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csprojAssemblyReference.cache
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj.ResolveComReference.cache
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\XAML\Effects.baml
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface_MarkupCompile.cache
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.g.resources
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.Properties.Resources.resources
-C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj.GenerateResource.Cache
+C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj.GenerateResource.cache
+C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj.CopyComplete
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.dll
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.pdb
-C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj.CopyComplete
