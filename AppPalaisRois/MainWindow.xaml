@@ -49,11 +49,11 @@
 				<Image x:Name="imageVisite" />
 				<Label
 					x:Name="labelVisite"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
 			</StackPanel>
 
 			<!--  Region  -->
@@ -68,11 +68,11 @@
 				<Image x:Name="imageRegion" />
 				<Label
 					x:Name="labelRegion"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
 			</StackPanel>
 
 			<!--  Expo virtuelle  -->
@@ -87,11 +87,11 @@
 				<Image x:Name="imageMediatheque" />
 				<Label
 					x:Name="labelMediatheque"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
 			</StackPanel>
 
 			<!--  Memory  -->
@@ -106,11 +106,11 @@
 				<Image x:Name="imageMemory" />
 				<Label
 					x:Name="labelMemory"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
 			</StackPanel>
 
 			<!--  Puzzle  -->
@@ -125,11 +125,11 @@
 				<Image x:Name="imagePuzzle" />
 				<Label
 					x:Name="labelPuzzle"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
 			</StackPanel>
 
             <!--  Frise  -->
@@ -144,11 +144,11 @@
                 <Image x:Name="imageFrise" />
                 <Label
 					x:Name="labelFrise"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
             </StackPanel>
 
             <!--  Banque Images  -->
@@ -163,11 +163,11 @@
                 <Image x:Name="imageBanqueImages" />
                 <Label
 					x:Name="labelBanqueImages"
-					Margin="0,-65,0,0"
+					Margin="0,-60,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
-					FontSize="30" />
+					FontSize="24" />
             </StackPanel>
 
             <!--  Crédits  -->
