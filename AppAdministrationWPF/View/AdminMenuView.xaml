@@ -38,7 +38,7 @@
 								HorizontalAlignment="Center"
 								Panel.ZIndex="3"
 								Content="{Binding Path=Text}"
-								FontSize="30"
+								FontSize="24"
 								Foreground="{Binding Path=Color}" />
 						</StackPanel>
 					</DataTemplate>

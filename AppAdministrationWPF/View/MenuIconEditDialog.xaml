@@ -47,7 +47,7 @@
 						HorizontalAlignment="Center"
 						Panel.ZIndex="3"
 						Content="{Binding Text, Mode=OneWay}"
-						FontSize="30"
+						FontSize="24"
 						FontWeight="Bold"
 						Foreground="{Binding Color, Mode=OneWay}" />
 				</StackPanel>
