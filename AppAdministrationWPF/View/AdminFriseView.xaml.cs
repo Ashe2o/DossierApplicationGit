@@ -172,7 +172,7 @@ namespace AppAdministrationWPF.View
                 {
                     listboxMapsFrise.Items.Refresh();
                     DAOFrise.Save();
-                    Frise.Source = ResourceAccessor.loadImage(selected.Background);
+                    Frise.Source = ResourceAccessor.loadImage(selected.BackgroundFR);
                 }
             };
             window.Show();
@@ -241,7 +241,7 @@ namespace AppAdministrationWPF.View
                 _viewModel.SelectedMap = listboxMapsFrise.SelectedItem as Map;
                 _viewModel.SelectedPlaceholder = null;
 
-                Frise.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.Background);
+                Frise.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.BackgroundFR);
             }
         }
 
@@ -331,7 +331,7 @@ namespace AppAdministrationWPF.View
             if (_viewModel.Maps.Count > 0)
             {
                 friseBackground.ItemsSource = _viewModel.Maps[0].PlaceHolders;
-                Frise.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].Background);
+                Frise.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].BackgroundFR);
                 listboxMapsFrise.SelectedIndex = 0;
                 listboxMapsFrise.Items.Refresh();
                 listboxMapsFrise.Items.SortDescriptions.Clear();

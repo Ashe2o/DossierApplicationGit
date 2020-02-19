@@ -24,7 +24,13 @@ namespace CommonSurface.Model
 
         private string _thumbnail;
 
-        private string _title;
+        private string _titleFR;
+
+        private string _titleCAT;
+
+        private string _titleEN;
+
+        private string _titleES;
 
         private NotifyCollectionChangedEventHandler collectionChanged;
 
@@ -32,13 +38,16 @@ namespace CommonSurface.Model
 
         #region Public Constructors
 
-        public Visite(int id, string name, string cover, string thumbnail, string title, string source)
+        public Visite(int id, string name, string cover, string thumbnail, string titleFR, string titleCAT, string titleEN, string titleES, string source)
         {
             this._id = id;
             this._name = name;
             this._cover = cover;
             this._thumbnail = thumbnail;
-            this._title = title;
+            this._titleFR = titleFR;
+            this._titleCAT = titleCAT;
+            this._titleEN = titleEN;
+            this._titleES = titleES;
             this._source = source;
             this._panoramas = new ObservableCollection<Panorama>();
         }
@@ -49,7 +58,10 @@ namespace CommonSurface.Model
             this._name = other.Name;
             this._cover = other.Cover;
             this._thumbnail = other.Thumbnail;
-            this._title = other.Title;
+            this._titleFR = other.TitleFR;
+            this._titleCAT = other.TitleCAT;
+            this._titleEN = other.TitleEN;
+            this._titleES = other.TitleES;
             this._source = other.Source;
             this._panoramas = new ObservableCollection<Panorama>(other.Panoramas);
         }
@@ -75,12 +87,12 @@ namespace CommonSurface.Model
 
         public static Visite Blank()
         {
-            return new Visite(-1, "", "", "", "", "");
+            return new Visite(-1, "", "", "", "", "","","","");
         }
 
         public static Visite Blank(int id)
         {
-            return new Visite(id, "", "", "", "", "");
+            return new Visite(id, "", "", "", "", "","","","");
         }
 
         public void Copy(Visite copy)
@@ -89,7 +101,10 @@ namespace CommonSurface.Model
             this.Name = copy.Name;
             this.Cover = copy.Cover;
             this.Thumbnail = copy.Thumbnail;
-            this.Title = copy.Title;
+            this.TitleFR = copy.TitleFR;
+            this.TitleCAT = copy.TitleCAT;
+            this.TitleEN = copy.TitleEN;
+            this.TitleES = copy.TitleES;
             this.Source = copy.Source;
             this.Panoramas = new ObservableCollection<Panorama>(copy.Panoramas);
         }
@@ -104,7 +119,10 @@ namespace CommonSurface.Model
             this._name = null;
             this._cover = null;
             this._thumbnail = null;
-            this._title = null;
+            this._titleFR = null;
+            this._titleCAT = null;
+            this._titleEN = null;
+            this._titleES = null;
             this._source = null;
 
             if (collectionChanged != null)
@@ -120,7 +138,10 @@ namespace CommonSurface.Model
         {
             return "Visite[ID= " + ID + ", " +
                 "Name=" + Name + ", " +
-                "Title=" + Title + "]";
+                "TitleFR=" + TitleFR + ", " +
+                "TitleCAT=" + TitleCAT + ", " +
+                "TitleEN=" + TitleEN + ", " +
+                "TitleES=" + TitleES + ", " + "]";
         }
 
         #endregion Public Methods
@@ -196,10 +217,31 @@ namespace CommonSurface.Model
         }
 
         [XmlElement]
-        public string Title
+        public string TitleFR
         {
-            get { return _title; }
-            set { _title = value; OnPropertyChanged("Title"); }
+            get { return _titleFR; }
+            set { _titleFR = value; OnPropertyChanged("TitleFR"); }
+        }
+
+        [XmlElement]
+        public string TitleCAT
+        {
+            get { return _titleCAT; }
+            set { _titleCAT = value; OnPropertyChanged("TitleCAT"); }
+        }
+
+        [XmlElement]
+        public string TitleEN
+        {
+            get { return _titleEN; }
+            set { _titleEN = value; OnPropertyChanged("TitleEN"); }
+        }
+
+        [XmlElement]
+        public string TitleES
+        {
+            get { return _titleES; }
+            set { _titleES = value; OnPropertyChanged("TitleES"); }
         }
 
         #endregion GETTEUR/SETTEUR

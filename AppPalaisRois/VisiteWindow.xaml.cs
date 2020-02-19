@@ -330,7 +330,36 @@ namespace AppPalaisRois
                 textblocktitle.Visibility = Visibility.Visible;
                 textblocktitle.FontSize = 40;
                 textblocktitle.Foreground = new SolidColorBrush(Colors.White);
-                textblocktitle.Text = visite.Title;
+
+                //Affichage du Titre en fonction de la Langue
+                switch (MainWindow.selectedLanguage)
+                {
+                    case "French":
+                        textblocktitle.Text = visite.TitleFR;
+                        break;
+                    case "Catalan":
+                        if (visite.TitleCAT != ""){
+                            textblocktitle.Text = visite.TitleCAT;
+                        }else{ 
+                            textblocktitle.Text = visite.TitleFR;
+                        }
+                        break;
+                    case "English":
+                        if (visite.TitleEN != ""){
+                            textblocktitle.Text = visite.TitleEN;
+                        }else{ 
+                            textblocktitle.Text = visite.TitleFR;
+                        }
+                        break;
+                    case "Spanish":
+                        if (visite.TitleES != ""){
+                            textblocktitle.Text = visite.TitleES;
+                        }else{
+                            textblocktitle.Text = visite.TitleFR;
+                        }
+                        break;
+                }
+                
                 textblocktitle.HorizontalAlignment = HorizontalAlignment.Center;
                 textblocktitle.TextAlignment = TextAlignment.Justify;
                 textblocktitle.TextWrapping = TextWrapping.WrapWithOverflow;

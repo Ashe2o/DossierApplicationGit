@@ -208,8 +208,32 @@ namespace AppPalaisRois
                     ExpoElement.titre = value;
                     break;
 
+                case "titreCAT":
+                    ExpoElement.titreCAT = value;
+                    break;
+
+                case "titreEN":
+                    ExpoElement.titreEN = value;
+                    break;
+
+                case "titreES":
+                    ExpoElement.titreES = value;
+                    break;
+
                 case "text":
                     ExpoElement.text = value;
+                    break;
+
+                case "textCAT":
+                    ExpoElement.textCAT = value;
+                    break;
+
+                case "textEN":
+                    ExpoElement.textEN = value;
+                    break;
+
+                case "textES":
+                    ExpoElement.textES= value;
                     break;
             }
         }
@@ -492,6 +516,18 @@ namespace AppPalaisRois
                     diapo.text = value;
                     break;
 
+                case "textCAT":
+                    diapo.textCAT = value;
+                    break;
+
+                case "textEN":
+                    diapo.textEN = value;
+                    break;
+
+                case "textES":
+                    diapo.textES = value;
+                    break;
+
                 case "image1":
                     diapo.image1 = value;
                     break;
@@ -625,7 +661,35 @@ namespace AppPalaisRois
                             textblockAll.Visibility = Visibility.Visible;
                             textblockAll.FontSize = 15;
                             textblockAll.Foreground = new SolidColorBrush(Colors.White);
-                            textblockAll.Text = i.ListeDiapo[0].text;
+
+                            //Affichage du texte en fonction de la Langue
+                            switch (MainWindow.selectedLanguage)
+                            {
+                                case "French":
+                                    textblockAll.Text = i.ListeDiapo[0].text;
+                                    break;
+                                case "Catalan":
+                                    if (i.textCAT != null){
+                                        textblockAll.Text = i.ListeDiapo[0].textCAT;
+                                    }else{
+                                        textblockAll.Text = i.ListeDiapo[0].text;
+                                    }
+                                    break;
+                                case "English":
+                                    if (i.textEN != null){
+                                        textblockAll.Text = i.ListeDiapo[0].textEN;
+                                    }else{
+                                        textblockAll.Text = i.ListeDiapo[0].text;
+                                    }
+                                    break;
+                                case "Spanish":
+                                    if (i.textES != null){
+                                        textblockAll.Text = i.ListeDiapo[0].textES;
+                                    }else{
+                                        textblockAll.Text = i.ListeDiapo[0].text;
+                                    }
+                                    break;
+                            }
                             textblockAll.HorizontalAlignment = HorizontalAlignment.Left;
                             textblockAll.TextAlignment = TextAlignment.Justify;
                             textblockAll.TextWrapping = TextWrapping.WrapWithOverflow;
@@ -812,7 +876,36 @@ namespace AppPalaisRois
                     textblockAll.Visibility = Visibility.Visible;
                     textblockAll.FontSize = 15;
                     textblockAll.Foreground = new SolidColorBrush(Colors.White);
-                    textblockAll.Text = Diapo.text;
+
+                    //Affichage du texte en fonction de la Langue
+                    switch (MainWindow.selectedLanguage)
+                    {
+                        case "French":
+                            textblockAll.Text = Diapo.text;
+                            break;
+                        case "Catalan":
+                            if (Diapo.textCAT != null){
+                                textblockAll.Text = Diapo.textCAT;
+                            }else{
+                                textblockAll.Text = Diapo.text;
+                            }
+                            break;
+                        case "English":
+                            if (Diapo.textEN != null){
+                                textblockAll.Text = Diapo.textEN;
+                            }else{
+                                textblockAll.Text = Diapo.text;
+                            }
+                            break;
+                        case "Spanish":
+                            if (Diapo.textES != null){
+                                textblockAll.Text = Diapo.textES;
+                            }else{
+                                textblockAll.Text = Diapo.text;
+                            }
+                            break;
+                    }
+
                     textblockAll.HorizontalAlignment = HorizontalAlignment.Left;
                     textblockAll.TextAlignment = TextAlignment.Justify;
                     textblockAll.TextWrapping = TextWrapping.WrapWithOverflow;

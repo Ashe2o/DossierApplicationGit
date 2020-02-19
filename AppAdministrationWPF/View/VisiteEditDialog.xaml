@@ -4,13 +4,13 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
 	Title="Customisation visite virtuelle"
 	Width="400"
-	Height="450"
+	Height="550"
 	ResizeMode="CanResizeWithGrip"
 	ShowInTaskbar="False"
 	Topmost="True">
 	<Grid>
 		<Border
-			Height="200"
+			Height="190"
 			Margin="8,8,8,152"
 			VerticalAlignment="Top"
 			BorderBrush="Black"
@@ -22,7 +22,7 @@
 				Volume="0" />
 		</Border>
 		<Grid
-			Height="190"
+			Height="300"
 			Margin="8,0,8,8"
 			VerticalAlignment="Bottom">
 			<Grid.RowDefinitions>
@@ -34,7 +34,8 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
-			</Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*" />
 				<ColumnDefinition Width="2*" />
@@ -108,31 +109,81 @@
 				Content="Parcourir..." />
 
 			<!--  Titre de la visite  -->
-			<Label
+            
+            <!--  FRANCAIS  -->
+            <Label
 				Grid.Row="3"
 				Grid.Column="0"
 				HorizontalAlignment="Right"
 				VerticalAlignment="Center"
-				Content="Titre :" />
+				Content="Titre FR :" />
 			<TextBox
-				Name="txtTitle"
+				Name="txtTitleFR"
 				Grid.Row="3"
 				Grid.Column="1"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Center"
 				MaxLines="100"
-				Text="{Binding Title}" />
+				Text="{Binding TitleFR}" />
 
-			<!--  Source / Copyright  -->
-			<Label
+            <!--  CATALAN  -->
+            <Label
 				Grid.Row="4"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre CAT :" />
+            <TextBox
+				Name="txtTitleCAT"
+				Grid.Row="4"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100"
+				Text="{Binding TitleCAT}" />
+
+            <!--  ENGLISH  -->
+            <Label
+				Grid.Row="5"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre EN :" />
+            <TextBox
+				Name="txtTitleEN"
+				Grid.Row="5"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100"
+				Text="{Binding TitleEN}" />
+
+            <!--  SPANISH  -->
+            <Label
+				Grid.Row="6"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre ES :" />
+            <TextBox
+				Name="txtTitleES"
+				Grid.Row="6"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100"
+				Text="{Binding TitleES}" />
+
+            <!--  Source / Copyright  -->
+			<Label
+				Grid.Row="7"
 				Grid.Column="0"
 				HorizontalAlignment="Right"
 				VerticalAlignment="Top"
 				Content="Source Media :" />
 			<TextBox
 				Name="txtSource"
-				Grid.Row="4"
+				Grid.Row="7"
 				Grid.Column="1"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Center"
@@ -142,7 +193,7 @@
 			<!--  Valider / Annuler  -->
 			<StackPanel
 				Name="stackPanel1"
-				Grid.Row="5"
+				Grid.Row="8"
 				Grid.Column="0"
 				Grid.ColumnSpan="3"
 				Margin="0,10"

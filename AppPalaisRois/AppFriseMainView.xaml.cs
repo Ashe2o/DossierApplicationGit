@@ -69,7 +69,34 @@ namespace AppPalaisRois
             StringCollection itemssource = new StringCollection();
             foreach (Map map in ViewModel.Maps)
             {
-                itemssource.Add(map.Background);
+                switch (MainWindow.selectedLanguage)
+                {
+                    case "French":
+                        itemssource.Add(map.BackgroundFR);
+                        break;
+                    case "Catalan":
+                        if (map.BackgroundCAT != ""){
+                            itemssource.Add(map.BackgroundCAT);
+                        }
+                        else {
+                            itemssource.Add(map.BackgroundFR);
+                        }
+                        break;
+                    case "English":
+                        if (map.BackgroundEN != ""){
+                            itemssource.Add(map.BackgroundEN);
+                        }else{
+                            itemssource.Add(map.BackgroundFR);
+                        }
+                        break;
+                    case "Spanish":
+                        if (map.BackgroundES != ""){
+                            itemssource.Add(map.BackgroundES);
+                        }else{
+                            itemssource.Add(map.BackgroundFR);
+                        }
+                        break;
+                }
             }
 
             flowCarte.SelectedIndex = 0;

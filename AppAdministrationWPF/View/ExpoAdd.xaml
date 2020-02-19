@@ -2,15 +2,15 @@
 	x:Class="AppAdministrationWPF.View.ExpoAdd"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	Title="MediaDialog"
+	Title="Ajouter/Modifier Expo"
 	Width="400"
-	Height="450"
+	Height="550"
 	ResizeMode="CanResizeWithGrip"
 	ShowInTaskbar="False"
 	Topmost="True">
 	<Grid>
 		<Border
-			Margin="8,8,8,152"
+			Margin="8,8,8,220"
 			BorderBrush="Black"
 			BorderThickness="1">
 			<MediaElement
@@ -20,7 +20,7 @@
 				Volume="0" />
 		</Border>
 		<Grid
-			Height="140"
+			Height="200"
 			Margin="8,0,8,8"
 			VerticalAlignment="Bottom">
 			<Grid.RowDefinitions>
@@ -31,48 +31,56 @@
 				<RowDefinition Height="Auto" />
 			</Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="1*" />
+				<ColumnDefinition Width="100" />
 				<ColumnDefinition Width="2*" />
 				<ColumnDefinition Width="1*" />
 			</Grid.ColumnDefinitions>
-			<Label
+
+            <!-- CHEMIN EXPO -->
+            <Label
 				Name="label1"
 				Grid.Row="0"
 				Grid.Column="0"
 				HorizontalAlignment="Right"
 				VerticalAlignment="Center"
-				Content="Chemin :" />
-			<Label
-				Name="lblName"
-				Grid.Row="1"
-				Grid.Column="0"
-				HorizontalAlignment="Right"
-				VerticalAlignment="Center"
-				Content="Titre :" />
-			<Label
-				Name="lblDescription"
-				Grid.Row="2"
-				Grid.Column="0"
-				HorizontalAlignment="Right"
-				VerticalAlignment="Top"
-				Content="Description :" />
-
-			<TextBox
+				Content="Chemin :"/>
+            <TextBox
 				Name="txtPath"
 				Grid.Row="0"
 				Grid.Column="1"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Center"
 				Text="{Binding Path}" />
-			<TextBox
-				Name="txtName"
+
+            <!-- GESTION DES LANGUES TITRES/DESCRIPTIONS -->
+            <!-- FR -->
+            <Label
+				Name="lblNameFR"
+				Grid.Row="1"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre FR :" 
+                Visibility="Visible"/>
+            <Label
+				Name="lblDescriptionFR"
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Top"
+				Content="Description FR :" 
+                Visibility="Visible"/>
+
+            <TextBox
+				Name="txtNameFR"
 				Grid.Row="1"
 				Grid.Column="1"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Center"
-				MaxLines="100" />
-			<TextBox
-				Name="Description"
+				MaxLines="100" 
+                Visibility="Visible"/>
+            <TextBox
+				Name="DescriptionFR"
 				Grid.Row="2"
 				Grid.Column="1"
 				MinHeight="60"
@@ -81,18 +89,141 @@
 				AcceptsReturn="True"
 				AcceptsTab="True"
 				SpellCheck.IsEnabled="True"
-				TextWrapping="Wrap" />
+				TextWrapping="Wrap" 
+                Visibility="Visible"/>
 
-			<ComboBox
-				Name="cbxType"
+            <!-- CAT -->
+            <Label
+				Name="lblNameCAT"
+				Grid.Row="1"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre CAT :" 
+                Visibility="Hidden"/>
+            <Label
+				Name="lblDescriptionCAT"
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Top"
+				Content="Description CAT :" 
+                Visibility="Hidden"/>
+
+            <TextBox
+				Name="txtNameCAT"
+				Grid.Row="1"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100" 
+                Visibility="Hidden"/>
+            <TextBox
+				Name="DescriptionCAT"
+				Grid.Row="2"
+				Grid.Column="1"
+				MinHeight="60"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				AcceptsReturn="True"
+				AcceptsTab="True"
+				SpellCheck.IsEnabled="True"
+				TextWrapping="Wrap" 
+                Visibility="Hidden"/>
+
+            <!-- EN -->
+            <Label
+				Name="lblNameEN"
+				Grid.Row="1"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre EN :" 
+                Visibility="Hidden"/>
+            <Label
+				Name="lblDescriptionEN"
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Top"
+				Content="Description EN :" 
+                Visibility="Hidden"/>
+
+            <TextBox
+				Name="txtNameEN"
+				Grid.Row="1"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100" 
+                Visibility="Hidden"/>
+            <TextBox
+				Name="DescriptionEN"
+				Grid.Row="2"
+				Grid.Column="1"
+				MinHeight="60"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				AcceptsReturn="True"
+				AcceptsTab="True"
+				SpellCheck.IsEnabled="True"
+				TextWrapping="Wrap" 
+                Visibility="Hidden"/>
+
+            <!-- ES -->
+            <Label
+				Name="lblNameES"
+				Grid.Row="1"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre ES :" 
+                Visibility="Hidden"/>
+            <Label
+				Name="lblDescriptionES"
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Top"
+				Content="Description ES :" 
+                Visibility="Hidden"/>
+
+            <TextBox
+				Name="txtNameES"
+				Grid.Row="1"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100" 
+                Visibility="Hidden"/>
+            <TextBox
+				Name="DescriptionES"
+				Grid.Row="2"
+				Grid.Column="1"
+				MinHeight="60"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				AcceptsReturn="True"
+				AcceptsTab="True"
+				SpellCheck.IsEnabled="True"
+				TextWrapping="Wrap" 
+                Visibility="Hidden"/>
+            
+            <!-- MENU DEROULANT CHOIX LANGUES -->
+
+            <ComboBox
+				Name="LangageType"
 				Grid.Row="1"
 				Grid.Column="2"
 				Width="80"
 				Height="22"
-				HorizontalAlignment="Stretch">
-				<ComboBoxItem Name="Photo">Photo</ComboBoxItem>
-				<ComboBoxItem Name="Video" IsSelected="True">Video</ComboBoxItem>
-			</ComboBox>
+				HorizontalAlignment="Stretch" 
+                SelectionChanged="LangageType_SelectionChanged">
+                <ComboBoxItem Name="FR" IsSelected="True">FR</ComboBoxItem>
+				<ComboBoxItem Name="CAT">CAT</ComboBoxItem>
+                <ComboBoxItem Name="EN">EN</ComboBoxItem>
+                <ComboBoxItem Name="ES">ES</ComboBoxItem>
+            </ComboBox>
 
 			<Button
 				Name="btOpen"

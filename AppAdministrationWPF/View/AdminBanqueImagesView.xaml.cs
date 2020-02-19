@@ -172,7 +172,7 @@ namespace AppAdministrationWPF.View
                 {
                     listboxMapsBanqueImages.Items.Refresh();
                     DAOBanqueImages.Save();
-                    BanqueImages.Source = ResourceAccessor.loadImage(selected.Background);
+                    BanqueImages.Source = ResourceAccessor.loadImage(selected.BackgroundFR);
                 }
             };
             window.Show();
@@ -241,7 +241,7 @@ namespace AppAdministrationWPF.View
                 _viewModel.SelectedMap = listboxMapsBanqueImages.SelectedItem as Map;
                 _viewModel.SelectedPlaceholder = null;
 
-                BanqueImages.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.Background);
+                BanqueImages.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.BackgroundFR);
             }
         }
 
@@ -331,7 +331,7 @@ namespace AppAdministrationWPF.View
             if (_viewModel.Maps.Count > 0)
             {
                 banqueimagesBackground.ItemsSource = _viewModel.Maps[0].PlaceHolders;
-                BanqueImages.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].Background);
+                BanqueImages.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].BackgroundFR);
                 listboxMapsBanqueImages.SelectedIndex = 0;
                 listboxMapsBanqueImages.Items.Refresh();
                 listboxMapsBanqueImages.Items.SortDescriptions.Clear();

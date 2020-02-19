@@ -127,13 +127,25 @@
 					KeyDown="updateLabelPreview"
 					KeyUp="updateLabelPreview" />
 			</Border>
-            
-            <!--  Label EN  -->
-            <Label Grid.Row="4" Grid.Column="0">Label EN :</Label>
+
+            <!--  Label CAT  -->
+            <Label Grid.Row="4" Grid.Column="0">Label CAT :</Label>
             <Border
 				Grid.Row="4"
 				Grid.Column="1"
 				Grid.ColumnSpan="4">
+                <TextBox
+					x:Name="txtImageLabelCAT"
+					KeyDown="updateLabelPreview"
+					KeyUp="updateLabelPreview" />
+            </Border>
+
+            <!--  Label EN  -->
+            <Label Grid.Row="6" Grid.Column="0">Label EN :</Label>
+            <Border
+				Grid.Row="6"
+				Grid.Column="1"
+				Grid.ColumnSpan="6">
                 <TextBox
 					x:Name="txtImageLabelEN"
 					KeyDown="updateLabelPreview"
@@ -141,25 +153,13 @@
             </Border>
 
             <!--  Label ES  -->
-            <Label Grid.Row="6" Grid.Column="0">Label ES :</Label>
-            <Border
-				Grid.Row="6"
-				Grid.Column="1"
-				Grid.ColumnSpan="6">
-                <TextBox
-					x:Name="txtImageLabelES"
-					KeyDown="updateLabelPreview"
-					KeyUp="updateLabelPreview" />
-            </Border>
-
-            <!--  Label CAT  -->
-            <Label Grid.Row="8" Grid.Column="0">Label CAT :</Label>
+            <Label Grid.Row="8" Grid.Column="0">Label ES :</Label>
             <Border
 				Grid.Row="8"
 				Grid.Column="1"
 				Grid.ColumnSpan="8">
                 <TextBox
-					x:Name="txtImageLabelCAT"
+					x:Name="txtImageLabelES"
 					KeyDown="updateLabelPreview"
 					KeyUp="updateLabelPreview" />
             </Border>

@@ -12,7 +12,13 @@ namespace CommonSurface.Model
     {
         #region Private Fields
 
-        private string _background;
+        private string _backgroundFR;
+
+        private string _backgroundCAT;
+
+        private string _backgroundEN;
+
+        private string _backgroundES;
 
         private string _thumbnail;
 
@@ -31,11 +37,14 @@ namespace CommonSurface.Model
         {
         }
 
-        public Map(int id, string name, string background,string thumbnail)
+        public Map(int id, string name, string backgroundFR, string backgroundCAT, string backgroundEN, string backgroundES, string thumbnail)
         {
             this._id = id;
             this._name = name;
-            this._background = background;
+            this._backgroundFR = backgroundFR;
+            this._backgroundCAT = backgroundCAT;
+            this._backgroundEN = backgroundEN;
+            this._backgroundES = backgroundES;
             this._thumbnail = thumbnail;
             this._placeholders = new ObservableCollection<PlaceHolder>();
         }
@@ -45,7 +54,10 @@ namespace CommonSurface.Model
             this._id = other.ID;
             this._name = other.Name;
             this._thumbnail = other.Thumbnail;
-            this._background = other.Background;
+            this._backgroundFR = other.BackgroundFR;
+            this._backgroundCAT = other.BackgroundCAT;
+            this._backgroundEN = other.BackgroundEN;
+            this._backgroundES = other.BackgroundES;
             this._placeholders = new ObservableCollection<PlaceHolder>(other.PlaceHolders);
         }
 
@@ -57,7 +69,10 @@ namespace CommonSurface.Model
         {
             this._id = 0;
             this._name = null;
-            this._background = null;
+            this._backgroundFR = null;
+            this._backgroundCAT = null;
+            this._backgroundEN = null;
+            this._backgroundES = null;
             this._placeholders = null;
         }
 
@@ -73,19 +88,22 @@ namespace CommonSurface.Model
 
         public static Map Blank()
         {
-            return new Map(-1, "", "","");
+            return new Map(-1, "", "","","","","");
         }
 
         public static Map Blank(int id)
         {
-            return new Map(id, "", "","");
+            return new Map(id, "", "","","","","");
         }
 
         public void Copy(Map copy)
         {
             this._id = copy.ID;
             this._name = copy.Name;
-            this._background = copy.Background;
+            this._backgroundFR = copy.BackgroundFR;
+            this._backgroundCAT = copy.BackgroundCAT;
+            this._backgroundEN = copy.BackgroundEN;
+            this._backgroundES = copy.BackgroundES;
             this.Thumbnail = copy.Thumbnail;
             this._placeholders = new ObservableCollection<PlaceHolder>(copy.PlaceHolders);
         }
@@ -130,10 +148,31 @@ namespace CommonSurface.Model
         #region GETTEUR/SETTEUR
 
         [XmlElement]
-        public string Background
+        public string BackgroundFR
         {
-            get { return _background; }
-            set { _background = value; OnPropertyChanged("Background"); }
+            get { return _backgroundFR; }
+            set { _backgroundFR = value; OnPropertyChanged("BackgroundFR"); }
+        }
+
+        [XmlElement]
+        public string BackgroundCAT
+        {
+            get { return _backgroundCAT; }
+            set { _backgroundCAT = value; OnPropertyChanged("BackgroundCAT"); }
+        }
+
+        [XmlElement]
+        public string BackgroundEN
+        {
+            get { return _backgroundEN; }
+            set { _backgroundEN = value; OnPropertyChanged("BackgroundEN"); }
+        }
+
+        [XmlElement]
+        public string BackgroundES
+        {
+            get { return _backgroundES; }
+            set { _backgroundES = value; OnPropertyChanged("BackgroundES"); }
         }
 
         [XmlAttribute]

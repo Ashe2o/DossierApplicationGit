@@ -40,27 +40,17 @@ namespace AppAdministrationWPF.View
                 XmlNodeList nodeList = doc.SelectNodes("descendant::listExpo/expo[IdExpo='" + Expoid + "']/contenu/document[ID='" + modifOrAdd + "']");
                 foreach (XmlNode xn in nodeList)
                 {
-                    //récuperation de toute les anciennes données
-                    txtName.Text = xn["titre"].InnerText;
-                    txtDescription.Text = xn["text"].InnerText;
+                    //Récuperation de toute les anciennes données
+                    txtNameFR.Text = xn["titre"].InnerText;
+                    txtDescriptionFR.Text = xn["text"].InnerText;
                     Source.Text = xn["source"].InnerText;
                     ViewModel.Path = xn["element"].InnerText;
                     txtImg1.Text = xn["image1"].InnerText;
                     txtImg2.Text = xn["image2"].InnerText;
-                    //teste pour selectionné le bon type de base
-                    if (xn["type"].InnerText != "video")
-                    {
-                        if (xn["type"].InnerText == "photo")
-                        {
-                            Video.IsSelected = false;
-                            Photo.IsSelected = true;
-                        }
-                        else
-                        {
-                            Video.IsSelected = false;
-                            Panorama.IsSelected = true;
-                        }
-                    }
+                    //Récupération des traductions seulement si elles existent
+                    if (xn["textCAT"] != null) { txtDescriptionCAT.Text = xn["textCAT"].InnerText; }
+                    if (xn["textEN"] != null) { txtDescriptionEN.Text = xn["textEN"].InnerText; }
+                    if (xn["textES"] != null) { txtDescriptionES.Text = xn["textES"].InnerText; }    
                 }
             }
             modifAdd = modifOrAdd;
@@ -155,13 +145,25 @@ namespace AppAdministrationWPF.View
 
                     coverNode.InnerText = txtPath.Text;
 
-                    XmlNode titreNode = doc.CreateElement("titre");
+                    XmlNode titreNodeFR = doc.CreateElement("titre");
 
-                    titreNode.InnerText = txtName.Text;
+                    titreNodeFR.InnerText = txtNameFR.Text;
 
-                    XmlNode textNode = doc.CreateElement("text");
+                    XmlNode textNodeFR = doc.CreateElement("text");
 
-                    textNode.InnerText = txtDescription.Text;
+                    textNodeFR.InnerText = txtDescriptionFR.Text;
+
+                    XmlNode textNodeCAT = doc.CreateElement("textCAT");
+
+                    textNodeCAT.InnerText = txtDescriptionCAT.Text;
+
+                    XmlNode textNodeEN = doc.CreateElement("textEN");
+
+                    textNodeEN.InnerText = txtDescriptionFR.Text;
+
+                    XmlNode textNodeES = doc.CreateElement("textES");
+
+                    textNodeES.InnerText = txtDescriptionES.Text;
 
                     XmlNode SourceNode = doc.CreateElement("source");
 
@@ -175,30 +177,19 @@ namespace AppAdministrationWPF.View
 
                     Img2Node.InnerText = txtImg2.Text;
 
-                    XmlNode typeNode = doc.CreateElement("type");
-
-                    //teste de ce qui est selectionné comme type
-                    if (Video.IsSelected)
-                    {
-                        typeNode.InnerText = "video";
-                    }
-                    else if (Photo.IsSelected)
-                    {
-                        typeNode.InnerText = "photo";
-                    }
-                    else if (Panorama.IsSelected)
-                    {
-                        typeNode.InnerText = "panorama";
-                    }
-
                     //emboitement des noeuds
-                    newNode.AppendChild(typeNode);
 
                     newNode.AppendChild(IdExpoNode);
 
-                    newNode.AppendChild(titreNode);
+                    newNode.AppendChild(titreNodeFR);
 
-                    newNode.AppendChild(textNode);
+                    newNode.AppendChild(textNodeFR);
+
+                    newNode.AppendChild(textNodeCAT);
+
+                    newNode.AppendChild(textNodeEN);
+
+                    newNode.AppendChild(textNodeES);
 
                     newNode.AppendChild(SourceNode);
 
@@ -219,25 +210,21 @@ namespace AppAdministrationWPF.View
                 XmlNodeList nodeList = doc.SelectNodes("descendant::listExpo/expo[IdExpo='" + ExpoID + "']/contenu/document[ID='" + modifAdd + "']");
                 foreach (XmlNode xn in nodeList)
                 {
-                    //modification de tous les element de la diapo
+                    // On vérifie si l'expo possède un texte par langue, dans le cas contraire, on créé les clés correspondante
+                    if (xn["textCAT"] == null) { XmlNode newElem = doc.CreateNode("element", "textCAT", ""); xn.AppendChild(newElem); }
+                    if (xn["textEN"] == null) { XmlNode newElem = doc.CreateNode("element", "textEN", ""); xn.AppendChild(newElem); }
+                    if (xn["textES"] == null) { XmlNode newElem = doc.CreateNode("element", "textES", ""); xn.AppendChild(newElem); }
+
+                    //Modification de tous les element de la diapo
                     xn["element"].InnerText = txtPath.Text;
-                    xn["titre"].InnerText = txtName.Text;
-                    xn["text"].InnerText = txtDescription.Text;
+                    xn["titre"].InnerText = txtNameFR.Text;
+                    xn["text"].InnerText = txtDescriptionFR.Text;
+                    xn["textCAT"].InnerText = txtDescriptionCAT.Text;
+                    xn["textEN"].InnerText = txtDescriptionEN.Text;
+                    xn["textES"].InnerText = txtDescriptionES.Text;
                     xn["source"].InnerText = Source.Text;
                     xn["image1"].InnerText = txtImg1.Text;
                     xn["image2"].InnerText = txtImg2.Text;
-                    if (Video.IsSelected)
-                    {
-                        xn["type"].InnerText = "video";
-                    }
-                    else if (Photo.IsSelected)
-                    {
-                        xn["type"].InnerText = "photo";
-                    }
-                    else if (Panorama.IsSelected)
-                    {
-                        xn["type"].InnerText = "panorama";
-                    }
                 }
             }
             //et lance la sauvegarde et lecture de la liste
@@ -274,5 +261,68 @@ namespace AppAdministrationWPF.View
         }
 
         #endregion Private Methods
+
+        private void LangageType_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
+        {
+            switch (((System.Windows.Controls.ContentControl)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Content)
+            {
+                //On affiche les cases et labels correspondants à la langues sélectionné dans le menu déroulant, on cache les autres.
+                case "FR":
+                    lblNameFR.Visibility = Visibility.Visible;
+                    lblDescriptionFR.Visibility = Visibility.Visible;
+                    txtNameFR.Visibility = Visibility.Visible;
+                    txtDescriptionFR.Visibility = Visibility.Visible;
+
+                    lblDescriptionCAT.Visibility = Visibility.Hidden;
+                    txtDescriptionCAT.Visibility = Visibility.Hidden;
+
+                    lblDescriptionEN.Visibility = Visibility.Hidden;
+                    txtDescriptionEN.Visibility = Visibility.Hidden;
+
+                    lblDescriptionES.Visibility = Visibility.Hidden;
+                    txtDescriptionES.Visibility = Visibility.Hidden;
+                    break;
+
+                case "CAT":
+                    lblDescriptionCAT.Visibility = Visibility.Visible;
+                    txtDescriptionCAT.Visibility = Visibility.Visible;
+
+                    lblDescriptionFR.Visibility = Visibility.Hidden;
+                    txtDescriptionFR.Visibility = Visibility.Hidden;
+
+                    lblDescriptionEN.Visibility = Visibility.Hidden;
+                    txtDescriptionEN.Visibility = Visibility.Hidden;
+
+                    lblDescriptionES.Visibility = Visibility.Hidden;
+                    txtDescriptionES.Visibility = Visibility.Hidden;
+                    break;
+                case "EN":
+                    lblDescriptionEN.Visibility = Visibility.Visible;
+                    txtDescriptionEN.Visibility = Visibility.Visible;
+
+                    lblDescriptionFR.Visibility = Visibility.Hidden;
+                    txtDescriptionFR.Visibility = Visibility.Hidden;
+
+                    lblDescriptionCAT.Visibility = Visibility.Hidden;
+                    txtDescriptionCAT.Visibility = Visibility.Hidden;
+
+                    lblDescriptionES.Visibility = Visibility.Hidden;
+                    txtDescriptionES.Visibility = Visibility.Hidden;
+                    break;
+                case "ES":
+                    lblDescriptionES.Visibility = Visibility.Visible;
+                    txtDescriptionES.Visibility = Visibility.Visible;
+
+                    lblDescriptionFR.Visibility = Visibility.Hidden;
+                    txtDescriptionFR.Visibility = Visibility.Hidden;
+
+                    lblDescriptionCAT.Visibility = Visibility.Hidden;
+                    txtDescriptionCAT.Visibility = Visibility.Hidden;
+
+                    lblDescriptionEN.Visibility = Visibility.Hidden;
+                    txtDescriptionEN.Visibility = Visibility.Hidden;
+                    break;
+            }
+        }
     }
 }

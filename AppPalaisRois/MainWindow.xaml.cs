@@ -22,7 +22,7 @@ namespace AppPalaisRois
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHideAnim, sbShowAnim, sbHideAnimSec, sbShowAnimSec;
         private List<Icon> icons;
-        private string Language = "French";
+        public static string selectedLanguage = "French";
 
         #endregion Private Fields
 
@@ -62,11 +62,55 @@ namespace AppPalaisRois
                     // Charge l'icone de la configuration
                     imageIcon.Source = ResourceAccessor.loadImage(icon.Source);
 
-                    // Label avec le texte définit dans la configuration
-                    if (icon.TextFR != null)
+                    //Affichage du titre de l'icone en fonction de la Langue
+                    switch (icon.Name)
                     {
-                        labelIcon.Content = icon.TextFR;
+                        case "Visite":
+                        case "Mediatheque": 
+                        case "Region": 
+                        case "Memory": 
+                        case "Puzzle": 
+                        case "Frise": 
+                        case "BanqueImages":
+                            switch (MainWindow.selectedLanguage)
+                            {
+                                case "French":
+                                    if (icon.TextFR != null) { labelIcon.Content = icon.TextFR; }
+                                    break;
+                                case "Catalan":
+                                    if (icon.TextCAT != null)
+                                    {
+                                        labelIcon.Content = icon.TextCAT;
+                                    }
+                                    else
+                                    {
+                                        labelIcon.Content = icon.TextFR;
+                                    }
+                                    break;
+                                case "English":
+                                    if (icon.TextEN != null)
+                                    {
+                                        labelIcon.Content = icon.TextEN;
+                                    }
+                                    else
+                                    {
+                                        labelIcon.Content = icon.TextFR;
+                                    }
+                                    break;
+                                case "Spanish":
+                                    if (icon.TextES != null)
+                                    {
+                                        labelIcon.Content = icon.TextES;
+                                    }
+                                    else
+                                    {
+                                        labelIcon.Content = icon.TextFR;
+                                    }
+                                    break;
+                            }
+                            break;
                     }
+                    
 
                     if (icon.Color != null)
                     {
@@ -174,7 +218,7 @@ namespace AppPalaisRois
                     }
                 }
             }
-            Language = "English";
+            selectedLanguage = "English";
         }
 
         /// <summary>
@@ -198,35 +242,7 @@ namespace AppPalaisRois
                     }
                 }
             }
-            Language = "French";
-        }
-
-        /// <summary>
-        /// Changement de la langue en ESPAGNOL
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e">     </param>
-        private void SpanishButton_Click(object sender, RoutedEventArgs e)
-        {
-            //Changement du nom de l'icone du menu Principal
-            foreach (Icon icon in icons)
-            {
-                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
-                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
-                {
-                    // Récupération du label de l'icone
-                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
-                    if (icon.TextES != "")
-                    {
-                        labelIcon.Content = icon.TextES;
-                    }
-                    else
-                    {
-                        labelIcon.Content = icon.TextFR;
-                    }
-                }
-            }
-            Language = "Spanish";
+            selectedLanguage = "French";
         }
 
         /// <summary>
@@ -254,7 +270,35 @@ namespace AppPalaisRois
                     }
                 }
             }
-            Language = "Catalan";
+            selectedLanguage = "Catalan";
+        }
+
+        /// <summary>
+        /// Changement de la langue en ESPAGNOL
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void SpanishButton_Click(object sender, RoutedEventArgs e)
+        {
+            //Changement du nom de l'icone du menu Principal
+            foreach (Icon icon in icons)
+            {
+                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                {
+                    // Récupération du label de l'icone
+                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
+                    if (icon.TextES != "")
+                    {
+                        labelIcon.Content = icon.TextES;
+                    }
+                    else
+                    {
+                        labelIcon.Content = icon.TextFR;
+                    }
+                }
+            }
+            selectedLanguage = "Spanish";
         }
 
         /// <summary>

@@ -30,7 +30,11 @@ namespace AppAdministrationWPF.View
 
             _cancel = true;
 
-            txtMap.Text = map.Background;
+            txtMapFR.Text = map.BackgroundFR;
+            txtMapCAT.Text = map.BackgroundCAT;
+            txtMapEN.Text = map.BackgroundEN;
+            txtMapES.Text = map.BackgroundES;
+
             txtName.Text = map.Name;
 
             this.DataContext = new_map;
@@ -67,10 +71,9 @@ namespace AppAdministrationWPF.View
         /// <param name="e">     </param>
         private void buttonOK_Click(object sender, RoutedEventArgs e)
         {
-            new_map.Name = txtMap.Text;
             new_map.Name = txtName.Text;
 
-            if (new_map.Name.Length <= 0 || new_map.Background.Length <= 0)
+            if (new_map.Name.Length <= 0 || new_map.BackgroundFR.Length <= 0)
             {
                 MessageBox.Show("Le nom ou l'image n'a pas été définis.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -81,7 +84,7 @@ namespace AppAdministrationWPF.View
             this.Close();
         }
 
-        private void buttonSearchFile_Click(object sender, RoutedEventArgs e)
+        private void buttonSearchFileFR_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
@@ -90,8 +93,50 @@ namespace AppAdministrationWPF.View
             bool? result = fileDialog.ShowDialog();
             if (result == true)
             {
-                new_map.Background = fileDialog.FileName;
-                txtMap.Text = fileDialog.FileName;
+                new_map.BackgroundFR = fileDialog.FileName;
+                txtMapFR.Text = fileDialog.FileName;
+            }
+        }
+
+        private void buttonSearchFileCAT_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.FilterIndex = 0;
+            fileDialog.RestoreDirectory = true;
+            bool? result = fileDialog.ShowDialog();
+            if (result == true)
+            {
+                new_map.BackgroundCAT = fileDialog.FileName;
+                txtMapCAT.Text = fileDialog.FileName;
+            }
+        }
+
+        private void buttonSearchFileEN_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.FilterIndex = 0;
+            fileDialog.RestoreDirectory = true;
+            bool? result = fileDialog.ShowDialog();
+            if (result == true)
+            {
+                new_map.BackgroundEN = fileDialog.FileName;
+                txtMapEN.Text = fileDialog.FileName;
+            }
+        }
+
+        private void buttonSearchFileES_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.FilterIndex = 0;
+            fileDialog.RestoreDirectory = true;
+            bool? result = fileDialog.ShowDialog();
+            if (result == true)
+            {
+                new_map.BackgroundES = fileDialog.FileName;
+                txtMapES.Text = fileDialog.FileName;
             }
         }
 
@@ -99,8 +144,8 @@ namespace AppAdministrationWPF.View
         {
             //ouverture de la fenetre de recherche de fichier sur des fichiers video image ou panorama
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png";
-            fileDialog.FilterIndex = 2;
+            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.FilterIndex = 0;
             fileDialog.Multiselect = false;
             Nullable<bool> result = fileDialog.ShowDialog();
             if (result == true)

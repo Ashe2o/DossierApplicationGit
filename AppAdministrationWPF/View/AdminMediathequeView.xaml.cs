@@ -107,8 +107,32 @@ namespace AppAdministrationWPF.View
                     ExpoElement.titre = value;
                     break;
 
+                case "titreCAT":
+                    ExpoElement.titreCAT = value;
+                    break;
+
+                case "titreEN":
+                    ExpoElement.titreEN = value;
+                    break;
+
+                case "titreES":
+                    ExpoElement.titreES = value;
+                    break;
+
                 case "text":
                     ExpoElement.text = value;
+                    break;
+
+                case "textCAT":
+                    ExpoElement.textCAT = value;
+                    break;
+
+                case "textEN":
+                    ExpoElement.textEN = value;
+                    break;
+
+                case "textES":
+                    ExpoElement.textES = value;
                     break;
             }
         }

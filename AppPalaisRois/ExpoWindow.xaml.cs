@@ -173,10 +173,6 @@ namespace AppPalaisRois
             //le switch envoie la valeur dans la bonne variable selon le nom de l'element
             switch (nameElement)
             {
-                case "type":
-                    diapo.type = value;
-                    break;
-
                 case "ID":
                     diapo.id = Int32.Parse(value);
                     break;
@@ -185,12 +181,24 @@ namespace AppPalaisRois
                     diapo.element = value;
                     break;
 
-                case "titre":
+                case "titreFR":
                     diapo.titre = value;
                     break;
 
-                case "text":
+                case "textFR":
                     diapo.text = value;
+                    break;
+
+                case "textCAT":
+                    diapo.textCAT = value;
+                    break;
+
+                case "textEN":
+                    diapo.textEN = value;
+                    break;
+
+                case "textES":
+                    diapo.textES = value;
                     break;
 
                 case "source":
@@ -217,8 +225,32 @@ namespace AppPalaisRois
                     ExpoElement.titre = value;
                     break;
 
+                case "titreCAT":
+                    ExpoElement.titreCAT = value;
+                    break;
+
+                case "titreEN":
+                    ExpoElement.titreEN = value;
+                    break;
+
+                case "titreES":
+                    ExpoElement.titreES = value;
+                    break;
+
                 case "text":
                     ExpoElement.text = value;
+                    break;
+
+                case "textCAT":
+                    ExpoElement.textCAT = value;
+                    break;
+
+                case "textEN":
+                    ExpoElement.textEN = value;
+                    break;
+
+                case "textES":
+                    ExpoElement.textES = value;
                     break;
             }
         }
@@ -343,7 +375,38 @@ namespace AppPalaisRois
                 textblocktitle.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole");
                 textblocktitle.FontSize = 15;
                 textblocktitle.Foreground = new SolidColorBrush(Colors.Black);
-                textblocktitle.Text = j.titre;
+
+                //Affichage du Titre en fonction de la Langue
+                switch (MainWindow.selectedLanguage)
+                {
+                    case "French":
+                        textblocktitle.Text = j.titre;
+                        break;
+                    case "Catalan":
+                        if (j.titreCAT != null)
+                        {
+                            textblocktitle.Text = j.titreCAT;
+                        }else{
+                            textblocktitle.Text = j.titre;
+                        }
+                        break;
+                    case "English":
+                        if (j.titreEN != null)
+                        {
+                            textblocktitle.Text = j.titreEN;
+                        }else{
+                            textblocktitle.Text = j.titre;
+                        }
+                        break;
+                    case "Spanish":
+                        if (j.titreES != null){
+                            textblocktitle.Text = j.titreES;
+                        }else{
+                            textblocktitle.Text = j.titre;
+                        }
+                        break;
+                }
+                                
                 textblocktitle.Margin = new Thickness(0, 0, 0, 30);
                 textblocktitle.HorizontalAlignment = HorizontalAlignment.Center;
                 textblocktitle.VerticalAlignment = VerticalAlignment.Top;
@@ -355,7 +418,38 @@ namespace AppPalaisRois
                 textblocktext.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole");
                 textblocktext.FontSize = 10;
                 textblocktext.Foreground = new SolidColorBrush(Colors.Black);
-                textblocktext.Text = j.text;
+
+                //Affichage du Texte en fonction de la Langue
+                switch(MainWindow.selectedLanguage)
+                {
+                    case "French":
+                        textblocktext.Text = j.text;
+                    break;
+                    case "Catalan":
+                        if (j.textCAT != null)
+                        {
+                        textblocktext.Text = j.textCAT;
+                    }else{
+                        textblocktext.Text = j.text;
+                    }
+                    break;
+                    case "English":
+                        if (j.textEN != null)
+                        {
+                        textblocktext.Text = j.textEN;
+                    }else{
+                        textblocktext.Text = j.text;
+                    }
+                    break;
+                    case "Spanish":
+                        if (j.textES != null)
+                        {
+                        textblocktext.Text = j.textES;
+                    }else{
+                        textblocktext.Text = j.text;
+                    }
+                    break;
+                }
                 textblocktext.Margin = new Thickness(0, 30, 0, 0);
                 textblocktext.HorizontalAlignment = HorizontalAlignment.Center;
                 textblocktext.VerticalAlignment = VerticalAlignment.Bottom;
