@@ -659,7 +659,7 @@ namespace AppPalaisRois
 
                             // Texte
                             textblockAll.Visibility = Visibility.Visible;
-                            textblockAll.FontSize = 15;
+                            textblockAll.FontSize = 16;
                             textblockAll.Foreground = new SolidColorBrush(Colors.White);
 
                             //Affichage du texte en fonction de la Langue
@@ -874,7 +874,7 @@ namespace AppPalaisRois
 
                     // Texte
                     textblockAll.Visibility = Visibility.Visible;
-                    textblockAll.FontSize = 15;
+                    textblockAll.FontSize = 16;
                     textblockAll.Foreground = new SolidColorBrush(Colors.White);
 
                     //Affichage du texte en fonction de la Langue

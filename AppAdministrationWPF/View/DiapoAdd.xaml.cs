@@ -50,9 +50,25 @@ namespace AppAdministrationWPF.View
                     //Récupération des traductions seulement si elles existent
                     if (xn["textCAT"] != null) { txtDescriptionCAT.Text = xn["textCAT"].InnerText; }
                     if (xn["textEN"] != null) { txtDescriptionEN.Text = xn["textEN"].InnerText; }
-                    if (xn["textES"] != null) { txtDescriptionES.Text = xn["textES"].InnerText; }    
+                    if (xn["textES"] != null) { txtDescriptionES.Text = xn["textES"].InnerText; }
+
+                    //teste pour selectionné le bon type de base
+                    if (xn["type"].InnerText != "video")
+                    {
+                        if (xn["type"].InnerText == "photo")
+                        {
+                            Video.IsSelected = false;
+                            Photo.IsSelected = true;
+                        }
+                        else
+                        {
+                            Video.IsSelected = false;
+                            Panorama.IsSelected = true;
+                        }
+                    }
                 }
             }
+
             modifAdd = modifOrAdd;
             ExpoID = Expoid;
             lastPage = page;
@@ -177,7 +193,25 @@ namespace AppAdministrationWPF.View
 
                     Img2Node.InnerText = txtImg2.Text;
 
+                    XmlNode typeNode = doc.CreateElement("type");
+
+                    //teste de ce qui est selectionné comme type
+                    if (Video.IsSelected)
+                    {
+                        typeNode.InnerText = "video";
+                    }
+                    else if (Photo.IsSelected)
+                    {
+                        typeNode.InnerText = "photo";
+                    }
+                    else if (Panorama.IsSelected)
+                    {
+                        typeNode.InnerText = "panorama";
+                    }
+
                     //emboitement des noeuds
+
+                    newNode.AppendChild(typeNode);
 
                     newNode.AppendChild(IdExpoNode);
 
@@ -225,6 +259,18 @@ namespace AppAdministrationWPF.View
                     xn["source"].InnerText = Source.Text;
                     xn["image1"].InnerText = txtImg1.Text;
                     xn["image2"].InnerText = txtImg2.Text;
+                    if (Video.IsSelected)
+                    {
+                        xn["type"].InnerText = "video";
+                    }
+                    else if (Photo.IsSelected)
+                    {
+                        xn["type"].InnerText = "photo";
+                    }
+                    else if (Panorama.IsSelected)
+                    {
+                        xn["type"].InnerText = "panorama";
+                    }
                 }
             }
             //et lance la sauvegarde et lecture de la liste

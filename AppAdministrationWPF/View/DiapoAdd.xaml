@@ -57,6 +57,19 @@
 				VerticalAlignment="Center"
 				Text="{Binding Path}" />
 
+			<!-- TYPE DE DIAPO SELECTIONNE -->
+            <ComboBox
+				Name="cbxType"
+				Grid.Row="1"
+				Grid.Column="2"
+				Width="100"
+				Height="22"
+				HorizontalAlignment="Stretch">
+                <ComboBoxItem Name="Photo" IsSelected="True">Photo</ComboBoxItem>
+                <ComboBoxItem Name="Video">Video</ComboBoxItem>
+                <ComboBoxItem Name="Panorama">Panorama</ComboBoxItem>
+            </ComboBox>
+
             <!-- GESTION DES LANGUES TITRES/PARAGRAPHES -->
             <!-- FR -->
             <Label

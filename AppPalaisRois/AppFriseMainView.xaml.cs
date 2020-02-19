@@ -75,7 +75,8 @@ namespace AppPalaisRois
                         itemssource.Add(map.BackgroundFR);
                         break;
                     case "Catalan":
-                        if (map.BackgroundCAT != ""){
+                        if (map.BackgroundES != null && map.BackgroundES != "")
+                        {
                             itemssource.Add(map.BackgroundCAT);
                         }
                         else {
@@ -83,14 +84,16 @@ namespace AppPalaisRois
                         }
                         break;
                     case "English":
-                        if (map.BackgroundEN != ""){
+                        if (map.BackgroundES != null && map.BackgroundES != "")
+                        {
                             itemssource.Add(map.BackgroundEN);
                         }else{
                             itemssource.Add(map.BackgroundFR);
                         }
                         break;
                     case "Spanish":
-                        if (map.BackgroundES != ""){
+                        if (map.BackgroundES != null && map.BackgroundES != "")
+                        {
                             itemssource.Add(map.BackgroundES);
                         }else{
                             itemssource.Add(map.BackgroundFR);
