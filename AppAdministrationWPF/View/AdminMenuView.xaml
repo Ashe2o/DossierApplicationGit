@@ -98,8 +98,8 @@
 				<StackPanel
 					Canvas.Left="{Binding Credits.Icon.X}"
 					Canvas.Top="{Binding Credits.Icon.Y}"
-					Width="100"
-					Height="100"
+					Width="800"
+					Height="120"
 					Panel.ZIndex="100"
 					MouseLeftButtonDown="selectIcon"
 					Opacity="{Binding Credits.Icon.Visibility, Converter={StaticResource OpacityConverter}}"

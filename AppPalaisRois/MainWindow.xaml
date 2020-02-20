@@ -173,8 +173,8 @@
             <!--  Crédits  -->
 			<StackPanel
 				x:Name="positionCredits"
-				Width="100"
-				Height="100"
+				Width="800"
+				Height="120"
 				Panel.ZIndex="10"
 				MouseLeftButtonDown="CreditsButton_Click"
 				RenderTransformOrigin="0.5,0.5">
