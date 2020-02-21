@@ -170,6 +170,25 @@
 					FontSize="24" />
             </StackPanel>
 
+            <!--  Sgraffito  -->
+            <StackPanel
+				x:Name="positionSgraffito"
+				Width="280"
+				Height="280"
+				Panel.ZIndex="10"
+				MouseLeftButtonUp="LaunchSgraffito"
+				RenderTransformOrigin="0.5,0.5">
+                <!--TouchDown="LaunchSgraffito">-->
+                <Image x:Name="imageSgraffito" />
+                <Label
+					x:Name="labelSgraffito"
+					Margin="0,-60,0,0"
+					HorizontalAlignment="Center"
+					Panel.ZIndex="3"
+                    FontFamily="{StaticResource Luciole-Regular}"
+					FontSize="24" />
+            </StackPanel>
+
             <!--  Crédits  -->
 			<StackPanel
 				x:Name="positionCredits"

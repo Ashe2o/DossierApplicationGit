@@ -145,6 +145,9 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="AppSgraffitoMainView.xaml.cs">
+      <DependentUpon>AppSgraffitoMainView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="AppBanqueImagesMainView.xaml.cs">
       <DependentUpon>AppBanqueImagesMainView.xaml</DependentUpon>
     </Compile>
@@ -167,6 +170,7 @@
     <Compile Include="PuzzleMainWindow.xaml.cs">
       <DependentUpon>PuzzleMainWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ViewModel\AppSgraffitoMainViewModel.cs" />
     <Compile Include="ViewModel\AppBanqueImagesMainViewModel.cs" />
     <Compile Include="ViewModel\AppFriseMainViewModel.cs" />
     <Compile Include="ViewModel\AppRegionMainViewModel.cs" />
@@ -179,6 +183,10 @@
     <Compile Include="VisiteWindow.xaml.cs">
       <DependentUpon>VisiteWindow.xaml</DependentUpon>
     </Compile>
+    <Page Include="AppSgraffitoMainView.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="AppBanqueImagesMainView.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

@@ -302,7 +302,7 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de l'expo
+        /// Lancement de l'application d'Expo Virtuelle
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -328,7 +328,7 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de memory
+        /// Lancement de l'application de Memory
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -354,7 +354,7 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de puzzle
+        /// Lancement de l'application de Puzzle
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -380,7 +380,7 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de region
+        /// Lancement de l'application de Cartothèque (Région)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -406,7 +406,7 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de Frise
+        /// Lancement de l'application de Frise Historique
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -432,7 +432,33 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de region
+        /// Lancement de l'application de Sgraffito
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void LaunchSgraffito(object sender, MouseButtonEventArgs e)
+        {
+            // Garbage Collector
+            GC.Collect();
+            GC.WaitForFullGCComplete();
+
+            if (isopen == 0)
+            {
+                isopen = 1;
+                //lancement de l'animation avant de fermer
+                Storyboard.SetTarget(sbHideAnimSec, canvas);
+                sbHideAnimSec.Completed += (s, t) =>
+                {
+                    AppSgraffitoMainView fenetre = new AppSgraffitoMainView();
+                    fenetre.Show();
+                    this.Close();
+                };
+                sbHideAnimSec.Begin();
+            }
+        }
+
+        /// <summary>
+        /// Lancement de l'application de Banque d'Images (Vidéothèque)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -458,7 +484,7 @@ namespace AppPalaisRois
         }
 
         /// <summary>
-        /// Lancement de l'application de visite
+        /// Lancement de l'application de Visite Virtuelle
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>

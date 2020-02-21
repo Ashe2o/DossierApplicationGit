@@ -166,3 +166,5 @@ C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.CopyComplete
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.exe
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.pdb
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.baml
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.g.cs
