@@ -318,8 +318,11 @@ namespace AppAdministrationWPF.View
         {
             if (_viewModel.SelectedPlaceholder != null)
             {
-                _viewModel.SelectedPlaceholder.X = (int)(x - selectedOne.ActualWidth / 2);
-                _viewModel.SelectedPlaceholder.Y = (int)(y - selectedOne.ActualHeight / 2);
+                if (selectedOne != null)
+                {
+                    _viewModel.SelectedPlaceholder.X = (int)(x - selectedOne.ActualWidth / 2);
+                    _viewModel.SelectedPlaceholder.Y = (int)(y - selectedOne.ActualHeight / 2);
+                }
             }
         }
 
