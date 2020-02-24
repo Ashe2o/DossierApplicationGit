@@ -139,6 +139,7 @@ C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Na
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\CommonSurface.pdb
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\CommonSurface.dll.config
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csprojAssemblyReference.cache
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppBanqueImagesMainView.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppFriseMainView.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppRegionMainView.baml
@@ -149,6 +150,7 @@ C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\MemoryMainWindow.bam
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\PuzzleMainWindow.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\VisiteWindow.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\App.baml
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.g.cs
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppBanqueImagesMainView.g.cs
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppFriseMainView.g.cs
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppRegionMainView.g.cs
@@ -166,5 +168,3 @@ C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.CopyComplete
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.exe
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.pdb
-C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.baml
-C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.g.cs
