@@ -66,41 +66,87 @@ namespace AppPalaisRois
             List<Map> temp = new List<Map>(ViewModel.Maps);
             temp.Sort((a, b) => (a.ID.CompareTo(b.ID)));
             ViewModel.Maps = new ObservableCollection<Map>(temp);
-            StringCollection itemssource = new StringCollection();
+            string itemssource = "";
+            MediaElement mediaFOND = new MediaElement();
+            //element a ajouté a la liste qui contient tous les elements
+            StackPanel stack = new StackPanel();
+            int id = 1;
             foreach (Map map in ViewModel.Maps)
             {
-                switch (MainWindow.selectedLanguage)
-                {
-                    case "French":
-                        itemssource.Add(map.BackgroundFR);
-                        break;
-                    case "Catalan":
-                        if (map.BackgroundCAT != null && map.BackgroundCAT != "")
-                        {
-                            itemssource.Add(map.BackgroundCAT);
-                        }else{
-                            itemssource.Add(map.BackgroundFR);
-                        }
-                        break;
-                    case "English":
-                        if (map.BackgroundEN != null && map.BackgroundEN != "")
-                        {
-                            itemssource.Add(map.BackgroundEN);
-                        }else{
-                            itemssource.Add(map.BackgroundFR);
-                        }
-                        break;
-                    case "Spanish":
-                        if (map.BackgroundES != null && map.BackgroundES != "")
-                        {
-                            itemssource.Add(map.BackgroundES);
-                        }else{
-                            itemssource.Add(map.BackgroundFR);
-                        }
-                        break;
+                if (map.BackgroundFR.Contains(".mov") || map.BackgroundFR.Contains(".wmv") || map.BackgroundFR.Contains(".mp4")){
+                    mediaFOND.BeginInit();
+                    mediaFOND.Source = new Uri(map.BackgroundFR, UriKind.RelativeOrAbsolute);
+                    switch (MainWindow.selectedLanguage)
+                    {
+                        case "Catalan":
+                            if (map.BackgroundCAT != null && map.BackgroundCAT != "")
+                            {
+                                mediaFOND.Source = new Uri(map.BackgroundCAT, UriKind.RelativeOrAbsolute);
+                            }
+                            break;
+                        case "English":
+                            if (map.BackgroundEN != null && map.BackgroundEN != "")
+                            {
+                                mediaFOND.Source = new Uri(map.BackgroundEN, UriKind.RelativeOrAbsolute);
+                            }
+                            break;
+                        case "Spanish":
+                            if (map.BackgroundES != null && map.BackgroundES != "")
+                            {
+                                mediaFOND.Source = new Uri(map.BackgroundES, UriKind.RelativeOrAbsolute);
+                            }
+                            break;
+                    }
+                    mediaFOND.Volume = 0;
+                    mediaFOND.MediaEnded += new RoutedEventHandler(Media_Ended);
+                    mediaFOND.EndInit();
+                    stack.Name = "stack" + id;
+                    id++;
+                    stack.Children.Add(mediaFOND);
+                    flowCarte.Items.Add(stack);
                 }
-            }
-            flowCarte.ItemsSource = itemssource;
+                else
+                {
+                    switch (MainWindow.selectedLanguage)
+                    {
+                        case "French":
+                            itemssource = map.BackgroundFR;
+                            break;
+                        case "Catalan":
+                            if (map.BackgroundCAT != null && map.BackgroundCAT != "")
+                            {
+                                itemssource = map.BackgroundCAT;
+                            }
+                            else
+                            {
+                                itemssource = map.BackgroundFR;
+                            }
+                            break;
+                        case "English":
+                            if (map.BackgroundEN != null && map.BackgroundEN != "")
+                            {
+                                itemssource = map.BackgroundEN;
+                            }
+                            else
+                            {
+                                itemssource = map.BackgroundFR;
+                            }
+                            break;
+                        case "Spanish":
+                            if (map.BackgroundES != null && map.BackgroundES != "")
+                            {
+                                itemssource = map.BackgroundES;
+                            }
+                            else
+                            {
+                                itemssource = map.BackgroundFR;
+                            }
+                            break;
+                    }
+                    flowCarte.Items.Add(itemssource);
+                } 
+                
+            }  
             flowCarte.SelectedIndex = 0;
             listboxMaps.SelectedIndex = 0;
 

@@ -87,7 +87,7 @@ namespace AppAdministrationWPF.View
         private void buttonSearchFileFR_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
             fileDialog.FilterIndex = 0;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
@@ -101,7 +101,7 @@ namespace AppAdministrationWPF.View
         private void buttonSearchFileCAT_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
             fileDialog.FilterIndex = 0;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
@@ -115,7 +115,7 @@ namespace AppAdministrationWPF.View
         private void buttonSearchFileEN_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
             fileDialog.FilterIndex = 0;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
@@ -129,7 +129,7 @@ namespace AppAdministrationWPF.View
         private void buttonSearchFileES_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Photos (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
             fileDialog.FilterIndex = 0;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
