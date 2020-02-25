@@ -146,7 +146,7 @@
 			<ItemsControl
 				Grid.Row="1"
 				Grid.Column="1"
-				Height="{Binding Path=ActualHeight, ElementName=ScatterView}"
+
 				Margin="0"
 				ItemsSource="{Binding Selected.PlaceHolders}"
 				RenderTransformOrigin="0,0"
@@ -224,8 +224,8 @@
 				Visibility="{Binding ScatterViewVisibility}">
 
 				<s:ScatterViewItem
-					Width="1490"
-					Height="780"
+					Width="{Binding Path=ActualWidth, ElementName=ScatterView}"
+					Height="{Binding Path=ActualHeight, ElementName=ScatterView}"
 					Padding="0"
 					Background="{x:Null}"
 					BorderThickness="1"
