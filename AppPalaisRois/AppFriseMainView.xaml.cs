@@ -424,16 +424,12 @@ namespace AppPalaisRois
         {
             PlaceHolder selectedOne = (PlaceHolder)((sender as FrameworkElement)).DataContext;
             FrameworkElement buttonSelected = (sender as FrameworkElement);
-            Image closeImg = new Image();
-            Image oldImg = new Image();
+            Image Icon = new Image();
+            Image IconOpen = new Image();
 
-            oldImg.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
+            Icon.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
+            IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPathOpen, UriKind.RelativeOrAbsolute));
 
-            closeImg.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                   CommonSurface.Properties.Resources.closebutton.GetHbitmap(),
-                   IntPtr.Zero,
-                   Int32Rect.Empty,
-                   BitmapSizeOptions.FromEmptyOptions());
 
             if (selectedOnes.Contains(selectedOne))
             {
@@ -445,7 +441,7 @@ namespace AppPalaisRois
                 {
                     selectedFramework.Remove(sender);
                     buttonSelected.Opacity = 1;
-                    (sender as Button).Content = oldImg;
+                    (sender as Button).Content = Icon;
                 }
             }
             else
@@ -458,9 +454,10 @@ namespace AppPalaisRois
                 {
                     selectedFramework.Add(sender);
                     buttonSelected.Opacity = 0.5;
-                    (sender as Button).Content = closeImg;
-                    (sender as Button).Width = 50;
-                    (sender as Button).Height = 50;
+                    if (!(String.Equals(selectedOne.IconPathOpen, "")))
+                    {
+                        (sender as Button).Content = IconOpen;
+                    }
                 }
             }
         }

@@ -84,6 +84,7 @@ namespace AppAdministrationWPF.View
                 _viewModel.SelectedPlaceholder.Y = cw.Selected.Y;
                 _viewModel.SelectedPlaceholder.Id = cw.Selected.Id;
                 _viewModel.SelectedPlaceholder.IconPath = cw.Selected.IconPath;
+                _viewModel.SelectedPlaceholder.IconPathOpen = cw.Selected.IconPathOpen;
 
                 _viewModel.SelectedPlaceholder.Media = new System.Collections.ObjectModel.ObservableCollection<Media>(cw.Selected.Media);
             }
@@ -150,10 +151,13 @@ namespace AppAdministrationWPF.View
             {
                 int index = listboxMapsBanqueImages.SelectedIndex;
                 _viewModel.Maps.Remove(_viewModel.SelectedMap);
+                _viewModel.SelectedMap.PlaceHolders.Clear();
 
                 if (ViewModel.Maps.Count < 1)
                 {
                     listboxMapsBanqueImages.SelectedIndex = -1;
+                    BanqueImages.Source = null;
+                    
                 }
                 else if (index > ViewModel.Maps.Count - 1)
                 {
@@ -172,7 +176,7 @@ namespace AppAdministrationWPF.View
                 {
                     listboxMapsBanqueImages.Items.Refresh();
                     DAOBanqueImages.Save();
-                    BanqueImages.Source = ResourceAccessor.loadImage(selected.BackgroundFR);
+                    BanqueImages.Source = ResourceAccessor.loadMedia(_viewModel.SelectedMap.BackgroundFR).Source;
                 }
             };
             window.Show();
@@ -245,7 +249,7 @@ namespace AppAdministrationWPF.View
                 stack.Name = "stackAdmin";
                 MediaElement media = ResourceAccessor.loadMedia(_viewModel.SelectedMap.BackgroundFR);
                 stack.Children.Add(media);
-                //banqueimagesBackground.ItemsSource = media;
+                BanqueImages.Source = media.Source;
             }
         }
 
@@ -338,7 +342,7 @@ namespace AppAdministrationWPF.View
             if (_viewModel.Maps.Count > 0)
             {
                 banqueimagesBackground.ItemsSource = _viewModel.Maps[0].PlaceHolders;
-                BanqueImages.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].BackgroundFR);
+                BanqueImages.Source = ResourceAccessor.loadMedia(_viewModel.SelectedMap.BackgroundFR).Source;
                 listboxMapsBanqueImages.SelectedIndex = 0;
                 listboxMapsBanqueImages.Items.Refresh();
                 listboxMapsBanqueImages.Items.SortDescriptions.Clear();

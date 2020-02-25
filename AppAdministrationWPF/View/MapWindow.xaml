@@ -25,9 +25,9 @@
 			Background="Transparent"
 			BorderBrush="Gray"
 			BorderThickness="1">
-			<Image
+			<MediaElement
 				x:Name="imageMap"
-				Source="{Binding Background}"
+				Source="{Binding BackgroundFR}"
 				Stretch="Uniform" />
 		</Border>
 

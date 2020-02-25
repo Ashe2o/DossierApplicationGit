@@ -424,6 +424,12 @@ namespace AppPalaisRois
         {
             PlaceHolder selectedOne = (PlaceHolder)((sender as FrameworkElement)).DataContext;
             FrameworkElement buttonSelected = (sender as FrameworkElement);
+            Image Icon = new Image();
+            Image IconOpen = new Image();
+
+            Icon.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
+            IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPathOpen, UriKind.RelativeOrAbsolute));
+
 
             if (selectedOnes.Contains(selectedOne))
             {
@@ -435,6 +441,7 @@ namespace AppPalaisRois
                 {
                     selectedFramework.Remove(sender);
                     buttonSelected.Opacity = 1;
+                    (sender as Button).Content = Icon;
                 }
             }
             else
@@ -447,6 +454,10 @@ namespace AppPalaisRois
                 {
                     selectedFramework.Add(sender);
                     buttonSelected.Opacity = 0.5;
+                    if (!(String.Equals(selectedOne.IconPathOpen, "")))
+                    {
+                        (sender as Button).Content = IconOpen;
+                    }
                 }
             }
         }
@@ -624,47 +635,6 @@ namespace AppPalaisRois
                     lblMediaName.Opacity = 0;
                     content.Children.Add(lblMediaName);
 
-                    // Bouton pour fermer le media
-                    Image playImg = new Image();
-
-                    try
-                    {
-                        playImg.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.closebutton.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
-                    }
-                    catch (Exception)
-                    {
-                        playImg.Source = null;
-                        continue;
-                    }
-
-                    playImg.HorizontalAlignment = HorizontalAlignment.Center;
-                    playImg.VerticalAlignment = VerticalAlignment.Center;
-                    playImg.Stretch = Stretch.Uniform;
-                    playImg.Height = 15;
-                    playImg.Width = 15;
-
-                    Button closeBut = new Button();
-                    closeBut.VerticalAlignment = VerticalAlignment.Top;
-                    closeBut.HorizontalAlignment = HorizontalAlignment.Right;
-                    closeBut.Height = 20;
-                    closeBut.Width = 20;
-                    closeBut.Background = Brushes.Black;
-                    closeBut.Content = playImg;
-                    closeBut.BorderBrush = new SolidColorBrush(Colors.White);
-
-                    closeBut.TouchDown += (s, t) =>
-                    {
-                        CloseMedia(item);
-                    };
-                    closeBut.Click += (s, t) =>
-                    {
-                        CloseMedia(item);
-                    };
-                    content.Children.Add(closeBut);
                     item.Content = content;
 
                     items.Add(item);

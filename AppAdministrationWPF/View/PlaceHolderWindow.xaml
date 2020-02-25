@@ -2,7 +2,7 @@
 	x:Class="AppAdministrationWPF.View.PlaceHolderWindow"
 	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
 	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-	Title="Placeholder Window"
+	Title="Modifier PlaceHolders"
 	Width="600"
 	Height="800"
 	ResizeMode="CanResize"
@@ -46,7 +46,7 @@
 			Grid.Column="0"
 			Margin="10,5"
 			HorizontalAlignment="Right"
-			Content="Icone:" />
+			Content="Icone :" />
 
 		<TextBox
 			Name="txtName"
@@ -58,7 +58,7 @@
 		<StackPanel
 			Grid.Row="1"
 			Grid.Column="1"
-			Margin="10,5"
+			Margin="10"
 			Orientation="Horizontal">
 			<Border
 				Grid.Row="1"
@@ -76,11 +76,38 @@
 				Name="txtIconPath"
 				Height="25"
 				Margin="10,5"
-				HorizontalAlignment="Right"
+				HorizontalAlignment="Stretch"
 				VerticalAlignment="Bottom"
 				Click="txtIconPath_Click"
-				Content="Changer icone..." />
-		</StackPanel>
+				Content="Parcourir ..." />
+            <Label
+			Name="labelOpen"
+			Grid.Row="1"
+			Grid.Column="0"
+			Margin="10,5"
+			HorizontalAlignment="Stretch"
+			Content="Icône Ouverte:" />
+            <Border
+				Grid.Row="1"
+				Grid.Column="2"
+				Width="75"
+				Height="75"
+				BorderBrush="Silver"
+				BorderThickness="1">
+                <Image
+					Grid.Row="1"
+					Grid.Column="1"
+					Source="{Binding Selected.IconPathOpen}" />
+            </Border>
+            <Button
+				Name="txtIconPathOpen"
+				Height="25"
+				Margin="10,5"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Bottom"
+				Click="txtIconPathOpen_Click"
+				Content="Parcourir ..." />
+        </StackPanel>
 
 		<Grid Grid.Row="4">
 			<Grid.RowDefinitions>
@@ -93,7 +120,7 @@
 				Grid.Row="0"
 				Grid.Column="0"
 				Margin="10,5"
-				HorizontalAlignment="right"
+				HorizontalAlignment="Stretch"
 				VerticalAlignment="Top"
 				Click="btAddMedia_Click"
 				Content="Ajouter..."
@@ -103,7 +130,7 @@
 				Grid.Row="1"
 				Grid.Column="0"
 				Margin="10,5"
-				HorizontalAlignment="right"
+				HorizontalAlignment="Stretch"
 				VerticalAlignment="Top"
 				Click="btModifyMedia_Click"
 				Content="Modifier..."
@@ -113,7 +140,7 @@
 				Grid.Row="2"
 				Grid.Column="0"
 				Margin="10,5"
-				HorizontalAlignment="right"
+				HorizontalAlignment="Stretch"
 				VerticalAlignment="Top"
 				Click="btDeleteMedia_Click"
 				Content="Supprimer"

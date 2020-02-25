@@ -99,7 +99,7 @@
 			Height="780"
 			MouseLeftButtonUp="Map_MouseLeftButtonUp"
 			MouseMove="Map_MouseMove">
-            <Image
+            <MediaElement
 				x:Name="BanqueImages"
 				Width="{Binding Path=ActualWidth, ElementName=canvasBanqueImages}"
 				Height="{Binding Path=ActualHeight, ElementName=canvasBanqueImages}"

@@ -84,6 +84,7 @@ namespace AppAdministrationWPF.View
                 _viewModel.SelectedPlaceholder.Y = cw.Selected.Y;
                 _viewModel.SelectedPlaceholder.Id = cw.Selected.Id;
                 _viewModel.SelectedPlaceholder.IconPath = cw.Selected.IconPath;
+                _viewModel.SelectedPlaceholder.IconPathOpen = cw.Selected.IconPathOpen;
 
                 _viewModel.SelectedPlaceholder.Media = new System.Collections.ObjectModel.ObservableCollection<Media>(cw.Selected.Media);
             }
@@ -150,10 +151,12 @@ namespace AppAdministrationWPF.View
             {
                 int index = listboxMaps.SelectedIndex;
                 _viewModel.Maps.Remove(_viewModel.SelectedMap);
+                _viewModel.SelectedMap.PlaceHolders.Clear();
 
                 if (ViewModel.Maps.Count < 1)
                 {
                     listboxMaps.SelectedIndex = -1;
+                    Carte.Source = null;
                 }
                 else if (index > ViewModel.Maps.Count - 1)
                 {

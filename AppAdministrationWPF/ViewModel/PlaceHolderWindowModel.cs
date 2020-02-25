@@ -39,6 +39,12 @@ namespace AppAdministrationWPF.ViewModel
             set { _placeholder.IconPath = value; OnPropertyChanged("pathIcon"); }
         }
 
+        public string pathOpen
+        {
+            get { return _placeholder.IconPathOpen; }
+            set { _placeholder.IconPathOpen = value; OnPropertyChanged("pathIconOpen"); }
+        }
+
         /// <summary>
         /// Set a copy
         /// </summary>

@@ -69,6 +69,7 @@ namespace AppAdministrationWPF.View
             _viewModel.Selected.Y = this.Selected.Y;
             _viewModel.Selected.Id = this.Selected.Id;
             _viewModel.Selected.IconPath = this.Selected.IconPath;
+            _viewModel.Selected.IconPathOpen = this.Selected.IconPathOpen;
 
             _viewModel.Selected.Media = new ObservableCollection<Media>(this.Selected.Media);
             this.DataContext = _viewModel;
@@ -109,6 +110,7 @@ namespace AppAdministrationWPF.View
             _viewModel.Selected.Y = this.Selected.Y;
             _viewModel.Selected.Id = this.Selected.Id;
             _viewModel.Selected.IconPath = this.Selected.IconPath;
+            _viewModel.Selected.IconPathOpen = this.Selected.IconPathOpen;
 
             _viewModel.Selected.Media = new ObservableCollection<Media>(this.Selected.Media);
             this.DataContext = _viewModel;
@@ -146,6 +148,7 @@ namespace AppAdministrationWPF.View
             _viewModel.Selected.Y = this.Selected.Y;
             _viewModel.Selected.Id = this.Selected.Id;
             _viewModel.Selected.IconPath = this.Selected.IconPath;
+            _viewModel.Selected.IconPathOpen = this.Selected.IconPathOpen;
 
             _viewModel.Selected.Media = new ObservableCollection<Media>(this.Selected.Media);
             this.DataContext = _viewModel;
@@ -184,11 +187,17 @@ namespace AppAdministrationWPF.View
             _viewModel.Selected.Y = this.Selected.Y;
             _viewModel.Selected.Id = this.Selected.Id;
             _viewModel.Selected.IconPath = this.Selected.IconPath;
+            _viewModel.Selected.IconPathOpen = this.Selected.IconPathOpen;
 
             _viewModel.Selected.Media = new ObservableCollection<Media>(this.Selected.Media);
             this.DataContext = _viewModel;
         }
 
+        /// <summary>
+        /// Ajout de l'icone du PlaceHolders
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
         private void txtIconPath_Click(object sender, RoutedEventArgs e)
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
@@ -206,11 +215,39 @@ namespace AppAdministrationWPF.View
             _viewModel.Selected.Y = this.Selected.Y;
             _viewModel.Selected.Id = this.Selected.Id;
             _viewModel.Selected.IconPath = this.Selected.IconPath;
+            _viewModel.Selected.IconPathOpen = this.Selected.IconPathOpen;
 
             _viewModel.Selected.Media = new ObservableCollection<Media>(this.Selected.Media);
             this.DataContext = _viewModel;
         }
 
         #endregion Private Methods
+        /// <summary>
+        /// Ajout de l'icone de fermeture du PlaceHolders
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void txtIconPathOpen_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Images (*.jpg, *.png)|*.jpg;*.png";
+            fileDialog.FilterIndex = 3;
+            fileDialog.Multiselect = false;
+            bool? result = fileDialog.ShowDialog();
+            if (result == true)
+            {
+                Selected.IconPathOpen = fileDialog.FileName;
+            }
+            //actualisation des données
+            _viewModel.Selected.Name = this.Selected.Name;
+            _viewModel.Selected.X = this.Selected.X;
+            _viewModel.Selected.Y = this.Selected.Y;
+            _viewModel.Selected.Id = this.Selected.Id;
+            _viewModel.Selected.IconPath = this.Selected.IconPath;
+            _viewModel.Selected.IconPathOpen = this.Selected.IconPathOpen;
+
+            _viewModel.Selected.Media = new ObservableCollection<Media>(this.Selected.Media);
+            this.DataContext = _viewModel;
+        }
     }
 }

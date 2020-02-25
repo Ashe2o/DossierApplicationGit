@@ -27,6 +27,7 @@ namespace CommonSurface.Model
             _x = x;
             _y = y;
             _iconPath = null;
+            _iconPathOpen = null;
             Media = new ObservableCollection<Media>();
         }
 
@@ -37,17 +38,19 @@ namespace CommonSurface.Model
             _x = x;
             _y = y;
             _iconPath = null;
+            _iconPathOpen = null;
             Media = new ObservableCollection<Media>();
             _section = owner;
         }
 
-        public PlaceHolder(int id, string name, int x, int y, string path)
+        public PlaceHolder(int id, string name, int x, int y, string path, string pathOpen)
         {
             _id = id;
             _name = name;
             _x = x;
             _y = y;
             _iconPath = path;
+            _iconPathOpen = pathOpen;
             Media = new ObservableCollection<Media>();
         }
 
@@ -62,6 +65,7 @@ namespace CommonSurface.Model
             X = copy.X;
             Y = copy.Y;
             IconPath = copy.IconPath;
+            IconPathOpen = copy.IconPathOpen;
             Media = new ObservableCollection<Media>(copy.Media);
             _section = copy.Section;
         }
@@ -85,6 +89,7 @@ namespace CommonSurface.Model
         #region properties
 
         private string _iconPath;
+        private string _iconPathOpen;
         private int _id;
         private bool _isSelected;
         private ObservableCollection<Media> _media;
@@ -119,6 +124,7 @@ namespace CommonSurface.Model
             _x = 0;
             _y = 0;
             _iconPath = null;
+            _iconPathOpen = null;
             foreach (Media m in _media)
             {
                 m.Dispose();
@@ -190,6 +196,13 @@ namespace CommonSurface.Model
         {
             get { return _iconPath == null ? "" : _iconPath; }
             set { _iconPath = value; OnPropertyChanged("IconPath"); }
+        }
+
+        [XmlElement]
+        public string IconPathOpen
+        {
+            get { return _iconPathOpen == null ? "" : _iconPathOpen; }
+            set { _iconPathOpen = value; OnPropertyChanged("IconPathOpen"); }
         }
 
         [XmlAttribute]
