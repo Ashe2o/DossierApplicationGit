@@ -377,8 +377,7 @@ namespace AppAdministrationWPF.View
                 this._selectedItem.Effect = null;
             }
 
-            // Si l'objet est différent de l'ancien, on le sélectionne Sinon, on déselectionne
-            // l'objet courant
+            // Si l'objet est différent de l'ancien, on le sélectionne Sinon, on désélectionne l'objet courant
             if (this._selectedItem != sender as StackPanel)
             {
                 _selectedItem = sender as StackPanel;
@@ -398,27 +397,10 @@ namespace AppAdministrationWPF.View
                 }
 
                 panelIconEdit.Visibility = Visibility.Visible;
-				if (this._viewModel.Selected.Name == "Credits")
-                {
+				if (this._viewModel.Selected.Name == "Credits"){
                     buttonCredit.Visibility = Visibility.Visible;
                 }											   
                 buttonVisibility.Content = (_viewModel.Selected.Visibility) ? "Cacher" : "Afficher";
-                if (this._viewModel.Selected.Name == "English")
-                {
-                    Console.WriteLine("English Selected");
-                }
-                if (this._viewModel.Selected.Name == "French")
-                {
-                    Console.WriteLine("French Selected");
-                }
-                if (this._viewModel.Selected.Name == "Spanish")
-                {
-                    Console.WriteLine("Spanish Selected");
-                }
-                if (this._viewModel.Selected.Name == "Catalan")
-                {
-                    Console.WriteLine("Catalan Selected");
-                }
             }
             else
             {

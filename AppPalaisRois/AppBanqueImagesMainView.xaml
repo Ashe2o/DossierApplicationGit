@@ -78,7 +78,7 @@
 			<Setter Property="ItemsPanel">
 				<Setter.Value>
 					<ItemsPanelTemplate>
-						<Canvas />
+                        <Canvas x:Name="canvas" />
 					</ItemsPanelTemplate>
 				</Setter.Value>
 			</Setter>
@@ -224,8 +224,8 @@
 				Visibility="{Binding ScatterViewVisibility}">
 
 				<s:ScatterViewItem
-					Width="{Binding Path=ActualWidth, ElementName=ScatterView}"
-					Height="{Binding Path=ActualHeight, ElementName=ScatterView}"
+					Width="1490"
+					Height="780"
 					Padding="0"
 					Background="{x:Null}"
 					BorderThickness="1"

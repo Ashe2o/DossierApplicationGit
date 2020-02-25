@@ -241,7 +241,11 @@ namespace AppAdministrationWPF.View
                 _viewModel.SelectedMap = listboxMapsBanqueImages.SelectedItem as Map;
                 _viewModel.SelectedPlaceholder = null;
 
-                BanqueImages.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.BackgroundFR);
+                StackPanel stack = new StackPanel();
+                stack.Name = "stackAdmin";
+                MediaElement media = ResourceAccessor.loadMedia(_viewModel.SelectedMap.BackgroundFR);
+                stack.Children.Add(media);
+                //banqueimagesBackground.ItemsSource = media;
             }
         }
 
