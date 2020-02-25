@@ -147,7 +147,6 @@
 			<ItemsControl
 				Grid.Row="1"
 				Grid.Column="1"
-				Height="{Binding Path=ActualHeight, ElementName=ScatterView}"
 				Margin="0"
 				ItemsSource="{Binding Selected.PlaceHolders}"
 				RenderTransformOrigin="0,0"

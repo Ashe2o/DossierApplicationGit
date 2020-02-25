@@ -146,7 +146,6 @@
 			<ItemsControl
 				Grid.Row="1"
 				Grid.Column="1"
-
 				Margin="0"
 				ItemsSource="{Binding Selected.PlaceHolders}"
 				RenderTransformOrigin="0,0"
