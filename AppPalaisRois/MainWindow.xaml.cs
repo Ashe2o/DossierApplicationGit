@@ -22,7 +22,7 @@ namespace AppPalaisRois
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHideAnim, sbShowAnim, sbHideAnimSec, sbShowAnimSec;
         private List<Icon> icons;
-        public static string selectedLanguage = "French";
+        public static string selectedLanguage;
 
         #endregion Private Fields
 
@@ -42,6 +42,14 @@ namespace AppPalaisRois
                 DAOMenu.Instance.Spanish.Icon,
                 DAOMenu.Instance.Catalan.Icon
             };
+
+            // Sélection Langue Française par défaut + Opacité des boutons
+            selectedLanguage = "French";
+            imageFrench.Opacity = 1;
+            imageCatalan.Opacity = 0.5;
+            imageEnglish.Opacity = 0.5;
+            imageSpanish.Opacity = 0.5;
+
             foreach (Icon icon in icons)
             {
                 // Récupération des éléments graphiques de l'icone
@@ -219,6 +227,10 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "English";
+            imageFrench.Opacity = 0.5;
+            imageCatalan.Opacity = 0.5;
+            imageEnglish.Opacity = 1;
+            imageSpanish.Opacity = 0.5;
         }
 
         /// <summary>
@@ -243,6 +255,10 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "French";
+            imageFrench.Opacity = 1;
+            imageCatalan.Opacity = 0.5;
+            imageEnglish.Opacity = 0.5;
+            imageSpanish.Opacity = 0.5;
         }
 
         /// <summary>
@@ -271,6 +287,10 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "Catalan";
+            imageFrench.Opacity = 0.5;
+            imageCatalan.Opacity = 1;
+            imageEnglish.Opacity = 0.5;
+            imageSpanish.Opacity = 0.5;
         }
 
         /// <summary>
@@ -299,6 +319,10 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "Spanish";
+            imageFrench.Opacity = 0.5;
+            imageCatalan.Opacity = 0.5;
+            imageEnglish.Opacity = 0.5;
+            imageSpanish.Opacity = 1;
         }
 
         /// <summary>
