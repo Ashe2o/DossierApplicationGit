@@ -22,7 +22,7 @@ namespace AppPalaisRois
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHideAnim, sbShowAnim, sbHideAnimSec, sbShowAnimSec;
         private List<Icon> icons;
-        public static string selectedLanguage;
+        public static string selectedLanguage = "French";
 
         #endregion Private Fields
 
@@ -43,12 +43,7 @@ namespace AppPalaisRois
                 DAOMenu.Instance.Catalan.Icon
             };
 
-            // Sélection Langue Française par défaut + Opacité des boutons
-            selectedLanguage = "French";
-            imageFrench.Opacity = 1;
-            imageCatalan.Opacity = 0.5;
-            imageEnglish.Opacity = 0.5;
-            imageSpanish.Opacity = 0.5;
+            UpdateOpacityLanguages();
 
             foreach (Icon icon in icons)
             {
@@ -227,10 +222,7 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "English";
-            imageFrench.Opacity = 0.5;
-            imageCatalan.Opacity = 0.5;
-            imageEnglish.Opacity = 1;
-            imageSpanish.Opacity = 0.5;
+            UpdateOpacityLanguages();
         }
 
         /// <summary>
@@ -255,10 +247,7 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "French";
-            imageFrench.Opacity = 1;
-            imageCatalan.Opacity = 0.5;
-            imageEnglish.Opacity = 0.5;
-            imageSpanish.Opacity = 0.5;
+            UpdateOpacityLanguages();
         }
 
         /// <summary>
@@ -287,10 +276,7 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "Catalan";
-            imageFrench.Opacity = 0.5;
-            imageCatalan.Opacity = 1;
-            imageEnglish.Opacity = 0.5;
-            imageSpanish.Opacity = 0.5;
+            UpdateOpacityLanguages();
         }
 
         /// <summary>
@@ -319,10 +305,7 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "Spanish";
-            imageFrench.Opacity = 0.5;
-            imageCatalan.Opacity = 0.5;
-            imageEnglish.Opacity = 0.5;
-            imageSpanish.Opacity = 1;
+            UpdateOpacityLanguages();
         }
 
         /// <summary>
@@ -530,6 +513,33 @@ namespace AppPalaisRois
                     this.Close();
                 };
                 sbHideAnimSec.Begin();
+            }
+        }
+
+        /// <summary>
+        /// Réduit l'opacité des langues qui ne sont pas sélectionné. Seul la Langue en cours d'utilisation est mis en avant.
+        /// </summary>
+        private void UpdateOpacityLanguages()
+        {
+            imageFrench.Opacity = 0.5;
+            imageCatalan.Opacity = 0.5;
+            imageEnglish.Opacity = 0.5;
+            imageSpanish.Opacity = 0.5;
+
+            switch (selectedLanguage)
+            {
+                case "French":
+                    imageFrench.Opacity = 1;
+                    break;
+                case "Catalan":
+                    imageCatalan.Opacity = 1;
+                    break;
+                case "English":
+                    imageEnglish.Opacity = 1;
+                    break;
+                case "Spanish":
+                    imageSpanish.Opacity = 1;
+                    break;
             }
         }
 

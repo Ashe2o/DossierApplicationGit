@@ -302,7 +302,6 @@ namespace AppPalaisRois
                 Grid grid2 = new Grid();
                 Grid grid3 = new Grid();
                 Grid grid4 = new Grid();
-                Grid grid5 = new Grid();
                 Grid grid6 = new Grid();
                 Grid grid7 = new Grid();
 
@@ -330,8 +329,8 @@ namespace AppPalaisRois
                 imgB2.Source = new Uri(j.cover, UriKind.RelativeOrAbsolute);
                 imgB2.HorizontalAlignment = HorizontalAlignment.Center;
                 imgB2.VerticalAlignment = VerticalAlignment.Center;
-                imgB2.Margin = new Thickness(50, 50, 50, 50);
-                imgB2.Height = 300;
+                imgB2.Margin = new Thickness(20, 20, 20, 20);
+                imgB2.Height = 400;
                 imgB2.Width = 450;
                 imgB2.Volume = 0;
                 imgB2.MediaEnded += new RoutedEventHandler(Media_Ended);
@@ -359,22 +358,18 @@ namespace AppPalaisRois
                 imgBlanc.HorizontalAlignment = HorizontalAlignment.Center;
                 imgBlanc.VerticalAlignment = VerticalAlignment.Center;
 
-                //cadre de l'image
+                //Cadre de l'image
                 grid3.Visibility = Visibility.Visible;
                 grid3.Height = 400;
-                grid3.Width = 650;
+                grid3.Width = 850;
                 grid4.Margin = new Thickness(20, 20, 20, 20);
                 grid4.Visibility = Visibility.Visible;
-                grid5.Margin = new Thickness(5, 5, 5, 5);
-                grid5.Visibility = Visibility.Visible;
-                grid5.Background = new SolidColorBrush(Colors.White);
 
-                //caractéristique du texte
-                //titre
+                //Caractéristique du texte : titre
                 textblocktitle.Visibility = Visibility.Visible;
                 textblocktitle.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole");
-                textblocktitle.FontSize = 15;
-                textblocktitle.Foreground = new SolidColorBrush(Colors.Black);
+                textblocktitle.FontSize = 18;
+                textblocktitle.Foreground = new SolidColorBrush(Colors.White);
 
                 //Affichage du Titre en fonction de la Langue
                 switch (MainWindow.selectedLanguage)
@@ -410,14 +405,13 @@ namespace AppPalaisRois
                 textblocktitle.Margin = new Thickness(0, 0, 0, 30);
                 textblocktitle.HorizontalAlignment = HorizontalAlignment.Center;
                 textblocktitle.VerticalAlignment = VerticalAlignment.Top;
-                textblocktitle.MaxWidth = 200;
-                textblocktitle.TextAlignment = TextAlignment.Left;
+                textblocktitle.TextAlignment = TextAlignment.Center;
                 textblocktitle.TextWrapping = TextWrapping.WrapWithOverflow;
-                //paragraphe
+                //Paragraphe
                 textblocktext.Visibility = Visibility.Visible;
                 textblocktext.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole");
-                textblocktext.FontSize = 10;
-                textblocktext.Foreground = new SolidColorBrush(Colors.Black);
+                textblocktext.FontSize = 12;
+                textblocktext.Foreground = new SolidColorBrush(Colors.White);
 
                 //Affichage du Texte en fonction de la Langue
                 switch(MainWindow.selectedLanguage)
@@ -453,8 +447,7 @@ namespace AppPalaisRois
                 textblocktext.Margin = new Thickness(0, 30, 0, 0);
                 textblocktext.HorizontalAlignment = HorizontalAlignment.Center;
                 textblocktext.VerticalAlignment = VerticalAlignment.Bottom;
-                textblocktext.MaxWidth = 200;
-                textblocktext.TextAlignment = TextAlignment.Left;
+                textblocktext.TextAlignment = TextAlignment.Center;
                 textblocktext.TextWrapping = TextWrapping.WrapWithOverflow;
 
                 //déterminer la taille maximum du text
@@ -470,22 +463,20 @@ namespace AppPalaisRois
                 //cadre du texte
                 grid1.Visibility = Visibility.Visible;
                 grid2.Visibility = Visibility.Visible;
-                grid2.MaxWidth = 210;
-                grid2.HorizontalAlignment = HorizontalAlignment.Left;
-                grid2.VerticalAlignment = VerticalAlignment.Bottom;
+                grid2.HorizontalAlignment = HorizontalAlignment.Center;
+                grid2.VerticalAlignment = VerticalAlignment.Center;
                 grid2.Margin = new Thickness(20, 20, 20, 10);
                 grid7.Visibility = Visibility.Visible;
-                grid7.MaxWidth = 210;
-                grid7.HorizontalAlignment = HorizontalAlignment.Left;
+                grid7.HorizontalAlignment = HorizontalAlignment.Center;
                 grid7.VerticalAlignment = VerticalAlignment.Top;
                 grid7.Margin = new Thickness(20, 10, 20, 20);
                 grid6.Visibility = Visibility.Visible;
-                grid6.Width = tailleText + 20;
-                grid6.Height = textblocktitle.Height + textblocktext.Height + 100;
-                grid6.MaxWidth = 210;
+                grid6.Width = grid3.Width;
+                grid6.Height = textblocktitle.Height + textblocktext.Height;
                 grid6.HorizontalAlignment = HorizontalAlignment.Center;
                 grid6.VerticalAlignment = VerticalAlignment.Bottom;
-                grid6.Background = new SolidColorBrush(Colors.White);
+                grid6.Margin = new Thickness(0, 0, 0, -100);
+                grid6.Background = new SolidColorBrush(Colors.Transparent);
 
                 //assemblement de l'élément
                 grid1.Children.Add(grid6);
@@ -495,11 +486,10 @@ namespace AppPalaisRois
                 grid2.Children.Add(textblocktext);
                 grid3.Children.Add(imgGrey3);
                 grid3.Children.Add(grid4);
-                grid4.Children.Add(grid5);
-                grid5.Children.Add(imgBlanc);
-                grid5.Children.Add(imgB2);
+                grid4.Children.Add(imgBlanc);
+                grid4.Children.Add(imgB2);
+                grid3.Children.Add(grid1);
                 stack.Children.Add(grid3);
-                stack.Children.Add(grid1);
 
                 //détection de la selection
                 stack.MouseUp += (sender, e) => launchExpo(sender, e);
