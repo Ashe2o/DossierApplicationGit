@@ -5,43 +5,44 @@
 	xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
 	xmlns:local="clr-namespace:AppAdministrationWPF.View"
 	xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
 	Title="Modification du bouton"
 	Width="480"
-	Height="480"
+	Height="520"
 	Background="Black"
 	ResizeMode="NoResize"
 	mc:Ignorable="d">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="200" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
-		<Grid.RowDefinitions>
-			<RowDefinition Height="10" />
-			<RowDefinition Height="200" />
-			<RowDefinition Height="5" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="5" />
-			<RowDefinition Height="40" />
-			<RowDefinition Height="10" />
-		</Grid.RowDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10" />
+            <RowDefinition Height="200" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="5" />
+            <RowDefinition Height="40" />
+            <RowDefinition Height="10" />
+        </Grid.RowDefinitions>
 
-		<!--  Image preview  -->
-		<Border
+        <!--  Image preview  -->
+        <Border
 			Grid.Row="1"
 			Grid.Column="1"
 			BorderBrush="Gray"
 			BorderThickness="1">
-			<Canvas>
-				<StackPanel
+            <Canvas>
+                <StackPanel
 					x:Name="stckPreview"
 					Width="200"
 					Height="200"
 					Panel.ZIndex="10"
 					RenderTransformOrigin="0.5,0.5">
-					<Image x:Name="imagePreview" Source="{Binding Source, Mode=OneWay}" />
-					<Label
+                    <Image x:Name="imagePreview" Source="{Binding Source, Mode=OneWay}" />
+                    <Label
 						x:Name="labelPreview"
 						Margin="0,-45,0,0"
 						HorizontalAlignment="Center"
@@ -50,27 +51,29 @@
 						FontSize="18"
 						FontWeight="Bold"
 						Foreground="{Binding Color, Mode=OneWay}" />
-				</StackPanel>
-			</Canvas>
-		</Border>
+                </StackPanel>
+            </Canvas>
+        </Border>
 
-		<!--  Configuration  -->
-		<Grid
+        <!--  Configuration  -->
+        <Grid
 			Grid.Row="3"
 			Grid.Column="0"
 			Grid.ColumnSpan="3"
 			Margin="10,0"
 			VerticalAlignment="Top">
-            
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="80" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="40" />
-			</Grid.ColumnDefinitions>
-			<Grid.RowDefinitions>
-				<RowDefinition Height="*" />
-				<RowDefinition Height="10" />
-				<RowDefinition Height="*" />
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="40" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
                 <RowDefinition Height="10" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="10" />
@@ -79,61 +82,67 @@
                 <RowDefinition Height="*" />
             </Grid.RowDefinitions>
 
-			<!--  Formulaire de configuration  -->
-			<Grid.Resources>
-				<Style TargetType="{x:Type Label}">
-					<Setter Property="Foreground" Value="White" />
-					<Setter Property="FontSize" Value="12" />
-					<Setter Property="FontWeight" Value="Bold" />
-				</Style>
-				<Style TargetType="{x:Type TextBlock}">
-					<Setter Property="Background" Value="White" />
-					<Setter Property="Foreground" Value="Black" />
-					<Setter Property="VerticalAlignment" Value="Center" />
-					<Setter Property="Height" Value="22" />
-					<Setter Property="FontSize" Value="12" />
-					<Setter Property="FontWeight" Value="Bold" />
-				</Style>
-				<Style TargetType="{x:Type Border}">
-					<Setter Property="CornerRadius" Value="5" />
-					<Setter Property="BorderBrush" Value="Gray" />
-				</Style>
-			</Grid.Resources>
+            <!--  Formulaire de configuration  -->
+            <Grid.Resources>
+                <Style TargetType="{x:Type Label}">
+                    <Setter Property="Foreground" Value="White" />
+                    <Setter Property="FontSize" Value="12" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+                <Style TargetType="{x:Type TextBlock}">
+                    <Setter Property="Background" Value="White" />
+                    <Setter Property="Foreground" Value="Black" />
+                    <Setter Property="VerticalAlignment" Value="Center" />
+                    <Setter Property="Height" Value="22" />
+                    <Setter Property="FontSize" Value="12" />
+                    <Setter Property="FontWeight" Value="Bold" />
+                </Style>
+                <Style TargetType="{x:Type Border}">
+                    <Setter Property="CornerRadius" Value="5" />
+                    <Setter Property="BorderBrush" Value="Gray" />
+                </Style>
+            </Grid.Resources>
 
-			<!--  Image  -->
-			<Label Grid.Row="0" Grid.Column="0">Image :</Label>
-			<Border Grid.Row="0" Grid.Column="1">
+            <!--  Image  -->
+            <Label Grid.Row="0" Grid.Column="0">Image :</Label>
+            <Border Grid.Row="0" Grid.Column="1">
                 <TextBlock x:Name="txtImageURI" FontFamily="{StaticResource Luciole-Regular}" />
-			</Border>
-			<Button
+            </Border>
+            <Button
 				x:Name="buttonSearchFile"
 				Grid.Row="0"
 				Grid.Column="2"
 				Height="26"
 				Margin="5,0,0,0"
 				VerticalAlignment="Top"
-				Click="buttonSearchFile_Click">
-				...
-			</Button>
+				Click="buttonSearchFile_Click" Grid.RowSpan="2">
+                ...
+            </Button>
 
-			<!--  Label FR  -->
-			<Label Grid.Row="2" Grid.Column="0">Label FR :</Label>
-			<Border
-				Grid.Row="2"
-				Grid.Column="1"
-				Grid.ColumnSpan="2">
-				<TextBox
-					x:Name="txtImageLabelFR"
-					KeyDown="updateLabelPreview"
-					KeyUp="updateLabelPreview" />
-			</Border>
+            <!--  Couleur du Label  -->
+            <Label Grid.Row="2" Grid.Column="0">Couleur Label :</Label>
+            <Border Grid.Row="2" Grid.Column="1">
+                <xctk:ColorPicker Name="ClrPcker_Background" SelectedColorChanged="ClrPcker_Background_SelectedColorChanged"></xctk:ColorPicker>
+            </Border>
 
-            <!--  Label CAT  -->
-            <Label Grid.Row="4" Grid.Column="0">Label CAT :</Label>
+            <!--  Label FR  -->
+            <Label Grid.Row="4" Grid.Column="0">Label FR :</Label>
             <Border
 				Grid.Row="4"
 				Grid.Column="1"
-				Grid.ColumnSpan="4">
+				Grid.ColumnSpan="2">
+                <TextBox
+					x:Name="txtImageLabelFR"
+					KeyDown="updateLabelPreview"
+					KeyUp="updateLabelPreview" />
+            </Border>
+
+            <!--  Label CAT  -->
+            <Label Grid.Row="6" Grid.Column="0">Label CAT :</Label>
+            <Border
+				Grid.Row="6"
+				Grid.Column="1"
+				Grid.ColumnSpan="2">
                 <TextBox
 					x:Name="txtImageLabelCAT"
 					KeyDown="updateLabelPreview"
@@ -141,11 +150,11 @@
             </Border>
 
             <!--  Label EN  -->
-            <Label Grid.Row="6" Grid.Column="0">Label EN :</Label>
+            <Label Grid.Row="8" Grid.Column="0">Label EN :</Label>
             <Border
-				Grid.Row="6"
+				Grid.Row="8"
 				Grid.Column="1"
-				Grid.ColumnSpan="6">
+				Grid.ColumnSpan="2">
                 <TextBox
 					x:Name="txtImageLabelEN"
 					KeyDown="updateLabelPreview"
@@ -153,37 +162,38 @@
             </Border>
 
             <!--  Label ES  -->
-            <Label Grid.Row="8" Grid.Column="0">Label ES :</Label>
+            <Label Grid.Row="10" Grid.Column="0">Label ES :</Label>
             <Border
-				Grid.Row="8"
+				Grid.Row="10"
 				Grid.Column="1"
-				Grid.ColumnSpan="8">
+				Grid.ColumnSpan="2">
                 <TextBox
 					x:Name="txtImageLabelES"
 					KeyDown="updateLabelPreview"
 					KeyUp="updateLabelPreview" />
             </Border>
+
         </Grid>
 
-		<!--  Boutons de validation et d'annulation  -->
-		<Grid Grid.Row="5" Grid.Column="1">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="10" />
-				<ColumnDefinition Width="*" />
-			</Grid.ColumnDefinitions>
-			<Button
+        <!--  Boutons de validation et d'annulation  -->
+        <Grid Grid.Row="5" Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="10" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Button
 				x:Name="buttonValidate"
 				Grid.Column="0"
 				Click="buttonValidate_Click">
-				Valider
-			</Button>
-			<Button
+                Valider
+            </Button>
+            <Button
 				x:Name="buttonCancel"
 				Grid.Column="2"
 				Click="buttonCancel_Click">
-				Annuler
-			</Button>
-		</Grid>
-	</Grid>
+                Annuler
+            </Button>
+        </Grid>
+    </Grid>
 </Window>

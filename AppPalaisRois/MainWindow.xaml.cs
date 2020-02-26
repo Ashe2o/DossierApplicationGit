@@ -22,6 +22,7 @@ namespace AppPalaisRois
         private ResourceDictionary myresourcedictionary;
         private Storyboard sbHideAnim, sbShowAnim, sbHideAnimSec, sbShowAnimSec;
         private List<Icon> icons;
+        // Sélection de la langue Française par défaut.
         public static string selectedLanguage = "French";
 
         #endregion Private Fields
@@ -34,6 +35,7 @@ namespace AppPalaisRois
 
             #region Gestion des icones
 
+            // Récupération de la liste d'icônes du menu principal, boutons langues et "Crédits".
             icons = new List<Icon>(DAOMenu.Instance.Icons)
             {
                 DAOMenu.Instance.Credits.Icon,
@@ -65,7 +67,7 @@ namespace AppPalaisRois
                     // Charge l'icone de la configuration
                     imageIcon.Source = ResourceAccessor.loadImage(icon.Source);
 
-                    //Affichage du titre de l'icone en fonction de la Langue
+                    //Affichage du titre de l'icone en fonction de la langue sélectionné
                     switch (icon.Name)
                     {
                         case "Visite":
@@ -78,35 +80,28 @@ namespace AppPalaisRois
                             switch (MainWindow.selectedLanguage)
                             {
                                 case "French":
-                                    if (icon.TextFR != null) { labelIcon.Content = icon.TextFR; }
+                                    if (icon.TextFR != null) { 
+                                        labelIcon.Content = icon.TextFR; 
+                                    }
                                     break;
                                 case "Catalan":
-                                    if (icon.TextCAT != null)
-                                    {
+                                    if (icon.TextCAT != null){
                                         labelIcon.Content = icon.TextCAT;
-                                    }
-                                    else
-                                    {
+                                    }else{
                                         labelIcon.Content = icon.TextFR;
                                     }
                                     break;
                                 case "English":
-                                    if (icon.TextEN != null)
-                                    {
+                                    if (icon.TextEN != null){
                                         labelIcon.Content = icon.TextEN;
-                                    }
-                                    else
-                                    {
+                                    }else{
                                         labelIcon.Content = icon.TextFR;
                                     }
                                     break;
                                 case "Spanish":
-                                    if (icon.TextES != null)
-                                    {
+                                    if (icon.TextES != null){
                                         labelIcon.Content = icon.TextES;
-                                    }
-                                    else
-                                    {
+                                    }else{
                                         labelIcon.Content = icon.TextFR;
                                     }
                                     break;
@@ -114,7 +109,6 @@ namespace AppPalaisRois
                             break;
                     }
                     
-
                     if (icon.Color != null)
                     {
                         labelIcon.Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(icon.Color));

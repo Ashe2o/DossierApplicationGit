@@ -51,14 +51,19 @@ C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 201
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.GenerateResource.Cache
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.CoreCompileInputs.cache
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.exe
-C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.exe
-C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\CommonSurface.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.exe.config
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.exe
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.pdb
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppPalaisRois.exe
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\CommonSurface.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Geckofx-Core.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Geckofx-Winforms.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\System.IO.Compression.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Xceed.Wpf.AvalonDock.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Xceed.Wpf.Toolkit.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Microsoft.Surface.Presentation.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\FluidKit.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Microsoft.Surface.Core.dll
@@ -69,6 +74,17 @@ C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppPalaisRois
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppPalaisRois.exe.config
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\CommonSurface.pdb
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\CommonSurface.dll.config
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csprojAssemblyReference.cache
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.ResolveComReference.cache
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\View\AdminBanqueImagesView.baml

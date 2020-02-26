@@ -2,6 +2,7 @@
 using Microsoft.Win32;
 using System.Windows;
 using System.Windows.Input;
+using System.Windows.Media;
 
 namespace AppAdministrationWPF.View
 {
@@ -37,6 +38,9 @@ namespace AppAdministrationWPF.View
                 txtImageLabelEN.Text = _new_icon.TextEN;
                 txtImageLabelES.Text = _new_icon.TextES;
                 txtImageLabelCAT.Text = _new_icon.TextCAT;
+
+                // Couleur du label
+                ClrPcker_Background.SelectedColor = (Color)ColorConverter.ConvertFromString(_new_icon.Color);
 
                 this.DataContext = _new_icon;
             }
@@ -80,6 +84,7 @@ namespace AppAdministrationWPF.View
             _old_icon.TextES = _new_icon.TextES;
             _old_icon.TextCAT = _new_icon.TextCAT;
             _old_icon.Source = _new_icon.Source;
+            _old_icon.Color = _new_icon.Color;
 
             this.Close();
         }
@@ -95,9 +100,15 @@ namespace AppAdministrationWPF.View
             _new_icon.TextEN = txtImageLabelEN.Text;
             _new_icon.TextES = txtImageLabelES.Text;
             _new_icon.TextCAT = txtImageLabelCAT.Text;
+            _new_icon.Color = ClrPcker_Background.SelectedColor.ToString();
 
         }
 
         #endregion Private Methods
+
+        private void ClrPcker_Background_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<System.Windows.Media.Color?> e)
+        {
+            _new_icon.Color = ClrPcker_Background.SelectedColor.ToString();
+        }
     }
 }
