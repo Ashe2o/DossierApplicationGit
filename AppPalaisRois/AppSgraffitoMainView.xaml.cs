@@ -63,7 +63,7 @@ namespace AppPalaisRois
             selectedOnes = new List<PlaceHolder>();
             flowCarte.Layout = new Rolodex();
 
-            //itemssource.Add(ViewModel.maps.BackgroundFR);
+            //itemssource.Add(ViewModel.maps.Background);
             //flowCarte.ItemsSource = itemssource;
             flowCarte.SelectedIndex = 0;
             listboxMaps.SelectedIndex = 0;

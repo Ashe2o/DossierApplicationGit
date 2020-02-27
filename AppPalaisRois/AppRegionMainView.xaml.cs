@@ -73,14 +73,14 @@ namespace AppPalaisRois
                 switch (MainWindow.selectedLanguage)
                 {
                     case "French":
-                        itemssource.Add(map.BackgroundFR);
+                        itemssource.Add(map.Background);
                         break;
                     case "Catalan":
                         if (map.BackgroundES != null && map.BackgroundES != "")
                         {
                             itemssource.Add(map.BackgroundCAT);
                         }else{
-                            itemssource.Add(map.BackgroundFR);
+                            itemssource.Add(map.Background);
                         }
                         break;
                     case "English":
@@ -88,7 +88,7 @@ namespace AppPalaisRois
                         {
                             itemssource.Add(map.BackgroundEN);
                         }else{
-                            itemssource.Add(map.BackgroundFR);
+                            itemssource.Add(map.Background);
                         }
                         break;
                     case "Spanish":
@@ -96,7 +96,7 @@ namespace AppPalaisRois
                         {
                             itemssource.Add(map.BackgroundES);
                         }else{
-                            itemssource.Add(map.BackgroundFR);
+                            itemssource.Add(map.Background);
                         }
                         break;
                 }

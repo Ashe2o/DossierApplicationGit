@@ -27,7 +27,7 @@
 			BorderThickness="1">
 			<MediaElement
 				x:Name="imageMap"
-				Source="{Binding BackgroundFR}"
+				Source="{Binding Background}"
 				Stretch="Uniform" />
 		</Border>
 

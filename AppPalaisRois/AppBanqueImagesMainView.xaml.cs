@@ -73,9 +73,9 @@ namespace AppPalaisRois
             int id = 1;
             foreach (Map map in ViewModel.Maps)
             {
-                if (map.BackgroundFR.Contains(".mov") || map.BackgroundFR.Contains(".wmv") || map.BackgroundFR.Contains(".mp4")){
+                if (map.Background.Contains(".mov") || map.Background.Contains(".wmv") || map.Background.Contains(".mp4")){
                     mediaFOND.BeginInit();
-                    mediaFOND.Source = new Uri(map.BackgroundFR, UriKind.RelativeOrAbsolute);
+                    mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
                     switch (MainWindow.selectedLanguage)
                     {
                         case "Catalan":
@@ -110,7 +110,7 @@ namespace AppPalaisRois
                     switch (MainWindow.selectedLanguage)
                     {
                         case "French":
-                            itemssource = map.BackgroundFR;
+                            itemssource = map.Background;
                             break;
                         case "Catalan":
                             if (map.BackgroundCAT != null && map.BackgroundCAT != "")
@@ -119,7 +119,7 @@ namespace AppPalaisRois
                             }
                             else
                             {
-                                itemssource = map.BackgroundFR;
+                                itemssource = map.Background;
                             }
                             break;
                         case "English":
@@ -129,7 +129,7 @@ namespace AppPalaisRois
                             }
                             else
                             {
-                                itemssource = map.BackgroundFR;
+                                itemssource = map.Background;
                             }
                             break;
                         case "Spanish":
@@ -139,7 +139,7 @@ namespace AppPalaisRois
                             }
                             else
                             {
-                                itemssource = map.BackgroundFR;
+                                itemssource = map.Background;
                             }
                             break;
                     }

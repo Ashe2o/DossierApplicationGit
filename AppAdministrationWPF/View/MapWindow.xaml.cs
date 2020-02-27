@@ -30,7 +30,7 @@ namespace AppAdministrationWPF.View
 
             _cancel = true;
 
-            txtMapFR.Text = map.BackgroundFR;
+            txtMapFR.Text = map.Background;
             txtMapCAT.Text = map.BackgroundCAT;
             txtMapEN.Text = map.BackgroundEN;
             txtMapES.Text = map.BackgroundES;
@@ -73,7 +73,7 @@ namespace AppAdministrationWPF.View
         {
             new_map.Name = txtName.Text;
 
-            if (new_map.Name.Length <= 0 || new_map.BackgroundFR.Length <= 0)
+            if (new_map.Name.Length <= 0 || new_map.Background.Length <= 0)
             {
                 MessageBox.Show("Le nom ou l'image n'a pas été définis.", "Warning", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -88,12 +88,12 @@ namespace AppAdministrationWPF.View
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
-            fileDialog.FilterIndex = 0;
+            fileDialog.FilterIndex = 3;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
             if (result == true)
             {
-                new_map.BackgroundFR = fileDialog.FileName;
+                new_map.Background = fileDialog.FileName;
                 txtMapFR.Text = fileDialog.FileName;
             }
         }
@@ -102,7 +102,7 @@ namespace AppAdministrationWPF.View
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
-            fileDialog.FilterIndex = 0;
+            fileDialog.FilterIndex = 3;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
             if (result == true)
@@ -116,7 +116,7 @@ namespace AppAdministrationWPF.View
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
-            fileDialog.FilterIndex = 0;
+            fileDialog.FilterIndex = 3;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
             if (result == true)
@@ -130,7 +130,7 @@ namespace AppAdministrationWPF.View
         {
             OpenFileDialog fileDialog = new OpenFileDialog();
             fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
-            fileDialog.FilterIndex = 0;
+            fileDialog.FilterIndex = 3;
             fileDialog.RestoreDirectory = true;
             bool? result = fileDialog.ShowDialog();
             if (result == true)

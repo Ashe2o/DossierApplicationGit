@@ -12,7 +12,7 @@ namespace CommonSurface.Model
     {
         #region Private Fields
 
-        private string _backgroundFR;
+        private string _background;
 
         private string _backgroundCAT;
 
@@ -37,11 +37,11 @@ namespace CommonSurface.Model
         {
         }
 
-        public Map(int id, string name, string backgroundFR, string backgroundCAT, string backgroundEN, string backgroundES, string thumbnail)
+        public Map(int id, string name, string background, string backgroundCAT, string backgroundEN, string backgroundES, string thumbnail)
         {
             this._id = id;
             this._name = name;
-            this._backgroundFR = backgroundFR;
+            this._background = background;
             this._backgroundCAT = backgroundCAT;
             this._backgroundEN = backgroundEN;
             this._backgroundES = backgroundES;
@@ -54,7 +54,7 @@ namespace CommonSurface.Model
             this._id = other.ID;
             this._name = other.Name;
             this._thumbnail = other.Thumbnail;
-            this._backgroundFR = other.BackgroundFR;
+            this._background = other.Background;
             this._backgroundCAT = other.BackgroundCAT;
             this._backgroundEN = other.BackgroundEN;
             this._backgroundES = other.BackgroundES;
@@ -69,7 +69,7 @@ namespace CommonSurface.Model
         {
             this._id = 0;
             this._name = null;
-            this._backgroundFR = null;
+            this._background = null;
             this._backgroundCAT = null;
             this._backgroundEN = null;
             this._backgroundES = null;
@@ -100,7 +100,7 @@ namespace CommonSurface.Model
         {
             this._id = copy.ID;
             this._name = copy.Name;
-            this._backgroundFR = copy.BackgroundFR;
+            this._background = copy.Background;
             this._backgroundCAT = copy.BackgroundCAT;
             this._backgroundEN = copy.BackgroundEN;
             this._backgroundES = copy.BackgroundES;
@@ -148,10 +148,10 @@ namespace CommonSurface.Model
         #region GETTEUR/SETTEUR
 
         [XmlElement]
-        public string BackgroundFR
+        public string Background
         {
-            get { return _backgroundFR; }
-            set { _backgroundFR = value; OnPropertyChanged("BackgroundFR"); }
+            get { return _background; }
+            set { _background = value; OnPropertyChanged("Background"); }
         }
 
         [XmlElement]

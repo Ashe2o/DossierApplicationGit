@@ -175,7 +175,7 @@ namespace AppAdministrationWPF.View
                 {
                     listboxMaps.Items.Refresh();
                     DAORegion.Save();
-                    Carte.Source = ResourceAccessor.loadImage(selected.BackgroundFR);
+                    Carte.Source = ResourceAccessor.loadImage(selected.Background);
                 }
             };
             window.Show();
@@ -244,7 +244,7 @@ namespace AppAdministrationWPF.View
                 _viewModel.SelectedMap = listboxMaps.SelectedItem as Map;
                 _viewModel.SelectedPlaceholder = null;
 
-                Carte.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.BackgroundFR);
+                Carte.Source = ResourceAccessor.loadImage(_viewModel.SelectedMap.Background);
             }
         }
 
@@ -337,7 +337,7 @@ namespace AppAdministrationWPF.View
             if (_viewModel.Maps.Count > 0)
             {
                 mapBackground.ItemsSource = _viewModel.Maps[0].PlaceHolders;
-                Carte.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].BackgroundFR);
+                Carte.Source = ResourceAccessor.loadImage(_viewModel.Maps[0].Background);
                 listboxMaps.SelectedIndex = 0;
                 listboxMaps.Items.Refresh();
                 listboxMaps.Items.SortDescriptions.Clear();
