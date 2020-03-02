@@ -193,12 +193,11 @@ namespace AppPalaisRois
                         sbMenu.Begin(pnlRightMenu);
                         CheckLanguages();
                         sbWebBrowser.Begin(dock_photo_visite);
-
-                        _informationOpen = false;
                     }
                 }
             }
 
+            CheckLanguages();
             dispatcherTimer.Start();
         }
 
