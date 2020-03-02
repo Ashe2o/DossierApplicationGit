@@ -11,117 +11,250 @@
 	Background="Black"
 	ResizeMode="NoResize"
 	mc:Ignorable="d">
-	<Grid>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="*" />
-			<ColumnDefinition Width="500" />
-			<ColumnDefinition Width="500" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="500" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-		<!--  Formulaire du panorama  -->
-		<Grid Grid.Column="1">
-			<Grid.ColumnDefinitions>
-				<ColumnDefinition Width="50" />
-				<ColumnDefinition Width="*" />
-				<ColumnDefinition Width="50" />
-			</Grid.ColumnDefinitions>
+        <!--  Formulaire du panorama  -->
+        <Grid Grid.Column="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50" />
+                <ColumnDefinition />
+                <ColumnDefinition Width="50" />
+            </Grid.ColumnDefinitions>
 
-			<Grid.RowDefinitions>
-				<RowDefinition Height="10" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="10" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="10" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="10" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="10" />
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="10" />
-				<RowDefinition Height="*" />
-			</Grid.RowDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="10" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
 
-			<!--  Titre  -->
-			<Label
+            <!--  Titre  -->
+            <Label
 				Grid.Row="1"
 				Grid.Column="1"
 				HorizontalAlignment="Center"
 				VerticalAlignment="Top"
 				Content="Information sur le panorama"
 				FontSize="24"
-				Foreground="White" />
+				Foreground="White" Height="42" Margin="41,0,44,0" Width="312" />
 
-			<!--  Titre du panorama  -->
-			<DockPanel Grid.Row="3" Grid.Column="1">
-				<Label
-					Width="80"
+            <!-- GESTION DES LANGUES TITRES -->
+            <!--  Titre du panorama FR  -->
+            <DockPanel Grid.Row="3" Grid.Column="1">
+                <Label
+                    Name="lblTitleFR"
+					Width="100"
 					HorizontalAlignment="Left"
-					Content="Titre :"
-					Foreground="White" />
-				<TextBox
+					Content="Titre FR :"
+					Foreground="White"
+                    Visibility="Visible"/>
+                <TextBox
 					Name="txtTitle"
 					HorizontalAlignment="Stretch"
 					Text="{Binding Title}"
-					TextChanged="UpdateTitle" />
-			</DockPanel>
+					TextChanged="UpdateTitle" 
+                    Visibility="Visible"/>
+            </DockPanel>
 
-			<!--  Media du panorama  -->
-			<DockPanel Grid.Row="5" Grid.Column="1">
-				<Label
-					Width="80"
+            <!--  Titre du panorama CAT -->
+            <DockPanel Grid.Row="3" Grid.Column="1">
+                <Label
+                    Name="lblTitleCAT"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Titre CAT :"
+					Foreground="White" 
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtTitleCAT"
+					HorizontalAlignment="Stretch"
+					Text="{Binding TitleCAT}"
+					TextChanged="UpdateTitleCAT"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
+            <!--  Titre du panorama EN  -->
+            <DockPanel Grid.Row="3" Grid.Column="1">
+                <Label
+                    Name="lblTitleEN"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Titre EN :"
+					Foreground="White"
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtTitleEN"
+					HorizontalAlignment="Stretch"
+					Text="{Binding TitleEN}"
+					TextChanged="UpdateTitleEN"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
+            <!--  Titre du panorama ES  -->
+            <DockPanel Grid.Row="3" Grid.Column="1">
+                <Label
+                    Name="lblTitleES"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Titre ES :"
+					Foreground="White"
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtTitleES"
+					HorizontalAlignment="Stretch"
+					Text="{Binding TitleES}"
+					TextChanged="UpdateTitleES"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
+            <!--  Media du panorama  -->
+            <DockPanel Grid.Row="5" Grid.Column="1">
+                <Label
+					Width="100"
 					HorizontalAlignment="Left"
 					Content="Media :"
 					Foreground="White" />
-				<TextBox
+                <TextBox
 					Name="txtMedia"
 					Width="200"
 					Margin="0,0,5,0"
 					IsEnabled="False"
 					Text="{Binding Media}" />
-				<Button
+                <Button
 					x:Name="buttonSearchMedia"
 					Width="33"
 					HorizontalAlignment="Right"
 					Click="buttonMediaSearch_Click">
-					...
-				</Button>
-				<Button
+                    ...
+                </Button>
+                <Button
 					x:Name="buttonDeleteMedia"
-					Width="70"
+					Width="60"
 					Height="26"
 					HorizontalAlignment="Right"
 					VerticalAlignment="Top"
 					Click="buttonMediaDelete_Click">
-					Supprimer
-				</Button>
-			</DockPanel>
+                    Supprimer
+                </Button>
+            </DockPanel>
 
-			<!--  Description du panorama  -->
-			<DockPanel Grid.Row="7" Grid.Column="1">
-				<Label
-					Width="80"
+            <!-- GESTION DES LANGUES DESCRIPTIONS -->
+            <!--  Description du panorama FR  -->
+            <DockPanel Grid.Row="7" Grid.Column="1">
+                <Label
+                    Name="lblDescriptionFR"
+					Width="100"
 					HorizontalAlignment="Left"
-					Content="Description :"
-					Foreground="White" />
-				<TextBox
+					Content="Description FR :"
+					Foreground="White" 
+                    Visibility="Visible"/>
+                <TextBox
 					Name="txtDescription"
 					Height="500"
 					HorizontalAlignment="Stretch"
 					AcceptsReturn="True"
 					Text="{Binding Description}"
 					TextChanged="UpdateDescription"
-					TextWrapping="Wrap" />
-			</DockPanel>
+					TextWrapping="Wrap"
+                    Visibility="Visible"/>
+            </DockPanel>
 
-			<!--  Copyright du panorama  -->
-			<DockPanel Grid.Row="9" Grid.Column="1">
-				<Label
+            <!--  Description du panorama CAT  -->
+            <DockPanel Grid.Row="7" Grid.Column="1">
+                <Label
+                    Name="lblDescriptionCAT"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Description CAT :"
+					Foreground="White" 
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtDescriptionCAT"
+					Height="500"
+					HorizontalAlignment="Stretch"
+					AcceptsReturn="True"
+					Text="{Binding DescriptionCAT}"
+					TextChanged="UpdateDescriptionCAT"
+					TextWrapping="Wrap"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
+            <!--  Description du panorama EN  -->
+            <DockPanel Grid.Row="7" Grid.Column="1">
+                <Label
+                    Name="lblDescriptionEN"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Description EN :"
+					Foreground="White" 
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtDescriptionEN"
+					Height="500"
+					HorizontalAlignment="Stretch"
+					AcceptsReturn="True"
+					Text="{Binding DescriptionEN}"
+					TextChanged="UpdateDescriptionEN"
+					TextWrapping="Wrap"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
+            <!--  Description du panorama ES  -->
+            <DockPanel Grid.Row="7" Grid.Column="1">
+                <Label
+                    Name="lblDescriptionES"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Description ES :"
+					Foreground="White" 
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtDescriptionES"
+					Height="500"
+					HorizontalAlignment="Stretch"
+					AcceptsReturn="True"
+					Text="{Binding DescriptionES}"
+					TextChanged="UpdateDescriptionES"
+					TextWrapping="Wrap"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
+            <!-- MENU DEROULANT CHOIX LANGUES -->
+
+            <ComboBox
+				Name="LangageType"
+				Grid.Row="3"
+				Grid.Column="2"
+				HorizontalAlignment="Stretch" 
+                SelectionChanged="LangageType_SelectionChanged" Margin="2,0,-5,0">
+                <ComboBoxItem Name="FR" IsSelected="True">FR</ComboBoxItem>
+                <ComboBoxItem Name="CAT">CAT</ComboBoxItem>
+                <ComboBoxItem Name="EN">EN</ComboBoxItem>
+                <ComboBoxItem Name="ES">ES</ComboBoxItem>
+            </ComboBox>
+
+            <!--  Copyright du panorama  -->
+            <DockPanel Grid.Row="9" Grid.Column="1">
+                <Label
 					Width="80"
 					HorizontalAlignment="Left"
 					Content="Copyright :"
 					Foreground="White" />
-				<TextBox
+                <TextBox
 					Name="txtCopyright"
 					Height="100"
 					HorizontalAlignment="Stretch"
@@ -129,42 +262,42 @@
 					Text="{Binding Copyright}"
 					TextChanged="UpdateCopyright"
 					TextWrapping="Wrap" />
-			</DockPanel>
+            </DockPanel>
 
-			<DockPanel
+            <DockPanel
 				Grid.Row="11"
 				Grid.Column="1"
 				Height="30"
 				HorizontalAlignment="Center"
-				VerticalAlignment="Top">
-				<Button
+				VerticalAlignment="Top" Margin="67,0,70,0" Width="260">
+                <Button
 					x:Name="buttonOK"
 					Width="120"
 					Margin="5,0"
 					HorizontalAlignment="Left"
 					Click="buttonOK_Click"
 					Content="OK" />
-				<Button
+                <Button
 					x:Name="buttonCancel"
 					Width="120"
 					Margin="5,0"
 					HorizontalAlignment="Right"
 					Click="buttonCancel_Click"
 					Content="Annuler" />
-			</DockPanel>
-		</Grid>
+            </DockPanel>
+        </Grid>
 
-		<!--  Panel d'information déroulant  -->
-		<Label
+        <!--  Panel d'information déroulant  -->
+        <Label
 			Grid.Column="2"
 			Margin="10"
 			HorizontalAlignment="Center"
 			VerticalAlignment="Top"
 			FontSize="24"
 			Foreground="White">
-			Prévisualisation
-		</Label>
-		<StackPanel
+            Prévisualisation
+        </Label>
+        <StackPanel
 			Name="pnlRightMenu"
 			Grid.Column="2"
 			Height="780"
@@ -172,38 +305,38 @@
 			HorizontalAlignment="Right"
 			VerticalAlignment="Bottom"
 			Orientation="Horizontal">
-			<Border
+            <Border
 				x:Name="bdrInfoMASK"
 				Width="490"
 				Background="#4C808080"
 				BorderBrush="White"
 				BorderThickness="3"
 				CornerRadius="80">
-				<Grid>
-					<Grid.ColumnDefinitions>
-						<ColumnDefinition Width="20" />
-						<ColumnDefinition Width="*" />
-						<ColumnDefinition Width="20" />
-					</Grid.ColumnDefinitions>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="20" />
+                    </Grid.ColumnDefinitions>
 
-					<!--  Image de fond  -->
-					<!--<Image x:Name="imageInformationBackground" Stretch="Fill" />-->
-					<Grid
+                    <!--  Image de fond  -->
+                    <!--<Image x:Name="imageInformationBackground" Stretch="Fill" />-->
+                    <Grid
 						x:Name="pnlInformation"
 						Grid.Column="1"
 						Panel.ZIndex="10">
-						<Grid.RowDefinitions>
-							<RowDefinition Height="30" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="20" />
-							<RowDefinition Height="*" />
-							<RowDefinition Height="20" />
-							<RowDefinition Height="Auto" />
-							<RowDefinition Height="30" />
-						</Grid.RowDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="*" />
+                            <RowDefinition Height="20" />
+                            <RowDefinition Height="Auto" />
+                            <RowDefinition Height="30" />
+                        </Grid.RowDefinitions>
 
-						<!--  Titre  -->
-						<Label
+                        <!--  Titre  -->
+                        <Label
 							x:Name="lblInfoTitle"
 							Grid.Row="1"
 							HorizontalAlignment="Center"
@@ -211,8 +344,8 @@
 							Content="{Binding Title}"
 							FontSize="25"
 							Foreground="White" />
-						<!--  Texte  -->
-						<TextBlock
+                        <!--  Texte  -->
+                        <TextBlock
 							x:Name="txtInfoDesc"
 							Grid.Row="3"
 							Background="Transparent"
@@ -221,8 +354,8 @@
 							Text="{Binding Description}"
 							TextAlignment="Justify"
 							TextWrapping="Wrap" />
-						<!--  Image  -->
-						<MediaElement
+                        <!--  Image  -->
+                        <MediaElement
 							x:Name="mediaInfoDesc"
 							Grid.Row="0"
 							Grid.RowSpan="4"
@@ -235,8 +368,8 @@
 							Stretch="Uniform"
 							UnloadedBehavior="Manual"
 							Volume="0" />
-						<!--  Copyright  -->
-						<TextBlock
+                        <!--  Copyright  -->
+                        <TextBlock
 							x:Name="txtInfoCopyright"
 							Grid.Row="5"
 							Margin="20,0"
@@ -247,9 +380,9 @@
 							Text="{Binding Copyright}"
 							TextAlignment="Justify"
 							TextWrapping="Wrap" />
-					</Grid>
-				</Grid>
-			</Border>
-		</StackPanel>
-	</Grid>
+                    </Grid>
+                </Grid>
+            </Border>
+        </StackPanel>
+    </Grid>
 </Window>

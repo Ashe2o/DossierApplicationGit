@@ -189,7 +189,7 @@
 								Grid.Row="1"
 								HorizontalAlignment="Center"
 								Background="Transparent"
-								Content="{Binding ActualPanorama.Title}"
+								Content=""
 								FontSize="25"
 								Foreground="White" />
 							<!--  Texte  -->
@@ -199,7 +199,7 @@
 								Background="Transparent"
 								FontSize="15"
 								Foreground="White"
-								Text="{Binding ActualPanorama.Description}"
+								Text=""
 								TextAlignment="Justify"
 								TextWrapping="Wrap" />
 							<!--  Image / Video  -->

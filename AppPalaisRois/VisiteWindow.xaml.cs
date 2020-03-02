@@ -122,6 +122,7 @@ namespace AppPalaisRois
 
             // Lancement de l'animation
             sbMenu.Begin(pnlRightMenu);
+            CheckLanguages();
             sbWebBrowser.Begin(dock_photo_visite);
 
             // On inverse l'état de la vue
@@ -190,6 +191,7 @@ namespace AppPalaisRois
                         Storyboard sbWebBrowser = Resources["sbExpandWebBrowser"] as Storyboard;
 
                         sbMenu.Begin(pnlRightMenu);
+                        CheckLanguages();
                         sbWebBrowser.Begin(dock_photo_visite);
 
                         _informationOpen = false;
@@ -417,6 +419,77 @@ namespace AppPalaisRois
 
                 //ajout de l'element créé pour le panorama
                 dock_photo_visite.Children.Add(textblockSource);
+            }
+        }
+        /// <summary>
+        /// Affichage du Titre et de la Description en fonction de la langue en cours d'utilisation
+        /// </summary>
+        private void CheckLanguages()
+        {
+            //Affichage du Titre en fonction de la Langue
+            switch (MainWindow.selectedLanguage)
+            {
+                case "French":
+                    lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                    txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                    break;
+                case "Catalan":
+                    if (ViewModel.ActualPanorama.TitleCAT != null)
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleCAT;
+                    }
+                    else
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                    }
+
+                    if (ViewModel.ActualPanorama.DescriptionCAT != null)
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionCAT;
+                    }
+                    else
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                    }
+                    break;
+                case "English":
+                    if (ViewModel.ActualPanorama.TitleEN != null)
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleEN;
+                    }
+                    else
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                    }
+
+                    if (ViewModel.ActualPanorama.DescriptionEN != null)
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionEN;
+                    }
+                    else
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                    }
+                    break;
+                case "Spanish":
+                    if (ViewModel.ActualPanorama.TitleES != null)
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleES;
+                    }
+                    else
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                    }
+
+                    if (ViewModel.ActualPanorama.DescriptionES != null)
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionES;
+                    }
+                    else
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                    }
+                    break;
             }
         }
 

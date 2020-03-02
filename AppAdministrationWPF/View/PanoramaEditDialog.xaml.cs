@@ -154,7 +154,7 @@ namespace AppAdministrationWPF.View
         }
 
         /// <summary>
-        /// Met à jour la descriptioon lorsque le texte change
+        /// Met à jour la description en FRANCAIS lorsque le texte change
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -164,7 +164,37 @@ namespace AppAdministrationWPF.View
         }
 
         /// <summary>
-        /// Met à jour le titre lorsque le texte change
+        /// Met à jour la description en CATALAN lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateDescriptionCAT(object sender, EventArgs e)
+        {
+            new_panorama.DescriptionCAT = txtDescriptionCAT.Text;
+        }
+
+        /// <summary>
+        /// Met à jour la description en ANGLAIS lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateDescriptionEN(object sender, EventArgs e)
+        {
+            new_panorama.DescriptionEN = txtDescriptionEN.Text;
+        }
+
+        /// <summary>
+        /// Met à jour la description en ESPAGNOL lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateDescriptionES(object sender, EventArgs e)
+        {
+            new_panorama.DescriptionES = txtDescriptionES.Text;
+        }
+
+        /// <summary>
+        /// Met à jour le titre FRANCAIS lorsque le texte change
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e">     </param>
@@ -173,6 +203,90 @@ namespace AppAdministrationWPF.View
             new_panorama.Title = txtTitle.Text;
         }
 
-        #endregion Private Methods
+        /// <summary>
+        /// Met à jour le titre CATALAN lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateTitleCAT(object sender, TextChangedEventArgs e)
+        {
+            new_panorama.TitleCAT = txtTitleCAT.Text;
+        }
+
+        /// <summary>
+        /// Met à jour le titre ANGLAIS lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateTitleEN(object sender, TextChangedEventArgs e)
+        {
+            new_panorama.TitleEN = txtTitleEN.Text;
+        }
+
+        /// <summary>
+        /// Met à jour le titre ESPAGNOL lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateTitleES(object sender, TextChangedEventArgs e)
+        {
+            new_panorama.TitleES = txtTitleES.Text;
+        }
+
+        private void LangageType_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            //On masque toutes les cases et labels de toutes les langues.
+            lblTitleFR.Visibility = Visibility.Hidden;
+            lblDescriptionFR.Visibility = Visibility.Hidden;
+            txtTitle.Visibility = Visibility.Hidden;
+            txtDescription.Visibility = Visibility.Hidden;
+
+            lblTitleCAT.Visibility = Visibility.Hidden;
+            lblDescriptionCAT.Visibility = Visibility.Hidden;
+            txtTitleCAT.Visibility = Visibility.Hidden;
+            txtDescriptionCAT.Visibility = Visibility.Hidden;
+
+            lblTitleEN.Visibility = Visibility.Hidden;
+            lblDescriptionEN.Visibility = Visibility.Hidden;
+            txtTitleEN.Visibility = Visibility.Hidden;
+            txtDescriptionEN.Visibility = Visibility.Hidden;
+
+            lblTitleES.Visibility = Visibility.Hidden;
+            lblDescriptionES.Visibility = Visibility.Hidden;
+            txtTitleES.Visibility = Visibility.Hidden;
+            txtDescriptionES.Visibility = Visibility.Hidden;
+
+            switch (((System.Windows.Controls.ContentControl)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Content)
+            {
+                //On affiche les cases et labels correspondants à la langues sélectionné dans le menu déroulant
+                case "FR":
+                case null:
+                    lblTitleFR.Visibility = Visibility.Visible;
+                    lblDescriptionFR.Visibility = Visibility.Visible;
+                    txtTitle.Visibility = Visibility.Visible;
+                    txtDescription.Visibility = Visibility.Visible;
+                    break;
+                case "CAT":
+                    lblTitleCAT.Visibility = Visibility.Visible;
+                    lblDescriptionCAT.Visibility = Visibility.Visible;
+                    txtTitleCAT.Visibility = Visibility.Visible;
+                    txtDescriptionCAT.Visibility = Visibility.Visible;
+                    break;
+                case "EN":
+                    lblTitleEN.Visibility = Visibility.Visible;
+                    lblDescriptionEN.Visibility = Visibility.Visible;
+                    txtTitleEN.Visibility = Visibility.Visible;
+                    txtDescriptionEN.Visibility = Visibility.Visible;
+                    break;
+                case "ES":
+                    lblTitleES.Visibility = Visibility.Visible;
+                    lblDescriptionES.Visibility = Visibility.Visible;
+                    txtTitleES.Visibility = Visibility.Visible;
+                    txtDescriptionES.Visibility = Visibility.Visible;
+                    break;
+            }
+        }
     }
+
+        #endregion Private Methods
 }

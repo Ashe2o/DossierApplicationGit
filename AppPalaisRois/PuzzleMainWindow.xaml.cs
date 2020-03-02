@@ -59,18 +59,47 @@ namespace AppPalaisRois
             sablier.Source = ResourceAccessor.loadImage("/CommonSurface;component/Resources/Sablier.png");
 
             // Ajout des jeux dans la liste des choix 
-            // Bouton facile Icône
+            // Bouton Facile Icône
             ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleEasy_click), ConfigurationManager.AppSettings["cheminIconeJeuFacile"]).getButton());
-            // Label Facile
-            labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacile"];
-            // Bouton moyen Icône
+            // Bouton Moyen Icône
             ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleMedium_click), ConfigurationManager.AppSettings["cheminIconeJeuMoyen"]).getButton());
-            // Label Moyen
-            labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyen"];
-            //Bouton difficile Icône
+            // Bouton Difficile Icône
             ChoixPuzzle.Children.Add(new BoutonBarreMenu(new RoutedEventHandler(PuzzleHard_click), ConfigurationManager.AppSettings["cheminIconeJeuDifficile"]).getButton());
-            // Label Difficile
-            labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficile"];
+
+            switch (MainWindow.selectedLanguage){
+                case "French":
+                    // Label Facile FR
+                    labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacileFR"];
+                    // Label Moyen FR
+                    labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyenFR"];
+                    // Label Difficile FR
+                    labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileFR"];
+                    break;
+                case "Catalan":
+                    // Label Facile CAT
+                    labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacileCAT"];
+                    // Label Moyen CAT
+                    labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyenCAT"];
+                    // Label Difficile CAT
+                    labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileCAT"];
+                    break;
+                case "English":
+                    // Label Facile EN
+                    labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacileEN"];
+                    // Label Moyen EN
+                    labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyenEN"];
+                    // Label Difficile EN
+                    labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileEN"];
+                    break;
+                case "Spanish":
+                    // Label Facile ES
+                    labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacileES"];
+                    // Label Moyen ES
+                    labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyenES"];
+                    // Label Difficile ES
+                    labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileES"];
+                    break;
+            }
 
             /* EFFECTS RESOURCE DICTIONARY */
             myresourcedictionary = new ResourceDictionary();

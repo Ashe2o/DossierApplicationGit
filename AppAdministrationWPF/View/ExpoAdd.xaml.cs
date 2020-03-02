@@ -227,93 +227,54 @@ namespace AppAdministrationWPF.View
 
         private void LangageType_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            //On masque toutes les cases et labels de toutes les langues.
+            lblNameFR.Visibility = Visibility.Hidden;
+            lblDescriptionFR.Visibility = Visibility.Hidden;
+            txtNameFR.Visibility = Visibility.Hidden;
+            DescriptionFR.Visibility = Visibility.Hidden;
+
+            lblNameCAT.Visibility = Visibility.Hidden;
+            lblDescriptionCAT.Visibility = Visibility.Hidden;
+            txtNameCAT.Visibility = Visibility.Hidden;
+            DescriptionCAT.Visibility = Visibility.Hidden;
+
+            lblNameEN.Visibility = Visibility.Hidden;
+            lblDescriptionEN.Visibility = Visibility.Hidden;
+            txtNameEN.Visibility = Visibility.Hidden;
+            DescriptionEN.Visibility = Visibility.Hidden;
+
+            lblNameES.Visibility = Visibility.Hidden;
+            lblDescriptionES.Visibility = Visibility.Hidden;
+            txtNameES.Visibility = Visibility.Hidden;
+            DescriptionES.Visibility = Visibility.Hidden;
+
             switch (((System.Windows.Controls.ContentControl)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Content)
             {
-                //On affiche les cases et labels correspondants à la langues sélectionné dans le menu déroulant, on cache les autres.
+                //On affiche les cases et labels correspondants à la langues sélectionné dans le menu déroulant
                 case "FR":
+                case null:
                     lblNameFR.Visibility = Visibility.Visible;
                     lblDescriptionFR.Visibility = Visibility.Visible;
                     txtNameFR.Visibility = Visibility.Visible;
                     DescriptionFR.Visibility = Visibility.Visible;
-
-                    lblNameCAT.Visibility = Visibility.Hidden;
-                    lblDescriptionCAT.Visibility = Visibility.Hidden;
-                    txtNameCAT.Visibility = Visibility.Hidden;
-                    DescriptionCAT.Visibility = Visibility.Hidden;
-
-                    lblNameEN.Visibility = Visibility.Hidden;
-                    lblDescriptionEN.Visibility = Visibility.Hidden;
-                    txtNameEN.Visibility = Visibility.Hidden;
-                    DescriptionEN.Visibility = Visibility.Hidden;
-
-                    lblNameES.Visibility = Visibility.Hidden;
-                    lblDescriptionES.Visibility = Visibility.Hidden;
-                    txtNameES.Visibility = Visibility.Hidden;
-                    DescriptionES.Visibility = Visibility.Hidden;
                     break;
-
                 case "CAT":
                     lblNameCAT.Visibility = Visibility.Visible;
                     lblDescriptionCAT.Visibility = Visibility.Visible;
                     txtNameCAT.Visibility = Visibility.Visible;
                     DescriptionCAT.Visibility = Visibility.Visible;
-
-                    lblNameFR.Visibility = Visibility.Hidden;
-                    lblDescriptionFR.Visibility = Visibility.Hidden;
-                    txtNameFR.Visibility = Visibility.Hidden;
-                    DescriptionFR.Visibility = Visibility.Hidden;
-
-                    lblNameEN.Visibility = Visibility.Hidden;
-                    lblDescriptionEN.Visibility = Visibility.Hidden;
-                    txtNameEN.Visibility = Visibility.Hidden;
-                    DescriptionEN.Visibility = Visibility.Hidden;
-
-                    lblNameES.Visibility = Visibility.Hidden;
-                    lblDescriptionES.Visibility = Visibility.Hidden;
-                    txtNameES.Visibility = Visibility.Hidden;
-                    DescriptionES.Visibility = Visibility.Hidden;
                     break;
                 case "EN":
                     lblNameEN.Visibility = Visibility.Visible;
                     lblDescriptionEN.Visibility = Visibility.Visible;
                     txtNameEN.Visibility = Visibility.Visible;
                     DescriptionEN.Visibility = Visibility.Visible;
-
-                    lblNameFR.Visibility = Visibility.Hidden;
-                    lblDescriptionFR.Visibility = Visibility.Hidden;
-                    txtNameFR.Visibility = Visibility.Hidden;
-                    DescriptionFR.Visibility = Visibility.Hidden;
-
-                    lblNameCAT.Visibility = Visibility.Hidden;
-                    lblDescriptionCAT.Visibility = Visibility.Hidden;
-                    txtNameCAT.Visibility = Visibility.Hidden;
-                    DescriptionCAT.Visibility = Visibility.Hidden;
-
-                    lblNameES.Visibility = Visibility.Hidden;
-                    lblDescriptionES.Visibility = Visibility.Hidden;
-                    txtNameES.Visibility = Visibility.Hidden;
-                    DescriptionES.Visibility = Visibility.Hidden;
                     break;
                 case "ES":
                     lblNameES.Visibility = Visibility.Visible;
                     lblDescriptionES.Visibility = Visibility.Visible;
                     txtNameES.Visibility = Visibility.Visible;
                     DescriptionES.Visibility = Visibility.Visible;
-
-                    lblNameFR.Visibility = Visibility.Hidden;
-                    lblDescriptionFR.Visibility = Visibility.Hidden;
-                    txtNameFR.Visibility = Visibility.Hidden;
-                    DescriptionFR.Visibility = Visibility.Hidden;
-
-                    lblNameCAT.Visibility = Visibility.Hidden;
-                    lblDescriptionCAT.Visibility = Visibility.Hidden;
-                    txtNameCAT.Visibility = Visibility.Hidden;
-                    DescriptionCAT.Visibility = Visibility.Hidden;
-
-                    lblNameEN.Visibility = Visibility.Hidden;
-                    lblDescriptionEN.Visibility = Visibility.Hidden;
-                    txtNameEN.Visibility = Visibility.Hidden;
-                    DescriptionEN.Visibility = Visibility.Hidden;
                     break;
             }
         }
