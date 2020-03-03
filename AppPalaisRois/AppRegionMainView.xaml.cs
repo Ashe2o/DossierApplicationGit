@@ -76,18 +76,22 @@ namespace AppPalaisRois
                         itemssource.Add(map.Background);
                         break;
                     case "Catalan":
-                        if (map.BackgroundES != null && map.BackgroundES != "")
+                        if (map.BackgroundCAT != null && map.BackgroundCAT != "")
                         {
                             itemssource.Add(map.BackgroundCAT);
-                        }else{
+                        }
+                        else
+                        {
                             itemssource.Add(map.Background);
                         }
                         break;
                     case "English":
-                        if (map.BackgroundES != null && map.BackgroundES != "")
+                        if (map.BackgroundEN != null && map.BackgroundEN != "")
                         {
                             itemssource.Add(map.BackgroundEN);
-                        }else{
+                        }
+                        else
+                        {
                             itemssource.Add(map.Background);
                         }
                         break;
@@ -95,7 +99,19 @@ namespace AppPalaisRois
                         if (map.BackgroundES != null && map.BackgroundES != "")
                         {
                             itemssource.Add(map.BackgroundES);
-                        }else{
+                        }
+                        else
+                        {
+                            itemssource.Add(map.Background);
+                        }
+                        break;
+                    case "German":
+                        if (map.BackgroundDE != null && map.BackgroundDE != "")
+                        {
+                            itemssource.Add(map.BackgroundDE);
+                        }
+                        else
+                        {
                             itemssource.Add(map.Background);
                         }
                         break;

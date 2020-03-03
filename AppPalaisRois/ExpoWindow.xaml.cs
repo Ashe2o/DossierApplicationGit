@@ -201,6 +201,10 @@ namespace AppPalaisRois
                     diapo.textES = value;
                     break;
 
+                case "textDE":
+                    diapo.textDE = value;
+                    break;
+
                 case "source":
                     diapo.source = value;
                     break;
@@ -237,6 +241,10 @@ namespace AppPalaisRois
                     ExpoElement.titreES = value;
                     break;
 
+                case "titreDE":
+                    ExpoElement.titreDE = value;
+                    break;
+
                 case "text":
                     ExpoElement.text = value;
                     break;
@@ -251,6 +259,10 @@ namespace AppPalaisRois
 
                 case "textES":
                     ExpoElement.textES = value;
+                    break;
+
+                case "textDE":
+                    ExpoElement.textDE = value;
                     break;
             }
         }
@@ -400,6 +412,13 @@ namespace AppPalaisRois
                             textblocktitle.Text = j.titre;
                         }
                         break;
+                    case "German":
+                        if (j.titreDE != null){
+                            textblocktitle.Text = j.titreDE;
+                        }else{
+                            textblocktitle.Text = j.titre;
+                        }
+                        break;
                 }
                                 
                 textblocktitle.Margin = new Thickness(0, 0, 0, 30);
@@ -422,27 +441,34 @@ namespace AppPalaisRois
                     case "Catalan":
                         if (j.textCAT != null)
                         {
-                        textblocktext.Text = j.textCAT;
-                    }else{
-                        textblocktext.Text = j.text;
-                    }
+                            textblocktext.Text = j.textCAT;
+                        }else{
+                            textblocktext.Text = j.text;
+                        }
                     break;
                     case "English":
                         if (j.textEN != null)
                         {
-                        textblocktext.Text = j.textEN;
-                    }else{
-                        textblocktext.Text = j.text;
-                    }
+                            textblocktext.Text = j.textEN;
+                        }else{
+                            textblocktext.Text = j.text;
+                        }
                     break;
                     case "Spanish":
                         if (j.textES != null)
                         {
-                        textblocktext.Text = j.textES;
-                    }else{
-                        textblocktext.Text = j.text;
-                    }
+                            textblocktext.Text = j.textES;
+                        }else{
+                            textblocktext.Text = j.text;
+                        }
                     break;
+                    case "German":
+                        if (j.textDE != null){
+                            textblocktext.Text = j.textDE;
+                        }else{
+                            textblocktext.Text = j.text;
+                        }
+                        break;
                 }
                 textblocktext.Margin = new Thickness(0, 30, 0, 0);
                 textblocktext.HorizontalAlignment = HorizontalAlignment.Center;

@@ -91,6 +91,14 @@ namespace AppPalaisRois
                     // Label Difficile ES
                     labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileES"];
                     break;
+                case "German":
+                    // Label Facile DE
+                    labelEasy.Content = ConfigurationManager.AppSettings["valeurNomJeuFacileDE"];
+                    // Label Moyen DE
+                    labelMedium.Content = ConfigurationManager.AppSettings["valeurNomJeuMoyenDE"];
+                    // Label Difficile DE
+                    labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileDE"];
+                    break;
             }
             
             

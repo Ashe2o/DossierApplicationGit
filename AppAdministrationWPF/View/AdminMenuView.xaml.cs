@@ -392,7 +392,10 @@ namespace AppAdministrationWPF.View
                     _viewModel.Selected = _viewModel.Spanish.Icon;
                 }else if (_selectedItem.Tag as string == _viewModel.Catalan.Icon.Name){
                     _viewModel.Selected = _viewModel.Catalan.Icon;
-                }else{
+                }else if (_selectedItem.Tag as string == _viewModel.German.Icon.Name){
+                    _viewModel.Selected = _viewModel.German.Icon;
+                }
+                else{
                     _viewModel.Selected = (Icon)_selectedItem.DataContext;
                 }
 

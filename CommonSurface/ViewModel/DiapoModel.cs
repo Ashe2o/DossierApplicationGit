@@ -13,6 +13,7 @@
         public string textCAT;
         public string textEN;
         public string textES;
+        public string textDE;
         public string titre;
         public string type;
 
@@ -31,7 +32,7 @@
         ~DiapoModel()
         {
             id = 0;
-            type = source = titre = text = textCAT = textEN = textES = element = image1 = image2 = null;
+            type = source = titre = text = textCAT = textEN = textES = textDE = element = image1 = image2 = null;
         }
 
         #endregion Private Destructors

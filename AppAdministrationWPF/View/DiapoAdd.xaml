@@ -178,7 +178,30 @@
 				TextWrapping="Wrap" 
                 ScrollViewer.VerticalScrollBarVisibility="Auto"
                 Visibility="Hidden"/>
-            
+
+            <!-- DE -->
+            <Label
+				Name="lblDescriptionDE"
+				Grid.Row="2"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Top"
+				Content="Paragraphe DE :"
+                Visibility="Hidden"/>
+            <TextBox
+				Name="txtDescriptionDE"
+				Grid.Row="2"
+				Grid.Column="1"
+				Height="110"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				AcceptsReturn="True"
+				AcceptsTab="True"
+				SpellCheck.IsEnabled="True"
+				TextWrapping="Wrap" 
+                ScrollViewer.VerticalScrollBarVisibility="Auto"
+                Visibility="Hidden"/>
+
             <!-- FIN GESTION DES LANGUES -->
 
 
@@ -241,6 +264,7 @@
                 <ComboBoxItem Name="CAT">CAT</ComboBoxItem>
                 <ComboBoxItem Name="EN">EN</ComboBoxItem>
                 <ComboBoxItem Name="ES">ES</ComboBoxItem>
+                <ComboBoxItem Name="DE">DE</ComboBoxItem>
             </ComboBox>
 
             <Button

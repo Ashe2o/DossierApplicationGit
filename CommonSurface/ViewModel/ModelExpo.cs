@@ -13,10 +13,12 @@ namespace CommonSurface.ViewModel
         public string textCAT;
         public string textEN;
         public string textES;
+        public string textDE;
         public string titre;
         public string titreCAT;
         public string titreEN;
         public string titreES;
+        public string titreDE;
 
         #endregion Public Fields
 
@@ -33,7 +35,7 @@ namespace CommonSurface.ViewModel
         ~ModelExpo()
         {
             id = 0;
-            cover = titre = titreCAT = titreEN = titreES = text = textCAT = textEN = textES = null;
+            cover = titre = titreCAT = titreEN = titreES = titreDE = text = textCAT = textEN = textES = textDE = null;
             ListeDiapo.Clear();
             ListeDiapo = null;
         }

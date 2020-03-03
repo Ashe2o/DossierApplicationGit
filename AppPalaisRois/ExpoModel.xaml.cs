@@ -220,6 +220,10 @@ namespace AppPalaisRois
                     ExpoElement.titreES = value;
                     break;
 
+                case "titreDE":
+                    ExpoElement.titreDE = value;
+                    break;
+
                 case "text":
                     ExpoElement.text = value;
                     break;
@@ -234,6 +238,10 @@ namespace AppPalaisRois
 
                 case "textES":
                     ExpoElement.textES= value;
+                    break;
+
+                case "textDE":
+                    ExpoElement.textDE = value;
                     break;
             }
         }
@@ -689,6 +697,13 @@ namespace AppPalaisRois
                                         textblockAll.Text = i.ListeDiapo[0].text;
                                     }
                                     break;
+                                case "German":
+                                    if (i.textDE != null){
+                                        textblockAll.Text = i.ListeDiapo[0].textDE;
+                                    }else{
+                                        textblockAll.Text = i.ListeDiapo[0].text;
+                                    }
+                                    break;
                             }
                             textblockAll.HorizontalAlignment = HorizontalAlignment.Left;
                             textblockAll.TextAlignment = TextAlignment.Justify;
@@ -900,6 +915,13 @@ namespace AppPalaisRois
                         case "Spanish":
                             if (Diapo.textES != null){
                                 textblockAll.Text = Diapo.textES;
+                            }else{
+                                textblockAll.Text = Diapo.text;
+                            }
+                            break;
+                        case "German":
+                            if (Diapo.textDE != null){
+                                textblockAll.Text = Diapo.textDE;
                             }else{
                                 textblockAll.Text = Diapo.text;
                             }

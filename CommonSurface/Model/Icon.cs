@@ -25,6 +25,8 @@ namespace CommonSurface.Model
 
         private string _textCAT;
 
+        private string _textDE;
+
         private bool _visibility;
 
         private int _x;
@@ -44,7 +46,7 @@ namespace CommonSurface.Model
             this.Visibility = true;
         }
 
-        public Icon(int id, string name, int x, int y, string source, string textFR, string textEN, string textES, string textCAT, string color, bool visibility)
+        public Icon(int id, string name, int x, int y, string source, string textFR, string textEN, string textES, string textCAT, string textDE, string color, bool visibility)
         {
             this.Id = id;
             this.Name = name;
@@ -55,6 +57,7 @@ namespace CommonSurface.Model
             this.TextEN = textEN;
             this.TextES = textES;
             this.TextCAT = textCAT;
+            this.TextDE = textDE;
             this.Color = color;
             this.Visibility = visibility;
         }
@@ -74,6 +77,7 @@ namespace CommonSurface.Model
             this.TextEN = other.TextEN;
             this.TextES = other.TextES;
             this.TextCAT = other.TextCAT;
+            this.TextDE = other.TextDE;
             this.Color = other.Color;
             this.Visibility = other.Visibility;
         }
@@ -152,6 +156,13 @@ namespace CommonSurface.Model
         {
             get { return _textCAT; }
             set { _textCAT = value; OnPropertyChanged("TextCAT"); }
+        }
+
+        [XmlElement]
+        public string TextDE
+        {
+            get { return _textDE; }
+            set { _textDE = value; OnPropertyChanged("TextDE"); }
         }
 
         [XmlElement]

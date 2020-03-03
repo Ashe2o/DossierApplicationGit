@@ -20,6 +20,8 @@ namespace CommonSurface.Model
 
         private string _descriptionES;
 
+        private string _descriptionDE;
+
         private string _media;
 
         private string _scene;
@@ -32,6 +34,8 @@ namespace CommonSurface.Model
 
         private string _titleES;
 
+        private string _titleDE;
+
         #endregion Private Fields
 
         #region Public Constructors
@@ -39,17 +43,19 @@ namespace CommonSurface.Model
         // DO NOT USE
         public Panorama() { }
 
-        public Panorama(string title, string titleCAT, string titleEN, string titleES, string scene, string description, string descriptionCAT, string descriptionEN, string descriptionES, string media, string copyright)
+        public Panorama(string title, string titleCAT, string titleEN, string titleES, string titleDE, string scene, string description, string descriptionCAT, string descriptionEN, string descriptionES, string descriptionDE, string media, string copyright)
         {
             this._title = title;
             this._titleCAT = titleCAT;
             this._titleEN = titleEN;
             this._titleES = titleES;
+            this._titleDE = titleDE;
             this._scene = scene;
             this._description = description;
             this._descriptionCAT = descriptionCAT;
             this._descriptionEN = descriptionEN;
             this._descriptionES = descriptionES;
+            this._descriptionDE = descriptionDE;
             this._media = media;
             this._copyright = copyright;
         }
@@ -60,11 +66,13 @@ namespace CommonSurface.Model
             this._titleCAT = other.TitleCAT;
             this._titleEN = other.TitleEN;
             this._titleES = other.TitleES;
+            this._titleDE = other.TitleDE;
             this._scene = other.Scene;
             this._description = other.Description;
             this._descriptionCAT = other.DescriptionCAT;
             this._descriptionEN = other.DescriptionEN;
             this._descriptionES = other.DescriptionES;
+            this._descriptionDE = other.DescriptionDE;
             this._media = other.Media;
             this._copyright = other.Copyright;
         }
@@ -81,12 +89,12 @@ namespace CommonSurface.Model
 
         public static Panorama Blank()
         {
-            return new Panorama("", "", "", "", "","","","","","","");
+            return new Panorama("", "", "", "", "","","","","","","","","");
         }
 
         public static Panorama Blank(string scene)
         {
-            return new Panorama("", scene, "", "", "","","","","","","");
+            return new Panorama("", scene, "", "", "","","","","","","","","");
         }
 
         public void Copy(Panorama copy)
@@ -95,11 +103,13 @@ namespace CommonSurface.Model
             this.TitleCAT = copy.TitleCAT;
             this.TitleEN = copy.TitleEN;
             this.TitleES = copy.TitleES;
+            this.TitleDE = copy.TitleDE;
             this.Scene = copy.Scene;
             this.Description = copy.Description;
             this.DescriptionCAT = copy.DescriptionCAT;
             this.DescriptionEN = copy.DescriptionEN;
             this.DescriptionES = copy.DescriptionES;
+            this.DescriptionDE = copy.DescriptionDE;
             this.Media = copy.Media;
             this.Copyright = copy.Copyright;
         }
@@ -110,11 +120,13 @@ namespace CommonSurface.Model
             this._titleCAT = null;
             this._titleEN = null;
             this._titleES = null;
+            this._titleDE = null;
             this._scene = null;
             this._description = null;
             this._descriptionCAT = null;
             this._descriptionEN = null;
             this._descriptionES = null;
+            this._descriptionDE = null;
             this._media = null;
             this._copyright = null;
         }
@@ -177,6 +189,13 @@ namespace CommonSurface.Model
         }
 
         [XmlElement]
+        public string DescriptionDE
+        {
+            get { return this._descriptionDE; }
+            set { this._descriptionDE = value; OnPropertyChanged("DescriptionDE"); }
+        }
+
+        [XmlElement]
         public string Media
         {
             get { return this._media; }
@@ -232,6 +251,13 @@ namespace CommonSurface.Model
         {
             get { return this._titleES; }
             set { this._titleES = value; OnPropertyChanged("TitleES"); }
+        }
+
+        [XmlElement]
+        public string TitleDE
+        {
+            get { return this._titleDE; }
+            set { this._titleDE = value; OnPropertyChanged("TitleDE"); }
         }
 
         #endregion GETTEUR/SETTEUR

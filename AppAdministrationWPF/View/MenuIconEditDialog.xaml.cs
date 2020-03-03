@@ -38,6 +38,7 @@ namespace AppAdministrationWPF.View
                 txtImageLabelEN.Text = _new_icon.TextEN;
                 txtImageLabelES.Text = _new_icon.TextES;
                 txtImageLabelCAT.Text = _new_icon.TextCAT;
+                txtImageLabelDE.Text = _new_icon.TextDE;
 
                 // Couleur du label
                 ClrPcker_Background.SelectedColor = (Color)ColorConverter.ConvertFromString(_new_icon.Color);
@@ -83,6 +84,7 @@ namespace AppAdministrationWPF.View
             _old_icon.TextEN = _new_icon.TextEN;
             _old_icon.TextES = _new_icon.TextES;
             _old_icon.TextCAT = _new_icon.TextCAT;
+            _old_icon.TextDE = _new_icon.TextDE;
             _old_icon.Source = _new_icon.Source;
             _old_icon.Color = _new_icon.Color;
 
@@ -100,6 +102,7 @@ namespace AppAdministrationWPF.View
             _new_icon.TextEN = txtImageLabelEN.Text;
             _new_icon.TextES = txtImageLabelES.Text;
             _new_icon.TextCAT = txtImageLabelCAT.Text;
+            _new_icon.TextDE = txtImageLabelDE.Text;
             _new_icon.Color = ClrPcker_Background.SelectedColor.ToString();
 
         }

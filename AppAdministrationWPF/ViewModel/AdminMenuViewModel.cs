@@ -26,6 +26,7 @@ namespace AppAdministrationWPF.ViewModel
         private Langue _fr_FR;
         private Langue _es_ES;
         private Langue _cat_CAT;
+        private Langue _de_DE;
 
         private ObservableCollection<Icon> _icons;
         private Icon _selected;
@@ -73,6 +74,10 @@ namespace AppAdministrationWPF.ViewModel
             {
                 _cat_CAT.Icon.Source = cheminDrapeauError;
             }
+            if (!File.Exists(_de_DE.Icon.Source))
+            {
+                _de_DE.Icon.Source = cheminDrapeauError;
+            }
         }
 
         #endregion Public Constructors
@@ -113,6 +118,12 @@ namespace AppAdministrationWPF.ViewModel
         {
             get { return _cat_CAT; }
             set { _cat_CAT = value; }
+        }
+
+        public Langue German
+        {
+            get { return _de_DE; }
+            set { _de_DE = value; }
         }
 
         public ObservableCollection<Icon> Icons
@@ -162,6 +173,7 @@ namespace AppAdministrationWPF.ViewModel
             _fr_FR = DAOMenu.Instance.French;
             _es_ES = DAOMenu.Instance.Spanish;
             _cat_CAT = DAOMenu.Instance.Catalan;
+            _de_DE = DAOMenu.Instance.German;
         }
 
         private void OnPropertyChanged(object sender, PropertyChangedEventArgs e)

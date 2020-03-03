@@ -35,6 +35,7 @@
 				<RowDefinition Height="Auto" />
 				<RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
 			<Grid.ColumnDefinitions>
 				<ColumnDefinition Width="1*" />
@@ -174,16 +175,32 @@
 				MaxLines="100"
 				Text="{Binding TitleES}" />
 
+            <!--  GERMAN  -->
+            <Label
+				Grid.Row="7"
+				Grid.Column="0"
+				HorizontalAlignment="Right"
+				VerticalAlignment="Center"
+				Content="Titre DE :" />
+            <TextBox
+				Name="txtTitleDE"
+				Grid.Row="7"
+				Grid.Column="1"
+				HorizontalAlignment="Stretch"
+				VerticalAlignment="Center"
+				MaxLines="100"
+				Text="{Binding TitleDE}" />
+
             <!--  Source / Copyright  -->
 			<Label
-				Grid.Row="7"
+				Grid.Row="8"
 				Grid.Column="0"
 				HorizontalAlignment="Right"
 				VerticalAlignment="Top"
 				Content="Source Media :" />
 			<TextBox
 				Name="txtSource"
-				Grid.Row="7"
+				Grid.Row="8"
 				Grid.Column="1"
 				HorizontalAlignment="Stretch"
 				VerticalAlignment="Center"
@@ -193,7 +210,7 @@
 			<!--  Valider / Annuler  -->
 			<StackPanel
 				Name="stackPanel1"
-				Grid.Row="8"
+				Grid.Row="9"
 				Grid.Column="0"
 				Grid.ColumnSpan="3"
 				Margin="0,10"

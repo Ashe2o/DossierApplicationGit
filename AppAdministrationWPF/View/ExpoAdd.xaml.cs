@@ -49,6 +49,8 @@ namespace AppAdministrationWPF.View
                     if (xn["textEN"] != null) { DescriptionEN.Text = xn["textEN"].InnerText; }
                     if (xn["titreES"] != null) { txtNameES.Text = xn["titreES"].InnerText; }
                     if (xn["textES"] != null) { DescriptionES.Text = xn["textES"].InnerText; }
+                    if (xn["titreDE"] != null) { txtNameDE.Text = xn["titreDE"].InnerText; }
+                    if (xn["textDE"] != null) { DescriptionDE.Text = xn["textDE"].InnerText; }
                 }
             }
             modifAdd = modifOrAdd;
@@ -136,6 +138,14 @@ namespace AppAdministrationWPF.View
 
                 textNodeES.InnerText = DescriptionES.Text;
 
+                XmlNode titreNodeDE = doc.CreateElement("titreDE");
+
+                titreNodeDE.InnerText = txtNameES.Text;
+
+                XmlNode textNodeDE = doc.CreateElement("textDE");
+
+                textNodeDE.InnerText = DescriptionDE.Text;
+
                 XmlNode numberDiapo = doc.CreateElement("numberDiapo");
 
                 numberDiapo.InnerText = "0";
@@ -163,6 +173,10 @@ namespace AppAdministrationWPF.View
 
                 newNode.AppendChild(textNodeES);
 
+                newNode.AppendChild(titreNodeDE);
+
+                newNode.AppendChild(textNodeDE);
+
                 newNode.AppendChild(numberDiapo);
 
                 newNode.AppendChild(contenuNode);
@@ -184,6 +198,8 @@ namespace AppAdministrationWPF.View
                     if (xn["textEN"] == null) { XmlNode newElem = doc.CreateNode("element", "textEN", ""); xn.AppendChild(newElem); }
                     if (xn["titreES"] == null) { XmlNode newElem = doc.CreateNode("element", "titreES", ""); xn.AppendChild(newElem); }
                     if (xn["textES"] == null) { XmlNode newElem = doc.CreateNode("element", "textES", ""); xn.AppendChild(newElem); }
+                    if (xn["titreDE"] == null) { XmlNode newElem = doc.CreateNode("element", "titreDE", ""); xn.AppendChild(newElem); }
+                    if (xn["textDE"] == null) { XmlNode newElem = doc.CreateNode("element", "textDE", ""); xn.AppendChild(newElem); }
 
                     // Modification de tous les element de l'expo
                     xn["cover"].InnerText = txtPath.Text;
@@ -195,6 +211,8 @@ namespace AppAdministrationWPF.View
                     xn["textEN"].InnerText = DescriptionEN.Text;
                     xn["titreES"].InnerText = txtNameES.Text;
                     xn["textES"].InnerText = DescriptionES.Text;
+                    xn["titreDE"].InnerText = txtNameDE.Text;
+                    xn["textDE"].InnerText = DescriptionDE.Text;
 
                 }
             }
@@ -248,6 +266,11 @@ namespace AppAdministrationWPF.View
             txtNameES.Visibility = Visibility.Hidden;
             DescriptionES.Visibility = Visibility.Hidden;
 
+            lblNameDE.Visibility = Visibility.Hidden;
+            lblDescriptionDE.Visibility = Visibility.Hidden;
+            txtNameDE.Visibility = Visibility.Hidden;
+            DescriptionDE.Visibility = Visibility.Hidden;
+
             switch (((System.Windows.Controls.ContentControl)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Content)
             {
                 //On affiche les cases et labels correspondants à la langues sélectionné dans le menu déroulant
@@ -275,6 +298,12 @@ namespace AppAdministrationWPF.View
                     lblDescriptionES.Visibility = Visibility.Visible;
                     txtNameES.Visibility = Visibility.Visible;
                     DescriptionES.Visibility = Visibility.Visible;
+                    break;
+                case "DE":
+                    lblNameDE.Visibility = Visibility.Visible;
+                    lblDescriptionDE.Visibility = Visibility.Visible;
+                    txtNameDE.Visibility = Visibility.Visible;
+                    DescriptionDE.Visibility = Visibility.Visible;
                     break;
             }
         }

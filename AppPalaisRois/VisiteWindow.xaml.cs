@@ -359,6 +359,13 @@ namespace AppPalaisRois
                             textblocktitle.Text = visite.TitleFR;
                         }
                         break;
+                    case "German":
+                        if (visite.TitleDE != ""){
+                            textblocktitle.Text = visite.TitleDE;
+                        }else{
+                            textblocktitle.Text = visite.TitleFR;
+                        }
+                        break;
                 }
                 
                 textblocktitle.HorizontalAlignment = HorizontalAlignment.Center;
@@ -483,6 +490,25 @@ namespace AppPalaisRois
                     if (ViewModel.ActualPanorama.DescriptionES != null)
                     {
                         txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionES;
+                    }
+                    else
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                    }
+                    break;
+                case "German":
+                    if (ViewModel.ActualPanorama.TitleDE != null)
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleDE;
+                    }
+                    else
+                    {
+                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                    }
+
+                    if (ViewModel.ActualPanorama.DescriptionDE != null)
+                    {
+                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionDE;
                     }
                     else
                     {

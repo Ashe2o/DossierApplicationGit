@@ -159,6 +159,19 @@
                     <Image Source="{Binding Catalan.Icon.Source}" />
                 </StackPanel>
 
+                <!--  Drapeau German  -->
+                <StackPanel
+					Canvas.Left="{Binding German.Icon.X}"
+					Canvas.Top="{Binding German.Icon.Y}"
+					Width="100"
+					Height="60"
+					Panel.ZIndex="100"
+					MouseLeftButtonDown="selectIcon"
+					Opacity="{Binding German.Icon.Visibility, Converter={StaticResource OpacityConverter}}"
+					Tag="{Binding German.Icon.Name}">
+                    <Image Source="{Binding German.Icon.Source}" />
+                </StackPanel>
+
                 <!--  Background  -->
 				<Image
 					x:Name="imageBackground"

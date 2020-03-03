@@ -51,6 +51,7 @@ namespace AppAdministrationWPF.View
                     if (xn["textCAT"] != null) { txtDescriptionCAT.Text = xn["textCAT"].InnerText; }
                     if (xn["textEN"] != null) { txtDescriptionEN.Text = xn["textEN"].InnerText; }
                     if (xn["textES"] != null) { txtDescriptionES.Text = xn["textES"].InnerText; }
+                    if (xn["textDE"] != null) { txtDescriptionDE.Text = xn["textDE"].InnerText; }
 
                     //teste pour selectionné le bon type de base
                     if (xn["type"].InnerText != "video")
@@ -181,6 +182,10 @@ namespace AppAdministrationWPF.View
 
                     textNodeES.InnerText = txtDescriptionES.Text;
 
+                    XmlNode textNodeDE = doc.CreateElement("textDE");
+
+                    textNodeDE.InnerText = txtDescriptionDE.Text;
+
                     XmlNode SourceNode = doc.CreateElement("source");
 
                     SourceNode.InnerText = Source.Text;
@@ -225,6 +230,8 @@ namespace AppAdministrationWPF.View
 
                     newNode.AppendChild(textNodeES);
 
+                    newNode.AppendChild(textNodeDE);
+
                     newNode.AppendChild(SourceNode);
 
                     newNode.AppendChild(Img1Node);
@@ -248,6 +255,7 @@ namespace AppAdministrationWPF.View
                     if (xn["textCAT"] == null) { XmlNode newElem = doc.CreateNode("element", "textCAT", ""); xn.AppendChild(newElem); }
                     if (xn["textEN"] == null) { XmlNode newElem = doc.CreateNode("element", "textEN", ""); xn.AppendChild(newElem); }
                     if (xn["textES"] == null) { XmlNode newElem = doc.CreateNode("element", "textES", ""); xn.AppendChild(newElem); }
+                    if (xn["textDE"] == null) { XmlNode newElem = doc.CreateNode("element", "textDE", ""); xn.AppendChild(newElem); }
 
                     //Modification de tous les element de la diapo
                     xn["element"].InnerText = txtPath.Text;
@@ -256,6 +264,7 @@ namespace AppAdministrationWPF.View
                     xn["textCAT"].InnerText = txtDescriptionCAT.Text;
                     xn["textEN"].InnerText = txtDescriptionEN.Text;
                     xn["textES"].InnerText = txtDescriptionES.Text;
+                    xn["textDE"].InnerText = txtDescriptionDE.Text;
                     xn["source"].InnerText = Source.Text;
                     xn["image1"].InnerText = txtImg1.Text;
                     xn["image2"].InnerText = txtImg2.Text;
@@ -310,63 +319,48 @@ namespace AppAdministrationWPF.View
 
         private void LangageType_SelectionChanged(object sender, System.Windows.Controls.SelectionChangedEventArgs e)
         {
+            lblNameFR.Visibility = Visibility.Visible;
+            lblDescriptionFR.Visibility = Visibility.Hidden;
+            txtNameFR.Visibility = Visibility.Visible;
+            txtDescriptionFR.Visibility = Visibility.Hidden;
+
+            lblDescriptionCAT.Visibility = Visibility.Hidden;
+            txtDescriptionCAT.Visibility = Visibility.Hidden;
+
+            lblDescriptionEN.Visibility = Visibility.Hidden;
+            txtDescriptionEN.Visibility = Visibility.Hidden;
+
+            lblDescriptionES.Visibility = Visibility.Hidden;
+            txtDescriptionES.Visibility = Visibility.Hidden;
+
+            lblDescriptionDE.Visibility = Visibility.Hidden;
+            txtDescriptionDE.Visibility = Visibility.Hidden;
+
             switch (((System.Windows.Controls.ContentControl)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Content)
             {
                 //On affiche les cases et labels correspondants à la langues sélectionné dans le menu déroulant, on cache les autres.
                 case "FR":
-                    lblNameFR.Visibility = Visibility.Visible;
+                case null:
                     lblDescriptionFR.Visibility = Visibility.Visible;
-                    txtNameFR.Visibility = Visibility.Visible;
                     txtDescriptionFR.Visibility = Visibility.Visible;
-
-                    lblDescriptionCAT.Visibility = Visibility.Hidden;
-                    txtDescriptionCAT.Visibility = Visibility.Hidden;
-
-                    lblDescriptionEN.Visibility = Visibility.Hidden;
-                    txtDescriptionEN.Visibility = Visibility.Hidden;
-
-                    lblDescriptionES.Visibility = Visibility.Hidden;
-                    txtDescriptionES.Visibility = Visibility.Hidden;
                     break;
 
                 case "CAT":
                     lblDescriptionCAT.Visibility = Visibility.Visible;
                     txtDescriptionCAT.Visibility = Visibility.Visible;
-
-                    lblDescriptionFR.Visibility = Visibility.Hidden;
-                    txtDescriptionFR.Visibility = Visibility.Hidden;
-
-                    lblDescriptionEN.Visibility = Visibility.Hidden;
-                    txtDescriptionEN.Visibility = Visibility.Hidden;
-
-                    lblDescriptionES.Visibility = Visibility.Hidden;
-                    txtDescriptionES.Visibility = Visibility.Hidden;
                     break;
                 case "EN":
                     lblDescriptionEN.Visibility = Visibility.Visible;
                     txtDescriptionEN.Visibility = Visibility.Visible;
-
-                    lblDescriptionFR.Visibility = Visibility.Hidden;
-                    txtDescriptionFR.Visibility = Visibility.Hidden;
-
-                    lblDescriptionCAT.Visibility = Visibility.Hidden;
-                    txtDescriptionCAT.Visibility = Visibility.Hidden;
-
-                    lblDescriptionES.Visibility = Visibility.Hidden;
-                    txtDescriptionES.Visibility = Visibility.Hidden;
                     break;
                 case "ES":
                     lblDescriptionES.Visibility = Visibility.Visible;
                     txtDescriptionES.Visibility = Visibility.Visible;
+                    break;
 
-                    lblDescriptionFR.Visibility = Visibility.Hidden;
-                    txtDescriptionFR.Visibility = Visibility.Hidden;
-
-                    lblDescriptionCAT.Visibility = Visibility.Hidden;
-                    txtDescriptionCAT.Visibility = Visibility.Hidden;
-
-                    lblDescriptionEN.Visibility = Visibility.Hidden;
-                    txtDescriptionEN.Visibility = Visibility.Hidden;
+                case "DE":
+                    lblDescriptionDE.Visibility = Visibility.Visible;
+                    txtDescriptionDE.Visibility = Visibility.Visible;
                     break;
             }
         }

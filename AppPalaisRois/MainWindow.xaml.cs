@@ -42,7 +42,8 @@ namespace AppPalaisRois
                 DAOMenu.Instance.English.Icon,
                 DAOMenu.Instance.French.Icon,
                 DAOMenu.Instance.Spanish.Icon,
-                DAOMenu.Instance.Catalan.Icon
+                DAOMenu.Instance.Catalan.Icon,
+                DAOMenu.Instance.German.Icon,
             };
 
             UpdateOpacityLanguages();
@@ -101,6 +102,13 @@ namespace AppPalaisRois
                                 case "Spanish":
                                     if (icon.TextES != null){
                                         labelIcon.Content = icon.TextES;
+                                    }else{
+                                        labelIcon.Content = icon.TextFR;
+                                    }
+                                    break;
+                                case "German":
+                                    if (icon.TextDE != null){
+                                        labelIcon.Content = icon.TextDE;
                                     }else{
                                         labelIcon.Content = icon.TextFR;
                                     }
@@ -201,7 +209,7 @@ namespace AppPalaisRois
             foreach (Icon icon in icons)
             {
                 //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
-                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan" && icon.Name != "German")
                 {
                     // Récupération du label de l'icone
                     Label labelIcon = this.FindName("label" + icon.Name) as Label;
@@ -230,11 +238,11 @@ namespace AppPalaisRois
             foreach (Icon icon in icons)
             {
                 //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
-                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan" && icon.Name != "German")
                 {
                     // Récupération du label de l'icone
                     Label labelIcon = this.FindName("label" + icon.Name) as Label;
-                    if (icon.TextFR != "")
+                    if (icon.TextFR != "" && icon.TextFR != null)
                     {
                         labelIcon.Content = icon.TextFR;
                     }
@@ -255,11 +263,11 @@ namespace AppPalaisRois
             foreach (Icon icon in icons)
             {
                 //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
-                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan" && icon.Name != "German")
                 {
                     // Récupération du label de l'icone
                     Label labelIcon = this.FindName("label" + icon.Name) as Label;
-                    if (icon.TextCAT != "")
+                    if (icon.TextCAT != "" && icon.TextCAT != null)
                     {
                         labelIcon.Content = icon.TextCAT;
                     }
@@ -284,11 +292,11 @@ namespace AppPalaisRois
             foreach (Icon icon in icons)
             {
                 //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
-                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan")
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan" && icon.Name != "German")
                 {
                     // Récupération du label de l'icone
                     Label labelIcon = this.FindName("label" + icon.Name) as Label;
-                    if (icon.TextES != "")
+                    if (icon.TextES != "" && icon.TextES != null)
                     {
                         labelIcon.Content = icon.TextES;
                     }
@@ -299,6 +307,34 @@ namespace AppPalaisRois
                 }
             }
             selectedLanguage = "Spanish";
+            UpdateOpacityLanguages();
+        }
+        /// <summary>
+        /// Changement de la langue en ALLEMAND
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void GermanButton_Click(object sender, MouseButtonEventArgs e)
+        {
+            //Changement du nom de l'icone du menu Principal
+            foreach (Icon icon in icons)
+            {
+                //On vérifie qu'il ne s'agit pas du boutons "Crédits" ou un des boutons de changement de Langues
+                if (icon.Name != "Credits" && icon.Name != "English" && icon.Name != "French" && icon.Name != "Spanish" && icon.Name != "Catalan" && icon.Name != "German")
+                {
+                    // Récupération du label de l'icone
+                    Label labelIcon = this.FindName("label" + icon.Name) as Label;
+                    if (icon.TextDE != "" && icon.TextDE != null)
+                    {
+                        labelIcon.Content = icon.TextDE;
+                    }
+                    else
+                    {
+                        labelIcon.Content = icon.TextFR;
+                    }
+                }
+            }
+            selectedLanguage = "German";
             UpdateOpacityLanguages();
         }
 
@@ -484,6 +520,7 @@ namespace AppPalaisRois
             }
         }
 
+
         /// <summary>
         /// Lancement de l'application de Visite Virtuelle
         /// </summary>
@@ -519,6 +556,7 @@ namespace AppPalaisRois
             imageCatalan.Opacity = 0.5;
             imageEnglish.Opacity = 0.5;
             imageSpanish.Opacity = 0.5;
+            imageGerman.Opacity = 0.5;
 
             switch (selectedLanguage)
             {
@@ -533,6 +571,9 @@ namespace AppPalaisRois
                     break;
                 case "Spanish":
                     imageSpanish.Opacity = 1;
+                    break;
+                case "German":
+                    imageGerman.Opacity = 1;
                     break;
             }
         }

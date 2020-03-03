@@ -20,6 +20,8 @@ namespace CommonSurface.Model
 
         private string _backgroundES;
 
+        private string _backgroundDE;
+
         private string _thumbnail;
 
         private int _id;
@@ -37,7 +39,7 @@ namespace CommonSurface.Model
         {
         }
 
-        public Map(int id, string name, string background, string backgroundCAT, string backgroundEN, string backgroundES, string thumbnail)
+        public Map(int id, string name, string background, string backgroundCAT, string backgroundEN, string backgroundES, string backgroundDE, string thumbnail)
         {
             this._id = id;
             this._name = name;
@@ -45,6 +47,7 @@ namespace CommonSurface.Model
             this._backgroundCAT = backgroundCAT;
             this._backgroundEN = backgroundEN;
             this._backgroundES = backgroundES;
+            this._backgroundDE = backgroundDE;
             this._thumbnail = thumbnail;
             this._placeholders = new ObservableCollection<PlaceHolder>();
         }
@@ -58,6 +61,7 @@ namespace CommonSurface.Model
             this._backgroundCAT = other.BackgroundCAT;
             this._backgroundEN = other.BackgroundEN;
             this._backgroundES = other.BackgroundES;
+            this._backgroundDE = other.BackgroundDE;
             this._placeholders = new ObservableCollection<PlaceHolder>(other.PlaceHolders);
         }
 
@@ -73,6 +77,7 @@ namespace CommonSurface.Model
             this._backgroundCAT = null;
             this._backgroundEN = null;
             this._backgroundES = null;
+            this._backgroundDE = null;
             this._placeholders = null;
         }
 
@@ -88,12 +93,12 @@ namespace CommonSurface.Model
 
         public static Map Blank()
         {
-            return new Map(-1, "", "","","","","");
+            return new Map(-1, "", "","","","","","");
         }
 
         public static Map Blank(int id)
         {
-            return new Map(id, "", "","","","","");
+            return new Map(id, "", "","","","","","");
         }
 
         public void Copy(Map copy)
@@ -104,6 +109,7 @@ namespace CommonSurface.Model
             this._backgroundCAT = copy.BackgroundCAT;
             this._backgroundEN = copy.BackgroundEN;
             this._backgroundES = copy.BackgroundES;
+            this._backgroundDE = copy.BackgroundDE;
             this.Thumbnail = copy.Thumbnail;
             this._placeholders = new ObservableCollection<PlaceHolder>(copy.PlaceHolders);
         }
@@ -173,6 +179,13 @@ namespace CommonSurface.Model
         {
             get { return _backgroundES; }
             set { _backgroundES = value; OnPropertyChanged("BackgroundES"); }
+        }
+
+        [XmlElement]
+        public string BackgroundDE
+        {
+            get { return _backgroundDE; }
+            set { _backgroundDE = value; OnPropertyChanged("BackgroundDE"); }
         }
 
         [XmlAttribute]

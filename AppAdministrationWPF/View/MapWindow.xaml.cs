@@ -34,6 +34,7 @@ namespace AppAdministrationWPF.View
             txtMapCAT.Text = map.BackgroundCAT;
             txtMapEN.Text = map.BackgroundEN;
             txtMapES.Text = map.BackgroundES;
+            txtMapDE.Text = map.BackgroundDE;
 
             txtName.Text = map.Name;
 
@@ -137,6 +138,20 @@ namespace AppAdministrationWPF.View
             {
                 new_map.BackgroundES = fileDialog.FileName;
                 txtMapES.Text = fileDialog.FileName;
+            }
+        }
+
+        private void buttonSearchFileDE_Click(object sender, RoutedEventArgs e)
+        {
+            OpenFileDialog fileDialog = new OpenFileDialog();
+            fileDialog.Filter = "Videos(*.mov, *.wmv, *.mp4)|*.mov;*.wmv;*.mp4|Photos (*.jpg, *.png)|*.jpg;*.png|Photos & Videos|*.mov;*.wmv;*.jpg;*.png; *.mp4; *.*";
+            fileDialog.FilterIndex = 3;
+            fileDialog.RestoreDirectory = true;
+            bool? result = fileDialog.ShowDialog();
+            if (result == true)
+            {
+                new_map.BackgroundDE = fileDialog.FileName;
+                txtMapDE.Text = fileDialog.FileName;
             }
         }
 

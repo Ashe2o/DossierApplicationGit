@@ -194,6 +194,16 @@ namespace AppAdministrationWPF.View
         }
 
         /// <summary>
+        /// Met à jour la description en ALLEMAND lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateDescriptionDE(object sender, EventArgs e)
+        {
+            new_panorama.DescriptionDE = txtDescriptionDE.Text;
+        }
+
+        /// <summary>
         /// Met à jour le titre FRANCAIS lorsque le texte change
         /// </summary>
         /// <param name="sender"></param>
@@ -233,6 +243,16 @@ namespace AppAdministrationWPF.View
             new_panorama.TitleES = txtTitleES.Text;
         }
 
+        /// <summary>
+        /// Met à jour le titre ALLEMAND lorsque le texte change
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e">     </param>
+        private void UpdateTitleDE(object sender, TextChangedEventArgs e)
+        {
+            new_panorama.TitleDE = txtTitleDE.Text;
+        }
+
         private void LangageType_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             //On masque toutes les cases et labels de toutes les langues.
@@ -255,6 +275,11 @@ namespace AppAdministrationWPF.View
             lblDescriptionES.Visibility = Visibility.Hidden;
             txtTitleES.Visibility = Visibility.Hidden;
             txtDescriptionES.Visibility = Visibility.Hidden;
+
+            lblTitleDE.Visibility = Visibility.Hidden;
+            lblDescriptionDE.Visibility = Visibility.Hidden;
+            txtTitleDE.Visibility = Visibility.Hidden;
+            txtDescriptionDE.Visibility = Visibility.Hidden;
 
             switch (((System.Windows.Controls.ContentControl)((System.Windows.Controls.Primitives.Selector)sender).SelectedItem).Content)
             {
@@ -283,6 +308,12 @@ namespace AppAdministrationWPF.View
                     lblDescriptionES.Visibility = Visibility.Visible;
                     txtTitleES.Visibility = Visibility.Visible;
                     txtDescriptionES.Visibility = Visibility.Visible;
+                    break;
+                case "DE":
+                    lblTitleDE.Visibility = Visibility.Visible;
+                    lblDescriptionDE.Visibility = Visibility.Visible;
+                    txtTitleDE.Visibility = Visibility.Visible;
+                    txtDescriptionDE.Visibility = Visibility.Visible;
                     break;
             }
         }

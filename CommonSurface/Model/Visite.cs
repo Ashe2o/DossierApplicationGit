@@ -32,13 +32,15 @@ namespace CommonSurface.Model
 
         private string _titleES;
 
+        private string _titleDE;
+
         private NotifyCollectionChangedEventHandler collectionChanged;
 
         #endregion Private Fields
 
         #region Public Constructors
 
-        public Visite(int id, string name, string cover, string thumbnail, string titleFR, string titleCAT, string titleEN, string titleES, string source)
+        public Visite(int id, string name, string cover, string thumbnail, string titleFR, string titleCAT, string titleEN, string titleES, string titleDE, string source)
         {
             this._id = id;
             this._name = name;
@@ -48,6 +50,7 @@ namespace CommonSurface.Model
             this._titleCAT = titleCAT;
             this._titleEN = titleEN;
             this._titleES = titleES;
+            this._titleDE = titleDE;
             this._source = source;
             this._panoramas = new ObservableCollection<Panorama>();
         }
@@ -62,6 +65,7 @@ namespace CommonSurface.Model
             this._titleCAT = other.TitleCAT;
             this._titleEN = other.TitleEN;
             this._titleES = other.TitleES;
+            this._titleDE = other.TitleDE;
             this._source = other.Source;
             this._panoramas = new ObservableCollection<Panorama>(other.Panoramas);
         }
@@ -87,12 +91,12 @@ namespace CommonSurface.Model
 
         public static Visite Blank()
         {
-            return new Visite(-1, "", "", "", "", "","","","");
+            return new Visite(-1, "", "", "", "", "","","","","");
         }
 
         public static Visite Blank(int id)
         {
-            return new Visite(id, "", "", "", "", "","","","");
+            return new Visite(id, "", "", "", "", "","","","","");
         }
 
         public void Copy(Visite copy)
@@ -105,6 +109,7 @@ namespace CommonSurface.Model
             this.TitleCAT = copy.TitleCAT;
             this.TitleEN = copy.TitleEN;
             this.TitleES = copy.TitleES;
+            this.TitleDE = copy.TitleDE;
             this.Source = copy.Source;
             this.Panoramas = new ObservableCollection<Panorama>(copy.Panoramas);
         }
@@ -123,6 +128,7 @@ namespace CommonSurface.Model
             this._titleCAT = null;
             this._titleEN = null;
             this._titleES = null;
+            this._titleDE = null;
             this._source = null;
 
             if (collectionChanged != null)
@@ -141,7 +147,8 @@ namespace CommonSurface.Model
                 "TitleFR=" + TitleFR + ", " +
                 "TitleCAT=" + TitleCAT + ", " +
                 "TitleEN=" + TitleEN + ", " +
-                "TitleES=" + TitleES + ", " + "]";
+                "TitleES=" + TitleES + ", " +
+                "TitleDE=" + TitleDE + ", " + "]";
         }
 
         #endregion Public Methods
@@ -244,6 +251,12 @@ namespace CommonSurface.Model
             set { _titleES = value; OnPropertyChanged("TitleES"); }
         }
 
+        [XmlElement]
+        public string TitleDE
+        {
+            get { return _titleDE; }
+            set { _titleDE = value; OnPropertyChanged("TitleDE"); }
+        }
         #endregion GETTEUR/SETTEUR
     }
 }

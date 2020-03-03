@@ -75,13 +75,19 @@ namespace AppPalaisRois
             {
                 if (map.Background.Contains(".mov") || map.Background.Contains(".wmv") || map.Background.Contains(".mp4")){
                     mediaFOND.BeginInit();
-                    mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
                     switch (MainWindow.selectedLanguage)
                     {
+                        case "French":
+                            mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
+                            break;
                         case "Catalan":
                             if (map.BackgroundCAT != null && map.BackgroundCAT != "")
                             {
                                 mediaFOND.Source = new Uri(map.BackgroundCAT, UriKind.RelativeOrAbsolute);
+                            }
+                            else
+                            {
+                                mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
                             }
                             break;
                         case "English":
@@ -89,11 +95,29 @@ namespace AppPalaisRois
                             {
                                 mediaFOND.Source = new Uri(map.BackgroundEN, UriKind.RelativeOrAbsolute);
                             }
+                            else
+                            {
+                                mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
+                            }
                             break;
                         case "Spanish":
                             if (map.BackgroundES != null && map.BackgroundES != "")
                             {
                                 mediaFOND.Source = new Uri(map.BackgroundES, UriKind.RelativeOrAbsolute);
+                            }
+                            else
+                            {
+                                mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
+                            }
+                            break;
+                        case "German":
+                            if (map.BackgroundDE != null && map.BackgroundDE != "")
+                            {
+                                mediaFOND.Source = new Uri(map.BackgroundDE, UriKind.RelativeOrAbsolute);
+                            }
+                            else
+                            {
+                                mediaFOND.Source = new Uri(map.Background, UriKind.RelativeOrAbsolute);
                             }
                             break;
                     }
@@ -136,6 +160,16 @@ namespace AppPalaisRois
                             if (map.BackgroundES != null && map.BackgroundES != "")
                             {
                                 itemssource = map.BackgroundES;
+                            }
+                            else
+                            {
+                                itemssource = map.Background;
+                            }
+                            break;
+                        case "German":
+                            if (map.BackgroundDE != null && map.BackgroundDE != "")
+                            {
+                                itemssource = map.BackgroundDE;
                             }
                             else
                             {

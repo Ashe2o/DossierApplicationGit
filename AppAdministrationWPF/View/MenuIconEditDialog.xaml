@@ -8,7 +8,7 @@
     xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
 	Title="Modification du bouton"
 	Width="480"
-	Height="520"
+	Height="580"
 	Background="Black"
 	ResizeMode="NoResize"
 	mc:Ignorable="d">
@@ -69,6 +69,8 @@
                 <ColumnDefinition Width="40" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="10" />
                 <RowDefinition Height="*" />
                 <RowDefinition Height="10" />
                 <RowDefinition Height="*" />
@@ -169,6 +171,18 @@
 				Grid.ColumnSpan="2">
                 <TextBox
 					x:Name="txtImageLabelES"
+					KeyDown="updateLabelPreview"
+					KeyUp="updateLabelPreview" />
+            </Border>
+
+            <!--  Label DE  -->
+            <Label Grid.Row="12" Grid.Column="0">Label DE :</Label>
+            <Border
+				Grid.Row="12"
+				Grid.Column="1"
+				Grid.ColumnSpan="2">
+                <TextBox
+					x:Name="txtImageLabelDE"
 					KeyDown="updateLabelPreview"
 					KeyUp="updateLabelPreview" />
             </Border>

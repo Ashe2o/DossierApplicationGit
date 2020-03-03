@@ -121,6 +121,23 @@
                     Visibility="Hidden"/>
             </DockPanel>
 
+            <!--  Titre du panorama DE  -->
+            <DockPanel Grid.Row="3" Grid.Column="1">
+                <Label
+                    Name="lblTitleDE"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Titre DE :"
+					Foreground="White"
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtTitleDE"
+					HorizontalAlignment="Stretch"
+					Text="{Binding TitleDE}"
+					TextChanged="UpdateTitleDE"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
             <!--  Media du panorama  -->
             <DockPanel Grid.Row="5" Grid.Column="1">
                 <Label
@@ -233,6 +250,26 @@
                     Visibility="Hidden"/>
             </DockPanel>
 
+            <!--  Description du panorama DE  -->
+            <DockPanel Grid.Row="7" Grid.Column="1">
+                <Label
+                    Name="lblDescriptionDE"
+					Width="100"
+					HorizontalAlignment="Left"
+					Content="Description DE :"
+					Foreground="White" 
+                    Visibility="Hidden"/>
+                <TextBox
+					Name="txtDescriptionDE"
+					Height="500"
+					HorizontalAlignment="Stretch"
+					AcceptsReturn="True"
+					Text="{Binding DescriptionDE}"
+					TextChanged="UpdateDescriptionDE"
+					TextWrapping="Wrap"
+                    Visibility="Hidden"/>
+            </DockPanel>
+
             <!-- MENU DEROULANT CHOIX LANGUES -->
 
             <ComboBox
@@ -245,6 +282,7 @@
                 <ComboBoxItem Name="CAT">CAT</ComboBoxItem>
                 <ComboBoxItem Name="EN">EN</ComboBoxItem>
                 <ComboBoxItem Name="ES">ES</ComboBoxItem>
+                <ComboBoxItem Name="DE">DE</ComboBoxItem>
             </ComboBox>
 
             <!--  Copyright du panorama  -->

@@ -21,6 +21,7 @@ namespace CommonSurface.DAO
         private Langue _fr_FR;
         private Langue _es_ES;
         private Langue _cat_CAT;
+        private Langue _de_DE;
         private ObservableHashSet<Icon> _icons;
 
         #endregion Private Fields
@@ -124,6 +125,7 @@ namespace CommonSurface.DAO
             _fr_FR = other.French;
             _es_ES = other.Spanish;
             _cat_CAT = other.Catalan;
+            _de_DE = other.German;
             _background = other.Background;
         }
 
@@ -186,6 +188,13 @@ namespace CommonSurface.DAO
         {
             get { return _cat_CAT; }
             set { _cat_CAT = value; }
+        }
+
+        [XmlElement("German")]
+        public Langue German
+        {
+            get { return _de_DE; }
+            set { _de_DE = value; }
         }
 
         /// <summary>
