@@ -14,7 +14,7 @@
 	WindowState="Maximized"
 	WindowStyle="None">
 
-	<!--  Ressources de la fenêtre  -->
+    <!--  Ressources de la fenêtre  -->
     <Window.Resources>
         <Style TargetType="Button">
             <Setter Property="Height" Value="50" />
@@ -52,24 +52,44 @@
     <Grid 
         x:Name="SgraffitoPanel"
         Background="Transparent">
-        <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="36*"/>
+            <RowDefinition Height="145*"/>
+            <RowDefinition Height="87*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="266*"/>
+            <ColumnDefinition Width="67*"/>
+            <ColumnDefinition Width="225*"/>
+            <ColumnDefinition Width="398*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.ColumnSpan="4" Grid.RowSpan="4">
             <Grid.Background >
                 <ImageBrush ImageSource="C:\Session Grand Public\Application\CommonSurface\Resources\arriere_plan.jpg" Stretch="UniformToFill"/>
             </Grid.Background>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*" />
-                <ColumnDefinition Width="1920" />
-                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="0*" />
+                <ColumnDefinition Width="80" />
+                <ColumnDefinition Width="452"/>
+                <ColumnDefinition Width="134"/>
+                <ColumnDefinition Width="450"/>
+                <ColumnDefinition Width="804"/>
+                <ColumnDefinition Width="0*" />
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="1080" />
-                <RowDefinition Height="*" />
+                <RowDefinition Height="0*" />
+                <RowDefinition Height="144" />
+                <RowDefinition Height="580"/>
+                <RowDefinition Height="356"/>
+                <RowDefinition Height="0*" />
             </Grid.RowDefinitions>
-            <Grid Grid.Row="1" Grid.Column="1">
+            <Grid Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="5" Grid.RowSpan="3">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="20" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="111*" />
+                    <ColumnDefinition Width="303*"/>
+                    <ColumnDefinition Width="526*"/>
                     <ColumnDefinition Width="20" />
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
@@ -88,39 +108,39 @@
 				    x:Name="canvasBorder"
 				    Grid.Row="3"
 				    Grid.Column="1"
-				    BorderThickness="2" Margin="10,10,795,0" Grid.RowSpan="2">
+				    BorderThickness="2" Margin="10,10,35,168" Grid.ColumnSpan="2">
                     <Canvas
                         x:Name="canvasList"
 					    Width="Auto"
-					    Height="850"
-					    ClipToBounds="true" Margin="58,8,262,-2">
+					    Height="Auto"
+					    ClipToBounds="true" Margin="52,24,276,74">
                         <Canvas.Background>
                             <ImageBrush ImageSource="C:\Session Grand Public\Application\CommonSurface\Resources\couche2.png"/>
                         </Canvas.Background>
                         <Image
-						    Width="750"
-						    Height="850"
+						    Width="461"
+						    Height="589"
 						    HorizontalAlignment="Center"
 						    VerticalAlignment="Center"
                             Name="image_WPF"
                             Source="C:\Session Grand Public\Application\CommonSurface\Resources\couche.png"
 						    Stretch="UniformToFill" 
-                            Visibility="Visible"/>
+                            Visibility="Visible" Canvas.Left="-10" Canvas.Top="-9"/>
                     </Canvas>
                 </Border>
                 <Border
 				    x:Name="canvasmodele"
 				    Grid.Row="3"
-				    Grid.Column="1"
-				    BorderThickness="2" Margin="1007,55,279,50">
+				    Grid.Column="2"
+				    BorderThickness="2" Margin="424,34,465,234" Grid.ColumnSpan="2">
                     <Canvas
 					    x:Name="canvasList2"
 					    Width="Auto"
 					    Height="Auto"
-					    ClipToBounds="true" Margin="-2">
+					    ClipToBounds="true" Margin="-2,-2,97,10">
                         <Image
-						    Width="594"
-						    Height="755"
+						    Width="450"
+						    Height="580"
 						    HorizontalAlignment="Center"
 						    VerticalAlignment="Center"
 						    Source="C:\Session Grand Public\Application\CommonSurface\Resources\modele.jpg"
@@ -133,17 +153,17 @@
             <!--  Bouton de retour  -->
             <Button
                 x:Name="Quit_button"
-		        Grid.Row="1"
+		        Grid.Row="3"
 			    Grid.Column="1"
 			    Width="100"
 			    Height="100"
-                Margin="0,900,0,0"
+                Margin="29,238,403,18"
 			    HorizontalAlignment="Center"
 			    VerticalAlignment="Center"
 			    Background="{x:Null}"
 			    BorderBrush="{x:Null}"
 			    Click="BoutonQuit_click"
-			    TouchDown="BoutonQuit_click">
+			    TouchDown="BoutonQuit_click" Grid.ColumnSpan="2">
                 <StackPanel>
                     <Image
                         x:Name="returnSgraffito"
@@ -151,6 +171,22 @@
 					    Height="80"
 					    Opacity="1.0" />
                 </StackPanel>
+            </Button>
+            <Button 
+                Name="ResetSgraffito" 
+                Width="Auto" 
+                Height="85" 
+                Click="cb_clear_Click" 
+                Margin="160,0,166,239" 
+                VerticalAlignment="Bottom" 
+                Grid.Row="3" 
+                Grid.Column="2"
+                Background="{x:Null}"
+			    BorderBrush="{x:Null}">
+                <Image x:Name="ImageResetSgraffito"
+                       Width="80"
+					   Height="80"
+                       Opacity="1.0" />
             </Button>
         </Grid>
     </Grid>

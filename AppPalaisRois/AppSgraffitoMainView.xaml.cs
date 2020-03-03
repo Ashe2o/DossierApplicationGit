@@ -27,7 +27,7 @@ namespace AppPalaisRois
         #region Private Fields
         private AppSgraffitoMainViewModel ViewModel;
         private string CheminBoutonReturn = ConfigurationManager.AppSettings["CheminBoutonReturn"];
-
+        private string CheminBoutonReset = ConfigurationManager.AppSettings["CheminBoutonResetSgraffito"];
         private float penWidth = 5;
         Bitmap image1;
         BitmapImage bitmapImage;
@@ -43,6 +43,7 @@ namespace AppPalaisRois
             ViewModel = new AppSgraffitoMainViewModel();
             this.DataContext = ViewModel;
             returnSgraffito.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
+            ImageResetSgraffito.Source = ResourceAccessor.loadImage(CheminBoutonReset);
 
             cb_clear_Click(null, null);
             image_WPF.MouseMove += pictureBox1_MouseMove;
