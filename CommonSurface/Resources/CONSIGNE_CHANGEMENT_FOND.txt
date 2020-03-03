@@ -1,0 +1,4 @@
+La premiere couche doit se nommer couche.png
+La seconde couche doit se nommer couche2.png
+Le fond avec les consignes doit se nommer arriere_plan.jpg
+Le modele doit se nommer modele.jpg

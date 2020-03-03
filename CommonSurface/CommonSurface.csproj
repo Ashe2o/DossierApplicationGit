@@ -235,6 +235,42 @@
   <ItemGroup>
     <Resource Include="Resources\ballError.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CONSIGNE_CHANGEMENT_FOND.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couche.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\couche2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feuille_or.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feuille_or1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feuille_or3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\feuille_or4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fond_old.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\modele.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\or_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\arriere_plan.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
