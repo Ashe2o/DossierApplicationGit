@@ -51,4 +51,3 @@ C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csproj.CopyComplete
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.dll
 C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.pdb
-C:\Session Grand Public\Application\CommonSurface\obj\Debug\CommonSurface.csprojAssemblyReference.cache
