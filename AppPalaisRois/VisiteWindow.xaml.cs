@@ -339,28 +339,32 @@ namespace AppPalaisRois
                         textblocktitle.Text = visite.TitleFR;
                         break;
                     case "Catalan":
-                        if (visite.TitleCAT != ""){
+                        if (visite.TitleCAT != "" && visite.TitleCAT != null)
+                        {
                             textblocktitle.Text = visite.TitleCAT;
                         }else{ 
                             textblocktitle.Text = visite.TitleFR;
                         }
                         break;
                     case "English":
-                        if (visite.TitleEN != ""){
+                        if (visite.TitleEN != "" && visite.TitleEN != null)
+                        {
                             textblocktitle.Text = visite.TitleEN;
                         }else{ 
                             textblocktitle.Text = visite.TitleFR;
                         }
                         break;
                     case "Spanish":
-                        if (visite.TitleES != ""){
+                        if (visite.TitleES != "" && visite.TitleES != null)
+                        {
                             textblocktitle.Text = visite.TitleES;
                         }else{
                             textblocktitle.Text = visite.TitleFR;
                         }
                         break;
                     case "German":
-                        if (visite.TitleDE != ""){
+                        if (visite.TitleDE != "" && visite.TitleDE != null)
+                        {
                             textblocktitle.Text = visite.TitleDE;
                         }else{
                             textblocktitle.Text = visite.TitleFR;
@@ -436,83 +440,98 @@ namespace AppPalaisRois
             switch (MainWindow.selectedLanguage)
             {
                 case "French":
-                    lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
-                    txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
-                    break;
-                case "Catalan":
-                    if (ViewModel.ActualPanorama.TitleCAT != null)
-                    {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleCAT;
-                    }
-                    else
+                    if (ViewModel.ActualPanorama != null)
                     {
                         lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
-                    }
-
-                    if (ViewModel.ActualPanorama.DescriptionCAT != null)
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionCAT;
-                    }
-                    else
-                    {
                         txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                    }
+                    break;
+                case "Catalan":
+                    if (ViewModel.ActualPanorama != null)
+                    {
+                        if (ViewModel.ActualPanorama.TitleCAT != null)
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.TitleCAT;
+                        }
+                        else
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                        }
+                        
+                        if (ViewModel.ActualPanorama.DescriptionCAT != null)
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionCAT;
+                        }
+                        else
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        }
                     }
                     break;
                 case "English":
-                    if (ViewModel.ActualPanorama.TitleEN != null)
+                    if (ViewModel.ActualPanorama != null)
                     {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleEN;
-                    }
-                    else
-                    {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
-                    }
-
-                    if (ViewModel.ActualPanorama.DescriptionEN != null)
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionEN;
-                    }
-                    else
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        if (ViewModel.ActualPanorama.TitleEN != null)
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.TitleEN;
+                        }
+                        else
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                        }
+                        
+                        if (ViewModel.ActualPanorama.DescriptionEN != null)
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionEN;
+                        }
+                        else
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        }
                     }
                     break;
                 case "Spanish":
-                    if (ViewModel.ActualPanorama.TitleES != null)
+                    if (ViewModel.ActualPanorama != null)
                     {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleES;
-                    }
-                    else
-                    {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
-                    }
-
-                    if (ViewModel.ActualPanorama.DescriptionES != null)
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionES;
-                    }
-                    else
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        if (ViewModel.ActualPanorama.TitleES != null)
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.TitleES;
+                        }
+                        else
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                        }
+                        
+                        if (ViewModel.ActualPanorama.DescriptionES != null)
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionES;
+                        }
+                        else
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        }
                     }
                     break;
                 case "German":
-                    if (ViewModel.ActualPanorama.TitleDE != null)
+                    if (ViewModel.ActualPanorama != null)
                     {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.TitleDE;
-                    }
-                    else
-                    {
-                        lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
-                    }
-
-                    if (ViewModel.ActualPanorama.DescriptionDE != null)
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionDE;
-                    }
-                    else
-                    {
-                        txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        if (ViewModel.ActualPanorama.TitleDE != null)
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.TitleDE;
+                        }
+                        else
+                        {
+                            lblInfoTitle.Content = ViewModel.ActualPanorama.Title;
+                        }
+                        
+                        if (ViewModel.ActualPanorama.DescriptionDE != null)
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.DescriptionDE;
+                        }
+                        else
+                        {
+                            txtInfoDesc.Text = ViewModel.ActualPanorama.Description;
+                        }
                     }
                     break;
             }
