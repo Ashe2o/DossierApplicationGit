@@ -41,9 +41,19 @@ namespace AppAdministrationWPF.View
                 txtImageLabelDE.Text = _new_icon.TextDE;
 
                 // Couleur du label
-                if (_new_icon.Name != "Credits")
+                switch (_new_icon.Name)
                 {
-                    ClrPcker_Background.SelectedColor = (Color)ColorConverter.ConvertFromString(_new_icon.Color);
+                    case "Credits":
+                    case "French":
+                    case "Catalan":
+                    case "English":
+                    case "Spanish":
+                    case "German":
+                        break;
+
+                    default:
+                        ClrPcker_Background.SelectedColor = (Color)ColorConverter.ConvertFromString(_new_icon.Color);
+                        break;
                 }
 
                 this.DataContext = _new_icon;
