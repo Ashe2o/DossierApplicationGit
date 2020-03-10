@@ -121,18 +121,18 @@ C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 201
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.CoreCompileInputs.cache
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppPalaisRois\obj\Debug\AppPalaisRois.exe
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppPalaisRois\obj\Debug\AppPalaisRois.pdb
-C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\AppPalaisRois.exe
-C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\CommonSurface.dll
-C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Core.dll
-C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Presentation.dll
-C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Presentation.Generic.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\AppPalaisRois.exe.config
+C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\AppPalaisRois.exe
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\AppPalaisRois.pdb
+C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\CommonSurface.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\FluidKit.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Geckofx-Core.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Geckofx-Winforms.dll
+C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Core.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Presentation.Design.dll
+C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Presentation.dll
+C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Surface.Presentation.Generic.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Microsoft.Windows.Design.Extensibility.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Xceed.Wpf.AvalonDock.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
@@ -154,7 +154,7 @@ C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\ro\Xceed.Wpf.AvalonD
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Session Grand Public\Application\AppPalaisRois\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csprojAssemblyReference.cache
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csprojResolveAssemblyReference.cache
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppSgraffitoMainView.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppBanqueImagesMainView.baml
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppFriseMainView.baml
@@ -180,7 +180,7 @@ C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\App.g.cs
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois_MarkupCompile.cache
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.g.resources
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.Properties.Resources.resources
-C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.GenerateResource.cache
-C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.CopyComplete
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.GenerateResource.Cache
+C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.csproj.CoreCompileInputs.cache
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.exe
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\AppPalaisRois.pdb
