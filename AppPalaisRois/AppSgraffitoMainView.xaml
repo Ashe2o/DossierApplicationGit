@@ -65,9 +65,6 @@
             <ColumnDefinition Width="398*"/>
         </Grid.ColumnDefinitions>
         <Grid Grid.ColumnSpan="4" Grid.RowSpan="4">
-            <Grid.Background >
-                <ImageBrush ImageSource="C:\Session Grand Public\Données\Administrateur\Application Public\Fond d'ecran\Sgraffito\arriere_plan.jpg" Stretch="UniformToFill"/>
-            </Grid.Background>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="0*" />
                 <ColumnDefinition Width="80" />
