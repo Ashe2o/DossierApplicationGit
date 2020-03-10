@@ -132,6 +132,7 @@ namespace AppPalaisRois
             labelMedium.Visibility = Visibility.Collapsed;
             labelHard.Visibility = Visibility.Collapsed;
             ((MemoryViewModel)DataContext).LoadGame("Easy");
+            ((MemoryViewModel)DataContext).SelectedGame = 1;
         }
 
         /// <summary>
@@ -143,6 +144,7 @@ namespace AppPalaisRois
             labelMedium.Visibility = Visibility.Collapsed;
             labelHard.Visibility = Visibility.Collapsed;
             ((MemoryViewModel)DataContext).LoadGame("Medium");
+            ((MemoryViewModel)DataContext).SelectedGame = 2;
         }
 
         /// <summary>
@@ -154,6 +156,7 @@ namespace AppPalaisRois
             labelMedium.Visibility = Visibility.Collapsed;
             labelHard.Visibility = Visibility.Collapsed;
             ((MemoryViewModel)DataContext).LoadGame("Hard");
+            ((MemoryViewModel)DataContext).SelectedGame = 3;
         }
 
         #endregion Choix de la difficulté
@@ -165,7 +168,25 @@ namespace AppPalaisRois
         /// </summary>
         private void BoutonQuit_click(object sender, RoutedEventArgs e)
         {
-            if (canClose)
+            if (((MemoryViewModel)DataContext).SelectedGame != 0)
+            {
+                // Garbage Collector
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+
+                //Effet de partir
+                Storyboard.SetTarget(sbHide, canvas);
+                sbHide.Completed += (s, t) =>
+                {
+                    //Fermeture et ouverture des fenetres
+                    MemoryMainWindow fenetre = new MemoryMainWindow();
+                    fenetre.Show();
+                    this.Close();
+                };
+                sbHide.Begin();
+
+            }
+            else if (canClose)
             {
                 canClose = false;
 

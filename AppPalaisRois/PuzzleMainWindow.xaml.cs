@@ -163,7 +163,25 @@ namespace AppPalaisRois
         // Sortie de l'application Puzzle
         private void BoutonQuit_click(object sender, RoutedEventArgs e)
         {
-            if (canClose)
+            if (((PuzzleViewModel)DataContext).SelectedPuzzle != null)
+            {
+                // Garbage Collector
+                GC.Collect();
+                GC.WaitForFullGCComplete();
+
+                //Effet de partir
+                Storyboard.SetTarget(sbHide, canvas);
+                sbHide.Completed += (s, t) =>
+                {
+                    //Fermeture et ouverture des fenetres
+                    PuzzleMainWindow fenetre = new PuzzleMainWindow();
+                    fenetre.Show();
+                    this.Close();
+                };
+                sbHide.Begin();
+
+            }
+            else if (canClose)
             {
                 canClose = false;
                 int fin = DateTime.Now.Hour * 3600 + DateTime.Now.Minute * 60 + DateTime.Now.Second;

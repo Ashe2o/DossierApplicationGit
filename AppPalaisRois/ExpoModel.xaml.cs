@@ -1076,5 +1076,6 @@ namespace AppPalaisRois
         }
 
         #endregion Private Methods
+
     }
 }
