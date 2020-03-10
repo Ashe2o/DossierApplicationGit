@@ -1,6 +1,7 @@
 ﻿using AppAdministrationWPF.Utils;
 using AppAdministrationWPF.ViewModel;
 using CommonSurface.Model;
+using CommonSurface.Other;
 using Microsoft.Win32;
 using System;
 using System.Configuration;
@@ -33,23 +34,11 @@ namespace AppAdministrationWPF.View
             #region Récupération des niveaux Puzzle
 
             // Niveau 1
-            niveau1Puzzle.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.PUZZLE_FACILE.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            niveau1Puzzle.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminNiveau1Puzzle"]);
             // Niveau 2
-            niveau2Puzzle.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.PUZZLE_MOYEN.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            niveau2Puzzle.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminNiveau2Puzzle"]);
             // Niveau 3
-            niveau3Puzzle.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.PUZZLE_DIFFICILE.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            niveau3Puzzle.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminNiveau3Puzzle"]);
 
             #endregion Récupération des niveaux Puzzle
         }

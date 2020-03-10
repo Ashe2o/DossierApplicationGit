@@ -1,6 +1,7 @@
 ﻿using AppAdministrationWPF.Utils;
 using AppAdministrationWPF.ViewModel;
 using CommonSurface.Model;
+using CommonSurface.Other;
 using Microsoft.Win32;
 using System;
 using System.Configuration;
@@ -35,30 +36,14 @@ namespace AppAdministrationWPF.View
             #region Récupération des niveaux Memory
 
             // Niveau 1
-            niveau1Memory.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.memory_vert.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            niveau1Memory.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminNiveau1Memory"]);
             // Niveau 2
-            niveau2Memory.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.memory_jaune.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            niveau2Memory.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminNiveau2Memory"]);
             // Niveau 3
-            niveau3Memory.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.memory_rouge.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            niveau3Memory.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminNiveau3Memory"]);
 
             // Arrière plans
-            arrierePlansMemory.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.memory_fondecran.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            arrierePlansMemory.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminArrierePlanMemory"]); 
 
             #endregion Récupération des niveaux Memory
         }

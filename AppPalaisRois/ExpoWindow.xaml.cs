@@ -349,22 +349,13 @@ namespace AppPalaisRois
                 imgB2.EndInit();
 
                 //récupération de l'image fond cadre1
-                imgGrey3.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.Cadre1ListeExpo.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
-                imgGrey3.Width = 850;
+                imgGrey3.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["CheminFondExpoCadre"]); 
                 imgGrey3.Height = 400;
                 imgGrey3.HorizontalAlignment = HorizontalAlignment.Center;
                 imgGrey3.VerticalAlignment = VerticalAlignment.Center;
 
                 //récupération de l'image fond cadre3 collé a l'element
-                imgBlanc.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.Cadre3ListeExpo.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+                imgBlanc.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["CheminFondExpoCadreInterieur"]);
                 imgBlanc.Width = 850;
                 imgBlanc.Height = 400;
                 imgBlanc.HorizontalAlignment = HorizontalAlignment.Center;

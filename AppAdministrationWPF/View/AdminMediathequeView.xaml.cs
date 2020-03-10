@@ -1,4 +1,5 @@
 ﻿using AppAdministrationWPF.ViewModel;
+using CommonSurface.Other;
 using CommonSurface.ViewModel;
 using System;
 using System.Collections.Generic;
@@ -36,17 +37,9 @@ namespace AppAdministrationWPF.View
             #region Récupération des flèches
 
             // Haut
-            flecheHaut.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                               CommonSurface.Properties.Resources.FlecheHaut.GetHbitmap(),
-                               IntPtr.Zero,
-                               Int32Rect.Empty,
-                               BitmapSizeOptions.FromEmptyOptions());
+            flecheHaut.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminFlecheHaut"]);
             // Bas
-            flecheBas.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.FlecheBas.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
+            flecheBas.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminFlecheBas"]);
 
             #endregion Récupération des flèches
 

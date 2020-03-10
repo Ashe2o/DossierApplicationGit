@@ -462,11 +462,7 @@ namespace AppPalaisRois
                 media.Pause();
                 gridplay.Children.Clear();
                 //recupération de la sourcebutton
-                imgButton.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                       CommonSurface.Properties.Resources.play.GetHbitmap(),
-                       IntPtr.Zero,
-                       Int32Rect.Empty,
-                       BitmapSizeOptions.FromEmptyOptions());
+                imgButton.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminBoutonPlay"]);
             }
             else
             {
@@ -475,11 +471,7 @@ namespace AppPalaisRois
                 media.Play();
                 gridplay.Children.Clear();
                 //recupération de la sourcebutton
-                imgButton.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                       CommonSurface.Properties.Resources.pause.GetHbitmap(),
-                       IntPtr.Zero,
-                       Int32Rect.Empty,
-                       BitmapSizeOptions.FromEmptyOptions());
+                imgButton.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminBoutonPause"]);
             }
 
             //initialisation de l'image
@@ -636,12 +628,7 @@ namespace AppPalaisRois
                         }
 
                         //recupération de la sourcebutton
-                        imgButton.Source = Imaging.CreateBitmapSourceFromHBitmap(
-                           CommonSurface.Properties.Resources.pause.GetHbitmap(),
-                           IntPtr.Zero,
-                           Int32Rect.Empty,
-                           BitmapSizeOptions.FromEmptyOptions());
-
+                        imgButton.Source = ResourceAccessor.loadImage(ConfigurationManager.AppSettings["cheminBoutonPause"]);
                         //initialisation de l'image
                         imgButton.Width = 40;
                         imgButton.Height = 40;
