@@ -132,17 +132,7 @@ namespace AppPalaisRois
                     // Background CAT
                     ImageBrush myBrushCAT = new ImageBrush();
                     System.Windows.Controls.Image imageCAT = new System.Windows.Controls.Image();
-                    if (imageCAT.Source == null)
-                    {
-                        ImageBrush myBrushDefault = new ImageBrush();
-                        System.Windows.Controls.Image imageDefault = new System.Windows.Controls.Image();
-                        imageDefault.Source = new BitmapImage(
-                            new Uri(
-                               "C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_FR.jpg"));
-                        myBrushDefault.ImageSource = imageDefault.Source;
-                        SgraffitoPanel.Background = myBrushDefault;
-                    }
-                    else
+                    if (File.Exists("C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_CAT.jpg"))
                     {
                         imageCAT.Source = new BitmapImage(
                         new Uri(
@@ -150,12 +140,7 @@ namespace AppPalaisRois
                         myBrushCAT.ImageSource = imageCAT.Source;
                         SgraffitoPanel.Background = myBrushCAT;
                     }
-                    break;
-                case "English":
-                    // Background EN
-                    ImageBrush myBrushEN = new ImageBrush();
-                    System.Windows.Controls.Image imageEN = new System.Windows.Controls.Image();
-                    if (imageEN.Source == null)
+                    else
                     {
                         ImageBrush myBrushDefault = new ImageBrush();
                         System.Windows.Controls.Image imageDefault = new System.Windows.Controls.Image();
@@ -165,7 +150,12 @@ namespace AppPalaisRois
                         myBrushDefault.ImageSource = imageDefault.Source;
                         SgraffitoPanel.Background = myBrushDefault;
                     }
-                    else
+                    break;
+                case "English":
+                    // Background EN
+                    ImageBrush myBrushEN = new ImageBrush();
+                    System.Windows.Controls.Image imageEN = new System.Windows.Controls.Image();
+                    if (File.Exists("C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_EN.jpg"))
                     {
                         imageEN.Source = new BitmapImage(
                         new Uri(
@@ -173,12 +163,7 @@ namespace AppPalaisRois
                         myBrushEN.ImageSource = imageEN.Source;
                         SgraffitoPanel.Background = myBrushEN;
                     }
-                    break;
-                case "Spanish":
-                    // Background ES
-                    ImageBrush myBrushES = new ImageBrush();
-                    System.Windows.Controls.Image imageES = new System.Windows.Controls.Image();
-                    if (imageES.Source == null)
+                    else
                     {
                         ImageBrush myBrushDefault = new ImageBrush();
                         System.Windows.Controls.Image imageDefault = new System.Windows.Controls.Image();
@@ -188,7 +173,12 @@ namespace AppPalaisRois
                         myBrushDefault.ImageSource = imageDefault.Source;
                         SgraffitoPanel.Background = myBrushDefault;
                     }
-                    else
+                    break;
+                case "Spanish":
+                    // Background ES
+                    ImageBrush myBrushES = new ImageBrush();
+                    System.Windows.Controls.Image imageES = new System.Windows.Controls.Image();
+                    if (File.Exists("C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_ES.jpg"))
                     {
                         imageES.Source = new BitmapImage(
                         new Uri(
@@ -196,12 +186,7 @@ namespace AppPalaisRois
                         myBrushES.ImageSource = imageES.Source;
                         SgraffitoPanel.Background = myBrushES;
                     }
-                    break;
-                case "German":
-                    // Background DE
-                    ImageBrush myBrushDE = new ImageBrush();
-                    System.Windows.Controls.Image imageDE = new System.Windows.Controls.Image();
-                    if (imageDE.Source == null)
+                    else
                     {
                         ImageBrush myBrushDefault = new ImageBrush();
                         System.Windows.Controls.Image imageDefault = new System.Windows.Controls.Image();
@@ -211,13 +196,28 @@ namespace AppPalaisRois
                         myBrushDefault.ImageSource = imageDefault.Source;
                         SgraffitoPanel.Background = myBrushDefault;
                     }
-                    else
+                    break;
+                case "German":
+                    // Background DE
+                    ImageBrush myBrushDE = new ImageBrush();
+                    System.Windows.Controls.Image imageDE = new System.Windows.Controls.Image();
+                    if (File.Exists("C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_DE.jpg"))
                     {
                         imageDE.Source = new BitmapImage(
                         new Uri(
                            "C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_DE.jpg"));
                         myBrushDE.ImageSource = imageDE.Source;
                         SgraffitoPanel.Background = myBrushDE;
+                    }
+                    else
+                    {
+                        ImageBrush myBrushDefault = new ImageBrush();
+                        System.Windows.Controls.Image imageDefault = new System.Windows.Controls.Image();
+                        imageDefault.Source = new BitmapImage(
+                            new Uri(
+                               "C:/Session Grand Public/Données/Administrateur/Application Public/Fond d'ecran/Sgraffito/arriere_plan_FR.jpg"));
+                        myBrushDefault.ImageSource = imageDefault.Source;
+                        SgraffitoPanel.Background = myBrushDefault;
                     }
                     break;
             }
