@@ -528,6 +528,10 @@ namespace AppPalaisRois
                     diapo.textES = value;
                     break;
 
+                case "textDE":
+                    diapo.textDE = value;
+                    break;
+
                 case "image1":
                     diapo.image1 = value;
                     break;
@@ -664,28 +668,28 @@ namespace AppPalaisRois
                                     textblockAll.Text = i.ListeDiapo[0].text;
                                     break;
                                 case "Catalan":
-                                    if (i.textCAT != null){
+                                    if (i.ListeDiapo[0].textCAT != null){
                                         textblockAll.Text = i.ListeDiapo[0].textCAT;
                                     }else{
                                         textblockAll.Text = i.ListeDiapo[0].text;
                                     }
                                     break;
                                 case "English":
-                                    if (i.textEN != null){
+                                    if (i.ListeDiapo[0].textEN != null){
                                         textblockAll.Text = i.ListeDiapo[0].textEN;
                                     }else{
                                         textblockAll.Text = i.ListeDiapo[0].text;
                                     }
                                     break;
                                 case "Spanish":
-                                    if (i.textES != null){
+                                    if (i.ListeDiapo[0].textES != null){
                                         textblockAll.Text = i.ListeDiapo[0].textES;
                                     }else{
                                         textblockAll.Text = i.ListeDiapo[0].text;
                                     }
                                     break;
                                 case "German":
-                                    if (i.textDE != null){
+                                    if (i.ListeDiapo[0].textDE != null){
                                         textblockAll.Text = i.ListeDiapo[0].textDE;
                                     }else{
                                         textblockAll.Text = i.ListeDiapo[0].text;
