@@ -80,9 +80,7 @@ namespace CommonSurface.DAO
         /// Find cards for the given game id <br />
         /// note: list not observated
         /// </summary>
-        /// <param name="gameId"></param>
-        /// <returns></returns>
-        public List<Picture> FindCardsForGame(int gameId)
+        public List<Picture> FindCardsForGame()
         {
             List<Picture> cs = new List<Picture>();
             return cs;

@@ -85,7 +85,7 @@ C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\ro\Xceed.Wpf.
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
-C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csprojResolveAssemblyReference.cache
+C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csprojAssemblyReference.cache
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.ResolveComReference.cache
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\View\AdminBanqueImagesView.baml
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\View\AdminFriseView.baml
@@ -132,7 +132,7 @@ C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\View\MenuIcon
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\View\PanoramaEditDialog.baml
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.g.resources
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.Properties.Resources.resources
-C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.GenerateResource.Cache
-C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.CoreCompileInputs.cache
+C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.GenerateResource.cache
+C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.CopyComplete
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.exe
 C:\Session Grand Public\Application\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.pdb

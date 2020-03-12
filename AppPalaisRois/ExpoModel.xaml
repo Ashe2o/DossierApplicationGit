@@ -88,7 +88,7 @@
 			ValueChanged="Slider_ValueChanged"
 			Visibility="Hidden" />
 		<Button
-			x:Name="Quit_button"
+			x:Name="Quit_buttonDiapo"
 			Canvas.Left="100"
 			Canvas.Top="681"
 			Width="90"
@@ -98,12 +98,12 @@
 			VerticalAlignment="Top"
 			Background="Transparent"
 			BorderBrush="Transparent"
-			Click="BoutonQuit_click"
-			TouchDown="BoutonQuit_click"
+			Click="BoutonQuitDiapo_click"
+			TouchDown="BoutonQuitDiapo_click"
 			Visibility="Visible">
 			<StackPanel>
 				<Image
-					x:Name="returnExpo"
+					x:Name="returnDiapo"
 					Width="80"
 					Height="80"
 					Opacity="1.0" />

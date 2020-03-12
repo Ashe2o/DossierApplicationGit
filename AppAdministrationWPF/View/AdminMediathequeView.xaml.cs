@@ -142,10 +142,12 @@ namespace AppAdministrationWPF.View
             //récupération de l'ancienne expo
             expoID = id;
 
-            MediaElement media = new MediaElement();
+            MediaElement media = new MediaElement
+            {
 
-            //source du média
-            media.Source = new Uri(listeExpo[id - 1].ListeDiapo[id_stack - 1].element);
+                //source du média
+                Source = new Uri(listeExpo[id - 1].ListeDiapo[id_stack - 1].element)
+            };
 
             //ajouter le média au grid
             dock_main_photo.Children.Clear();
@@ -173,10 +175,11 @@ namespace AppAdministrationWPF.View
                 StackPanel stack = new StackPanel();
 
                 //texte boxe pour la description
-                TextBlock textblocktitle = new TextBlock();
-
-                textblocktitle.Text = j.titre;
-                textblocktitle.Width = 350;
+                TextBlock textblocktitle = new TextBlock
+                {
+                    Text = j.titre,
+                    Width = 350
+                };
                 stack.Name = "stack" + j.id;
                 stack.Children.Add(textblocktitle);
 
@@ -228,10 +231,11 @@ namespace AppAdministrationWPF.View
                 StackPanel stack = new StackPanel();
 
                 //texte boxe pour la description
-                TextBlock textblocktitle = new TextBlock();
-
-                textblocktitle.Text = j.titre;
-                textblocktitle.Width = 350;
+                TextBlock textblocktitle = new TextBlock
+                {
+                    Text = j.titre,
+                    Width = 350
+                };
                 stack.Name = "stack" + j.id;
                 stack.Children.Add(textblocktitle);
 
@@ -634,11 +638,13 @@ namespace AppAdministrationWPF.View
                         StackPanel stack = new StackPanel();
 
                         //texte boxe pour la description
-                        TextBlock textblocktitle = new TextBlock();
+                        TextBlock textblocktitle = new TextBlock
+                        {
 
-                        //récupération du titre
-                        textblocktitle.Text = h.titre;
-                        textblocktitle.Width = 350;
+                            //récupération du titre
+                            Text = h.titre,
+                            Width = 350
+                        };
                         stack.Name = "stack" + h.id;
 
                         //ajouter l'element au contenant

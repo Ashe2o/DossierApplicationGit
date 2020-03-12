@@ -100,13 +100,15 @@ namespace AppPalaisRois
                     labelHard.Content = ConfigurationManager.AppSettings["valeurNomJeuDifficileDE"];
                     break;
             }
-            
-            
+
+
             #endregion Récupération des icones de difficultés
 
             /* EFFECTS RESOURCE DICTIONARY */
-            myresourcedictionary = new ResourceDictionary();
-            myresourcedictionary.Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute);
+            myresourcedictionary = new ResourceDictionary
+            {
+                Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute)
+            };
             sbHide = myresourcedictionary["hideAnimSec"] as Storyboard;
         }
 

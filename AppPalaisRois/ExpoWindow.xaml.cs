@@ -47,8 +47,10 @@ namespace AppPalaisRois
                 new Uri(CheminFondEcranExpo, UriKind.RelativeOrAbsolute),
                 BitmapCreateOptions.PreservePixelFormat,
                 BitmapCacheOption.OnLoad);
-            ImageBrush brush = new ImageBrush(decoder.Frames[0]);
-            brush.Stretch = Stretch.Fill;
+            ImageBrush brush = new ImageBrush(decoder.Frames[0])
+            {
+                Stretch = Stretch.Fill
+            };
             this.grille.Background = brush;
 
             this.Loaded += new RoutedEventHandler(MainWindow_Loaded);
@@ -56,8 +58,10 @@ namespace AppPalaisRois
             string nameElement = "";
 
             /* EFFECTS RESOURCE DICTIONARY */
-            myresourcedictionary = new ResourceDictionary();
-            myresourcedictionary.Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute);
+            myresourcedictionary = new ResourceDictionary
+            {
+                Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute)
+            };
             sbHide = myresourcedictionary["hideAnimSec"] as Storyboard;
 
             bool isDocument = false;

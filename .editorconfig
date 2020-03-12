@@ -5,3 +5,15 @@ dotnet_diagnostic.IDE0052.severity = none
 
 # IDE0044: Ajouter un modificateur readonly
 dotnet_style_readonly_field = true:none
+
+# IDE1006: Styles d'affectation de noms
+dotnet_diagnostic.IDE1006.severity = none
+
+# IDE0060: Supprimer le paramètre inutilisé
+dotnet_code_quality_unused_parameters = all:none
+
+# IDE0017: Simplifier l'initialisation des objets
+dotnet_style_object_initializer = true:none
+
+# IDE0059: Assignation inutile d'une valeur
+csharp_style_unused_value_assignment_preference = discard_variable:none

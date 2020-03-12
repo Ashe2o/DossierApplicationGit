@@ -68,7 +68,7 @@
 				<Image x:Name="imageRegion" />
 				<Label
 					x:Name="labelRegion"
-					Margin="0,-60,0,0"
+					Margin="0,-65,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
@@ -144,7 +144,7 @@
                 <Image x:Name="imageFrise" />
                 <Label
 					x:Name="labelFrise"
-					Margin="0,-60,0,0"
+					Margin="0,-65,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"
@@ -163,7 +163,7 @@
                 <Image x:Name="imageBanqueImages" />
                 <Label
 					x:Name="labelBanqueImages"
-					Margin="0,-60,0,0"
+					Margin="0,-65,0,0"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
                     FontFamily="{StaticResource Luciole-Regular}"

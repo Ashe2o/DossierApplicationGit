@@ -214,29 +214,29 @@
 				<Label
 					x:Name="labelEasy"
 					Width="90"
-					Margin="605,609,1217,412"
+					Margin="605,615,1217,412"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
 					Background="#00000000"
-					FontSize="30"
+					FontSize="25"
 					Foreground="White" />
 				<Label
 					x:Name="labelMedium"
 					Width="110"
-					Margin="913,609,889,412"
+					Margin="913,615,889,412"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
 					Background="#00000000"
-					FontSize="30"
+					FontSize="25"
 					Foreground="White" />
 				<Label
 					x:Name="labelHard"
 					Width="115"
-					Margin="1214,609,583,412"
+					Margin="1214,615,583,412"
 					HorizontalAlignment="Center"
 					Panel.ZIndex="3"
 					Background="#00000000"
-					FontSize="30"
+					FontSize="25"
 					Foreground="White" />
 			</Grid>
 

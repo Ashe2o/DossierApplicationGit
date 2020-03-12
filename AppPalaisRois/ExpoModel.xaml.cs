@@ -64,7 +64,7 @@ namespace AppPalaisRois
             imageBackground.Source = ResourceAccessor.loadImage(CheminFondEcran);
 
             // Récupération du retour
-            returnExpo.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
+            returnDiapo.Source = ResourceAccessor.loadImage(CheminBoutonReturn);
 
             string nameElement = "";
 
@@ -483,7 +483,7 @@ namespace AppPalaisRois
         }
 
         //bouton retour et de fermeture de la fenetre
-        private void BoutonQuit_click(object sender, RoutedEventArgs e)
+        private void BoutonQuitDiapo_click(object sender, RoutedEventArgs e)
         {
             ExpoWindow fenetre = new ExpoWindow();
             fenetre.Show();

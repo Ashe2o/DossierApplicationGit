@@ -52,8 +52,10 @@ namespace AppPalaisRois
 
             ///* ANIM PART*/
             ///* EFFECTS RESOURCE DICTIONARY */
-            myresourcedictionary = new ResourceDictionary();
-            myresourcedictionary.Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute);
+            myresourcedictionary = new ResourceDictionary
+            {
+                Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute)
+            };
             sbHide = myresourcedictionary["hideAnimSec"] as Storyboard;
 
             ///* GRAB STORYBOARDS FROM RD */
@@ -611,10 +613,12 @@ namespace AppPalaisRois
                         {
                             foreach (ScatterViewItem svi in displayedItems[p])
                             {
-                                PointAnimation anim = new PointAnimation();
-                                anim.From = new Point(svi.ActualCenter.X, svi.ActualCenter.Y);
-                                anim.To = new Point(p.X, p.Y);
-                                anim.Duration = new Duration(TimeSpan.FromMilliseconds(450));
+                                PointAnimation anim = new PointAnimation
+                                {
+                                    From = new Point(svi.ActualCenter.X, svi.ActualCenter.Y),
+                                    To = new Point(p.X, p.Y),
+                                    Duration = new Duration(TimeSpan.FromMilliseconds(450))
+                                };
                                 anim.Completed += (a, b) =>
                                 {
                                     anim_Completed(null, null);
@@ -683,9 +687,11 @@ namespace AppPalaisRois
 
                 item.ContainerActivated += new RoutedEventHandler(item_ContainerActivated);
                 item.ContainerDeactivated += new RoutedEventHandler(item_ContainerDeactivated);
-                Grid content = new Grid();
-                content.VerticalAlignment = VerticalAlignment.Stretch;
-                content.HorizontalAlignment = HorizontalAlignment.Stretch;
+                Grid content = new Grid
+                {
+                    VerticalAlignment = VerticalAlignment.Stretch,
+                    HorizontalAlignment = HorizontalAlignment.Stretch
+                };
 
                 MediaElement mediaElement = new MediaElement();
                 mediaElement.BeginInit();
@@ -703,14 +709,16 @@ namespace AppPalaisRois
                     mediaElement.EndInit();
 
                     // Nom du media
-                    Label lblMediaName = new Label();
-                    lblMediaName.Content = media.Name;
-                    lblMediaName.HorizontalAlignment = HorizontalAlignment.Stretch;
-                    lblMediaName.VerticalAlignment = VerticalAlignment.Bottom;
-                    lblMediaName.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#96000000"));
-                    lblMediaName.Foreground = new SolidColorBrush(Colors.White);
-                    lblMediaName.FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole");
-                    lblMediaName.Opacity = 0;
+                    Label lblMediaName = new Label
+                    {
+                        Content = media.Name,
+                        HorizontalAlignment = HorizontalAlignment.Stretch,
+                        VerticalAlignment = VerticalAlignment.Bottom,
+                        Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#96000000")),
+                        Foreground = new SolidColorBrush(Colors.White),
+                        FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole"),
+                        Opacity = 0
+                    };
                     content.Children.Add(lblMediaName);
 
                     item.Content = content;
@@ -765,10 +773,12 @@ namespace AppPalaisRois
             {
                 foreach (ScatterViewItem svi in displayedItems[p])
                 {
-                    PointAnimation anim = new PointAnimation();
-                    anim.From = new Point(svi.ActualCenter.X, svi.ActualCenter.Y);
-                    anim.To = new Point(p.X, p.Y);
-                    anim.Duration = new Duration(TimeSpan.FromMilliseconds(450));
+                    PointAnimation anim = new PointAnimation
+                    {
+                        From = new Point(svi.ActualCenter.X, svi.ActualCenter.Y),
+                        To = new Point(p.X, p.Y),
+                        Duration = new Duration(TimeSpan.FromMilliseconds(450))
+                    };
                     anim.Completed += new EventHandler(anim_Completed);
 
                     svi.BeginAnimation(ScatterViewItem.HeightProperty, new DoubleAnimation()

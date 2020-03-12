@@ -110,8 +110,10 @@ namespace AppPalaisRois
             }
 
             /* EFFECTS RESOURCE DICTIONARY */
-            myresourcedictionary = new ResourceDictionary();
-            myresourcedictionary.Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute);
+            myresourcedictionary = new ResourceDictionary
+            {
+                Source = new Uri("/CommonSurface;component/XAML/Effects.xaml", UriKind.RelativeOrAbsolute)
+            };
             sbHide = myresourcedictionary["hideAnimSec"] as Storyboard;
         }
 
