@@ -42,7 +42,7 @@
 			Canvas.Top="681"
 			Width="90"
 			Height="90"
-			Margin="75,960,0,0"
+			Margin="175,960,0,0"
 			HorizontalAlignment="Left"
 			VerticalAlignment="Top"
 			Background="Transparent"
