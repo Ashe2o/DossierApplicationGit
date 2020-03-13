@@ -1081,5 +1081,11 @@ namespace AppPalaisRois
 
         #endregion Private Methods
 
+        private void BoutonQuitDiapo_click(object sender, System.Windows.Input.TouchEventArgs e)
+        {
+            ExpoWindow fenetre = new ExpoWindow();
+            fenetre.Show();
+            this.Close();
+        }
     }
 }

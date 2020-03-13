@@ -556,5 +556,19 @@ namespace AppPalaisRois
         }
 
         #endregion Private Methods
+
+        private void Quit_button_Click(object sender, System.Windows.Input.TouchEventArgs e)
+        {
+            //Effet de fermeture
+            Storyboard.SetTarget(sbHide, grille);
+            sbHide.Completed += (s, t) =>
+            {
+                //Fermeture et ouverture des fenetres
+                MainWindow fenetre = new MainWindow();
+                fenetre.Show();
+                this.Close();
+            };
+            sbHide.Begin();
+        }
     }
 }
