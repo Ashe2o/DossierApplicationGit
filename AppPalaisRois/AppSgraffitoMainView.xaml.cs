@@ -99,7 +99,7 @@ namespace AppPalaisRois
         /// </summary>
         private void ClearSheet()
         {
-            image1 = new Bitmap(@"C:\Session Grand Public\Application\CommonSurface\Resources\couche.png", true);
+            image1 = new Bitmap(@"C:\Session Grand Public\Données\Administrateur\Application Public\Fond d'ecran\Sgraffito\couche.png", true);
             // Set the image source.
             using (MemoryStream memory = new MemoryStream())
             {
