@@ -51,11 +51,11 @@ C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 201
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.GenerateResource.Cache
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.csproj.CoreCompileInputs.cache
 C:\Users\milan.teles\Desktop\Table Tactile\Appli PRM sauvegarde - 30 janvier 2018\Table_Tactile_CG66\AppAdministrationWPF\obj\Debug\AppAdministrationWPF.exe
-C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.exe.config
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.exe
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\CommonSurface.dll
+C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.exe.config
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppAdministrationWPF.pdb
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\AppPalaisRois.exe
-C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\CommonSurface.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Geckofx-Core.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\Geckofx-Winforms.dll
 C:\Session Grand Public\Application\AppAdministrationWPF\bin\Debug\System.IO.Compression.dll

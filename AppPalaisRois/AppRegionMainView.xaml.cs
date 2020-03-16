@@ -443,8 +443,17 @@ namespace AppPalaisRois
             Image Icon = new Image();
             Image IconOpen = new Image();
 
-            Icon.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
-            IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPathOpen, UriKind.RelativeOrAbsolute));
+            try{
+                Icon.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
+            }
+            catch{}
+            try{
+                IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPathOpen, UriKind.RelativeOrAbsolute));
+            }
+            catch {
+                IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
+            }
+
 
 
             if (selectedOnes.Contains(selectedOne))
