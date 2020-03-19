@@ -18,6 +18,10 @@ namespace AppAdministrationWPF.ViewModel
 
         #region Public Constructors
 
+        public PlaceHolderWindowModel()
+        {
+        }
+
         public PlaceHolderWindowModel(PlaceHolder place)
         {
             Selected = place;

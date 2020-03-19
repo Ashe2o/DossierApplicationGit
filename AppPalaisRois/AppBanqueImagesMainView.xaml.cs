@@ -711,7 +711,6 @@ namespace AppPalaisRois
                     // Nom du media
                     Label lblMediaName = new Label
                     {
-                        Content = media.Name,
                         HorizontalAlignment = HorizontalAlignment.Stretch,
                         VerticalAlignment = VerticalAlignment.Bottom,
                         Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#96000000")),
@@ -719,6 +718,26 @@ namespace AppPalaisRois
                         FontFamily = new FontFamily(new Uri("pack://application:,,,/"), "./Fonts/#Luciole"),
                         Opacity = 0
                     };
+                    lblMediaName.Content = media.Name;
+                    switch (MainWindow.selectedLanguage)
+                    {
+                        case "Catalan":
+                            if (media.NameCAT != null & media.NameCAT != "")
+                                lblMediaName.Content = media.NameCAT;
+                            break;
+                        case "English":
+                            if (media.NameEN != null & media.NameEN != "")
+                                lblMediaName.Content = media.NameEN;
+                            break;
+                        case "Spanish":
+                            if (media.NameES != null & media.NameES != "")
+                                lblMediaName.Content = media.NameES;
+                            break;
+                        case "German":
+                            if (media.NameDE != null & media.NameDE != "")
+                                lblMediaName.Content = media.NameDE;
+                            break;
+                    }
                     content.Children.Add(lblMediaName);
 
                     item.Content = content;

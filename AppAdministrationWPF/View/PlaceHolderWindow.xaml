@@ -8,71 +8,69 @@
 	ResizeMode="CanResize"
 	ShowInTaskbar="False"
 	Topmost="True">
-	<Grid Name="grid">
-		<Grid.RowDefinitions>
-			<RowDefinition Height="Auto" />
-			<RowDefinition Height="auto" />
-			<RowDefinition Height="auto" />
-			<RowDefinition Height="auto" />
-			<RowDefinition Height="auto" />
-			<RowDefinition Height="*" />
-			<RowDefinition Height="auto" />
-		</Grid.RowDefinitions>
-		<Grid.ColumnDefinitions>
-			<ColumnDefinition Width="Auto" />
-			<ColumnDefinition Width="*" />
-		</Grid.ColumnDefinitions>
+    <Grid Name="grid">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
 
-		<Label
+        <Label
 			Name="label1"
 			Grid.Row="0"
 			Grid.Column="0"
 			Height="auto"
-			Margin="10,5"
 			HorizontalAlignment="Right"
 			Content="Nom :" />
-		<Label
+        <Label
 			Name="label4"
 			Grid.Row="3"
 			Grid.Column="0"
 			Height="auto"
-			Margin="10,5,10,0"
 			HorizontalAlignment="Right"
 			VerticalAlignment="top"
-			Content="Media:" />
-		<Label
+			Content="Media(s):" />
+        <Label
 			Name="label2"
 			Grid.Row="1"
 			Grid.Column="0"
-			Margin="10,5"
 			HorizontalAlignment="Right"
+            VerticalAlignment="Top"
 			Content="Icone :" />
 
-		<TextBox
+        <TextBox
 			Name="txtName"
 			Grid.Row="0"
 			Grid.Column="1"
 			Margin="10,5"
 			HorizontalAlignment="Stretch"
 			Text="{Binding Path=Selected.Name}" />
-		<StackPanel
+        <StackPanel
 			Grid.Row="1"
 			Grid.Column="1"
 			Margin="10"
 			Orientation="Horizontal">
-			<Border
+            <Border
 				Grid.Row="1"
 				Grid.Column="1"
 				Width="75"
 				Height="75"
 				BorderBrush="Silver"
 				BorderThickness="1">
-				<Image
+                <Image
 					Grid.Row="1"
 					Grid.Column="1"
 					Source="{Binding Selected.IconPath}" />
-			</Border>
-			<Button
+            </Border>
+            <Button
 				Name="txtIconPath"
 				Height="25"
 				Margin="10,5"
@@ -109,13 +107,13 @@
 				Content="Parcourir ..." />
         </StackPanel>
 
-		<Grid Grid.Row="4">
-			<Grid.RowDefinitions>
-				<RowDefinition Height="Auto" />
-				<RowDefinition Height="auto" />
-				<RowDefinition Height="auto" />
-			</Grid.RowDefinitions>
-			<Button
+        <Grid Grid.Row="4">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="auto" />
+                <RowDefinition Height="auto" />
+            </Grid.RowDefinitions>
+            <Button
 				Name="btAddMedia"
 				Grid.Row="0"
 				Grid.Column="0"
@@ -125,7 +123,7 @@
 				Click="btAddMedia_Click"
 				Content="Ajouter..."
 				ToolTip="Ajouter un media" />
-			<Button
+            <Button
 				Name="btModifyMedia"
 				Grid.Row="1"
 				Grid.Column="0"
@@ -135,7 +133,7 @@
 				Click="btModifyMedia_Click"
 				Content="Modifier..."
 				ToolTip="Modifier un media" />
-			<Button
+            <Button
 				Name="btDeleteMedia"
 				Grid.Row="2"
 				Grid.Column="0"
@@ -145,77 +143,77 @@
 				Click="btDeleteMedia_Click"
 				Content="Supprimer"
 				ToolTip="Supprimer un media" />
-		</Grid>
+        </Grid>
 
-		<ListBox
+        <ListBox
 			Name="lbMedia"
-			Grid.Row="1"
-			Grid.RowSpan="5"
+			Grid.Row="4"
+			Grid.RowSpan="2"
 			Grid.Column="1"
-			Margin="12,80,8,45"
+			Margin="10,10,10,50"
 			HorizontalAlignment="Stretch"
 			ItemsSource="{Binding Path=Selected.Media}">
-			<ListBox.ItemTemplate>
-				<DataTemplate>
-					<Border
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <Border
 						Width="170"
 						Margin="5,5,5,5"
 						BorderBrush="Gray"
 						BorderThickness="1"
 						CornerRadius="2">
-						<StackPanel Margin="5,5,5,5" Orientation="Horizontal">
-							<Border
+                        <StackPanel Margin="5,5,5,5" Orientation="Horizontal">
+                            <Border
 								Width="90"
 								Height="90"
 								Margin="5,5,5,5"
 								Background="Black"
 								BorderBrush="Black"
 								BorderThickness="1">
-								<MediaElement
+                                <MediaElement
 									x:Name="Apercu"
 									Source="{Binding Path}"
 									Stretch="Uniform"
 									Volume="0" />
-							</Border>
-							<TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
-						</StackPanel>
-						<Border.ContextMenu>
-							<ContextMenu Name="cm">
-								<MenuItem
+                            </Border>
+                            <TextBlock VerticalAlignment="Center" Text="{Binding Name}" />
+                        </StackPanel>
+                        <Border.ContextMenu>
+                            <ContextMenu Name="cm">
+                                <MenuItem
 									Name="miEditPH"
 									Click="miEditPH_Click"
 									Header="Modifier" />
-								<MenuItem
+                                <MenuItem
 									Name="miDeletePH"
 									Click="miDeletePH_Click"
 									Header="Supprimer" />
-							</ContextMenu>
-						</Border.ContextMenu>
-					</Border>
-				</DataTemplate>
-			</ListBox.ItemTemplate>
-		</ListBox>
+                            </ContextMenu>
+                        </Border.ContextMenu>
+                    </Border>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
 
-		<StackPanel
+        <StackPanel
 			Grid.Row="5"
 			Grid.ColumnSpan="2"
 			Margin="8,8,8,8"
 			HorizontalAlignment="Right"
 			VerticalAlignment="Bottom"
 			Orientation="Horizontal">
-			<Button
+            <Button
 				Name="btOk"
 				Width="60"
 				Margin="2"
 				Click="btOk_Click"
 				Content="OK"
 				FontWeight="Bold" />
-			<Button
+            <Button
 				Name="btCancel"
 				Width="60"
 				Margin="2"
 				Click="btCancel_Click"
 				Content="Annuler" />
-		</StackPanel>
-	</Grid>
+        </StackPanel>
+    </Grid>
 </Window>

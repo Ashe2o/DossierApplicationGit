@@ -443,14 +443,17 @@ namespace AppPalaisRois
             Image Icon = new Image();
             Image IconOpen = new Image();
 
-            try{
+            try
+            {
                 Icon.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
             }
-            catch{}
-            try{
+            catch { }
+            try
+            {
                 IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPathOpen, UriKind.RelativeOrAbsolute));
             }
-            catch {
+            catch
+            {
                 IconOpen.Source = new BitmapImage(new Uri(selectedOne.IconPath, UriKind.RelativeOrAbsolute));
             }
 
@@ -641,6 +644,25 @@ namespace AppPalaisRois
                     // Image ou vidéo
                     content.Children.Add(mediaElement);
                     mediaElement.Source = new Uri(media.Path);
+                    switch (MainWindow.selectedLanguage)
+                    {
+                        case "Catalan":
+                            if (media.PathCAT != null & media.PathCAT != "") 
+                                mediaElement.Source = new Uri(media.PathCAT);
+                            break;
+                        case "English":
+                            if (media.PathEN != null & media.PathEN != "") 
+                                mediaElement.Source = new Uri(media.PathEN);
+                            break;
+                        case "Spanish":
+                            if (media.PathES != null & media.PathES != "") 
+                                mediaElement.Source = new Uri(media.PathES);
+                            break;
+                        case "German":
+                            if (media.PathDE != null & media.PathDE != "") 
+                                mediaElement.Source = new Uri(media.PathDE);
+                            break;
+                    }
                     mediaElement.Stretch = Stretch.Uniform;
                     mediaElement.Volume = 0;
                     mediaElement.HorizontalAlignment = HorizontalAlignment.Stretch;
@@ -652,6 +674,25 @@ namespace AppPalaisRois
                     // Nom du media
                     Label lblMediaName = new Label();
                     lblMediaName.Content = media.Name;
+                    switch (MainWindow.selectedLanguage)
+                    {
+                        case "Catalan":
+                            if (media.NameCAT != null & media.NameCAT != "")
+                                lblMediaName.Content = media.NameCAT;
+                            break;
+                        case "English":
+                            if (media.NameEN != null & media.NameEN != "")
+                                lblMediaName.Content = media.NameEN;
+                            break;
+                        case "Spanish":
+                            if (media.NameES != null & media.NameES != "")
+                                lblMediaName.Content = media.NameES;
+                            break;
+                        case "German":
+                            if (media.NameDE != null & media.NameDE != "")
+                                lblMediaName.Content = media.NameDE;
+                            break;
+                    }
                     lblMediaName.HorizontalAlignment = HorizontalAlignment.Stretch;
                     lblMediaName.VerticalAlignment = VerticalAlignment.Bottom;
                     lblMediaName.Background = new SolidColorBrush((Color)ColorConverter.ConvertFromString("#96000000"));

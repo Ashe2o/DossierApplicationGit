@@ -202,8 +202,14 @@ namespace AppAdministrationWPF.View
 
                 foreach (XNode nodeOriginal in original.Nodes())
                 {
-                    ((nodeOriginal as XElement).FirstNode as XElement).Value = id.ToString();
-                    id++;
+                    try
+                    {
+                        ((nodeOriginal as XElement).FirstNode as XElement).Value = id.ToString();
+                        id++;
+                    }
+                    catch {
+                        return;
+                    }
                 }
             }
 
