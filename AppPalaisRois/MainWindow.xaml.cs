@@ -3,6 +3,7 @@ using CommonSurface.Model;
 using CommonSurface.Other;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -126,9 +127,11 @@ namespace AppPalaisRois
 
             #endregion Gestion des icones
 
-            // Chargement des ressources
-            imageBackground.Source = ResourceAccessor.loadImage(DAOMenu.Instance.Background);
+            // Chargement du média des Crédits
             mediaCredits.Source = new Uri(DAOMenu.Instance.Credits.Source);
+
+            // Chargement du Fond d'écran en fonction de la Langue choisis.
+            UpdateBackgroundHome();
 
             #region Dimension du crédit
 
@@ -225,6 +228,7 @@ namespace AppPalaisRois
             }
             selectedLanguage = "English";
             UpdateOpacityLanguages();
+            UpdateBackgroundHome();
         }
 
         /// <summary>
@@ -250,6 +254,7 @@ namespace AppPalaisRois
             }
             selectedLanguage = "French";
             UpdateOpacityLanguages();
+            UpdateBackgroundHome();
         }
 
         /// <summary>
@@ -279,6 +284,7 @@ namespace AppPalaisRois
             }
             selectedLanguage = "Catalan";
             UpdateOpacityLanguages();
+            UpdateBackgroundHome();
         }
 
         /// <summary>
@@ -308,6 +314,7 @@ namespace AppPalaisRois
             }
             selectedLanguage = "Spanish";
             UpdateOpacityLanguages();
+            UpdateBackgroundHome();
         }
         /// <summary>
         /// Changement de la langue en ALLEMAND
@@ -336,6 +343,7 @@ namespace AppPalaisRois
             }
             selectedLanguage = "German";
             UpdateOpacityLanguages();
+            UpdateBackgroundHome();
         }
 
         /// <summary>
@@ -574,6 +582,32 @@ namespace AppPalaisRois
                     break;
                 case "German":
                     imageGerman.Opacity = 1;
+                    break;
+            }
+        }
+        /// <summary>
+        /// Change le Fond d'écran d'accueil en fonction de la Langue choisis. Par défaut, le fond d'écran principal est choisis si il n'y a pas de traduction disponible.
+        /// </summary>
+        private void UpdateBackgroundHome()
+        {
+            imageBackground.Source = ResourceAccessor.loadImage(DAOMenu.Instance.Background);
+            switch (selectedLanguage)
+            {
+                case "Catalan":
+                    if (File.Exists(DAOMenu.Instance.BackgroundCAT))
+                        imageBackground.Source = ResourceAccessor.loadImage(DAOMenu.Instance.BackgroundCAT);
+                    break;
+                case "English":
+                    if (File.Exists(DAOMenu.Instance.BackgroundEN))
+                        imageBackground.Source = ResourceAccessor.loadImage(DAOMenu.Instance.BackgroundEN);
+                    break;
+                case "Spanish":
+                    if (File.Exists(DAOMenu.Instance.BackgroundES))
+                        imageBackground.Source = ResourceAccessor.loadImage(DAOMenu.Instance.BackgroundES);
+                    break;
+                case "German":
+                    if (File.Exists(DAOMenu.Instance.BackgroundDE))
+                        imageBackground.Source = ResourceAccessor.loadImage(DAOMenu.Instance.BackgroundDE);
                     break;
             }
         }
