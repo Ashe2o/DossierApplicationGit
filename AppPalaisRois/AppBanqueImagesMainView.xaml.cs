@@ -753,8 +753,8 @@ namespace AppPalaisRois
 
                     //animation
                     double teta = Math.PI * (currentMedia / (float)totalMedia * 360) / 180;
-                    double x = 200 * Math.Cos(teta);
-                    double y = 200 * Math.Sin(teta);
+                    double x = 300 * Math.Cos(teta);
+                    double y = 300 * Math.Sin(teta);
 
                     double endX = placeholder.X + x;
                     double endY = placeholder.Y + y;
