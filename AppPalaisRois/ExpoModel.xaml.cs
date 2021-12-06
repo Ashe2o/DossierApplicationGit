@@ -4,7 +4,9 @@ using System;
 using System.Collections.Generic;
 using System.Configuration;
 using System.Windows;
+using System.Windows.Input;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
@@ -59,6 +61,13 @@ namespace AppPalaisRois
         public ExpoModel(object sender, EventArgs e)
         {
             InitializeComponent();
+
+            slider.ApplyTemplate();
+
+            Thumb thumb = (slider.Template.FindName(
+                "PART_Track", slider) as Track).Thumb;
+
+            thumb.MouseEnter += new MouseEventHandler(thumb_MouseEnter);
 
             //Récupération du fond d'ecran
             imageBackground.Source = ResourceAccessor.loadImage(CheminFondEcran);
@@ -1080,6 +1089,20 @@ namespace AppPalaisRois
         }
 
         #endregion Private Methods
+
+        private void thumb_MouseEnter(object sender, MouseEventArgs e)
+        {
+            Console.WriteLine("pressed");
+
+            if(e.LeftButton == MouseButtonState.Pressed && e.MouseDevice.Captured == null)
+            {
+                MouseButtonEventArgs args = new MouseButtonEventArgs(
+                    e.MouseDevice, e.Timestamp, MouseButton.Left);
+
+                args.RoutedEvent = MouseLeftButtonDownEvent;
+                (sender as Thumb).RaiseEvent(args);
+            }
+        }
 
         private void BoutonQuitDiapo_click(object sender, System.Windows.Input.TouchEventArgs e)
         {

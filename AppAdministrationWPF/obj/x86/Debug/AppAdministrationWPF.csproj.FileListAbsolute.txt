@@ -1,0 +1,2 @@
+C:\Users\Thomas\Desktop\Session Grand Public\Application\AppAdministrationWPF\obj\x86\Debug\AppAdministrationWPF.csproj.AssemblyReference.cache
+C:\Users\Thomas\Desktop\Session Grand Public\Application\AppAdministrationWPF\obj\x86\Debug\AppAdministrationWPF.csproj.SuggestedBindingRedirects.cache

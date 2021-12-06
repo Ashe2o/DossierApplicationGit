@@ -16,7 +16,7 @@ namespace AppAdministrationWPF.View
     /// <summary>
     /// Logique d'interaction pour AdminBanqueImagesView.xaml
     /// </summary>
-    public partial class AdminBanqueImagesView : UserControl
+    public partial class AdminBanqueImagesView : UserControl 
     {
         #region Private Fields
 
@@ -147,7 +147,7 @@ namespace AppAdministrationWPF.View
         /// <param name="e">     </param>
         private void btDeleteMap_Click(object sender, RoutedEventArgs e)
         {
-            if (_viewModel.SelectedMap != null)
+            if (_viewModel.SelectedMap != null) 
             {
                 int index = listboxMapsBanqueImages.SelectedIndex;
                 _viewModel.Maps.Remove(_viewModel.SelectedMap);
@@ -158,7 +158,7 @@ namespace AppAdministrationWPF.View
                     listboxMapsBanqueImages.SelectedIndex = -1;
                     BanqueImages.Source = null;
                     
-                }
+                } 
                 else if (index > ViewModel.Maps.Count - 1)
                 {
                     listboxMapsBanqueImages.SelectedIndex = ViewModel.Maps.Count - 1;

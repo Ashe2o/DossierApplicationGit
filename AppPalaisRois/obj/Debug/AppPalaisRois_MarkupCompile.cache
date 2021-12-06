@@ -1,7 +1,7 @@
 ﻿AppPalaisRois
 
 
-winexe
+exe
 C#
 .cs
 C:\Session Grand Public\Application\AppPalaisRois\obj\Debug\
@@ -10,10 +10,10 @@ none
 false
 DEBUG;TRACE
 C:\Session Grand Public\Application\AppPalaisRois\App.xaml
-10-1654771713
+102135107377
 
-27-2099961001
-361479424152
+27486217035
+36803061236
 AppSgraffitoMainView.xaml;AppBanqueImagesMainView.xaml;AppFriseMainView.xaml;AppRegionMainView.xaml;ExpoModel.xaml;ExpoWindow.xaml;MainWindow.xaml;MemoryMainWindow.xaml;PuzzleMainWindow.xaml;VisiteWindow.xaml;
 
 False

@@ -144,7 +144,6 @@ namespace AppAdministrationWPF.View
 
             MediaElement media = new MediaElement
             {
-
                 //source du média
                 Source = new Uri(listeExpo[id - 1].ListeDiapo[id_stack - 1].element)
             };
@@ -299,7 +298,7 @@ namespace AppAdministrationWPF.View
             {
                 tailleListe = Convert.ToInt32(xn["numberDiapo"].InnerText);
             }
-
+        
             if (diapoID == 0)
             {
                 if (expoID != 0 && expoID != listeExpo.Count)
@@ -463,7 +462,7 @@ namespace AppAdministrationWPF.View
 
             //et lance la sauvegarde et lecture de la liste
             doc.Save(chemin);
-
+        
             //recharger la page avec les modification
             listExpo.Items.Clear();
             listDiapo.Items.Clear();

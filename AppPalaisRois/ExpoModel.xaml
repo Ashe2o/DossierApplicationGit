@@ -82,6 +82,7 @@
 			Visibility="Hidden" />
 		<Slider
 			x:Name="slider"
+            IsMoveToPointEnabled="True"
 			Width="1250"
 			Height="45"
 			Margin="165,890,397,170"

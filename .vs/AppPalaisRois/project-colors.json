@@ -1,0 +1,21 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "5cba546e-ea2e-432a-980e-cfcd00bc271a": {
+      "ProjectGuid": "5cba546e-ea2e-432a-980e-cfcd00bc271a",
+      "DisplayName": "AppPalaisRois",
+      "ColorIndex": 0
+    },
+    "b43372ae-369e-437b-a98e-88a92dfb0a24": {
+      "ProjectGuid": "b43372ae-369e-437b-a98e-88a92dfb0a24",
+      "DisplayName": "AppAdministrationWPF",
+      "ColorIndex": 1
+    },
+    "b19cbe34-a981-4cf3-8933-490286ae046f": {
+      "ProjectGuid": "b19cbe34-a981-4cf3-8933-490286ae046f",
+      "DisplayName": "CommonSurface",
+      "ColorIndex": 2
+    }
+  },
+  "NextColorIndex": 3
+}
